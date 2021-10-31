@@ -1,0 +1,29 @@
+{
+  "rainesrhapsody": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "owlhousemodmc:rainesrhapsody",
+        "stream": true
+      }
+    ]
+  },
+  "endingtheme": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "owlhousemodmc:endingtheme",
+        "stream": true
+      }
+    ]
+  },
+  "gromfright": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "owlhousemodmc:enchantinggromfright",
+        "stream": true
+      }
+    ]
+  }
+}

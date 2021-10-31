@@ -1,0 +1,60 @@
+{
+  "id_map": {},
+  "mod_elements": [],
+  "variable_elements": [],
+  "sound_elements": [
+    {
+      "name": "rainesrhapsody",
+      "files": [
+        "rainesrhapsody"
+      ],
+      "category": "music",
+      "subtitle": ""
+    },
+    {
+      "name": "endingtheme",
+      "files": [
+        "endingtheme"
+      ],
+      "category": "music",
+      "subtitle": ""
+    },
+    {
+      "name": "gromfright",
+      "files": [
+        "enchantinggromfright"
+      ],
+      "category": "music",
+      "subtitle": ""
+    }
+  ],
+  "language_map": {
+    "en_us": {
+      "subtitles.gromfright": "",
+      "subtitles.rainesrhapsody": "",
+      "subtitles.endingtheme": ""
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "owlhousemodmc",
+    "modName": "OwlHouseModMC",
+    "version": "1.0.0",
+    "author": "maswi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "modElementsPackage": "net.mcreator.owlhousemodmc",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100118117
+}
