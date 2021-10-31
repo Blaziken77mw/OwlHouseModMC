@@ -1,6 +1,37 @@
 {
   "id_map": {},
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "OwlHouseBlocks",
+      "type": "tab",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "owl_house_blocks",
+      "path": "~/Creative tabs"
+    },
+    {
+      "name": "GlyphCombination",
+      "type": "gui",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "glyph_combination",
+      "path": "~/Blocks/Glyph Workbench"
+    },
+    {
+      "name": "GlyphWorkbench",
+      "type": "block",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "glyph_workbench",
+      "path": "~/Blocks/Glyph Workbench"
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [
     {
@@ -30,14 +61,30 @@
   ],
   "language_map": {
     "en_us": {
+      "itemGroup.tabowl_house_blocks": "Owl House Blocks",
       "subtitles.gromfright": "",
       "subtitles.rainesrhapsody": "",
+      "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
       "subtitles.endingtheme": ""
     }
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Creative tabs",
+        "children": []
+      },
+      {
+        "name": "Blocks",
+        "children": [
+          {
+            "name": "Glyph Workbench",
+            "children": []
+          }
+        ]
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "owlhousemodmc",

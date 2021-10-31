@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "owlhousemodmc:blocks/glyphworkbenchbottom",
+    "up": "owlhousemodmc:blocks/glyphworkbenchtop",
+    "north": "owlhousemodmc:blocks/glyphworkbenchside",
+    "east": "owlhousemodmc:blocks/glyphworkbenchside",
+    "south": "owlhousemodmc:blocks/glyphworkbenchside",
+    "west": "owlhousemodmc:blocks/glyphworkbenchside",
+    "particle": "owlhousemodmc:blocks/glyphworkbenchbottom"
+  }
+}
