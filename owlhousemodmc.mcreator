@@ -30,9 +30,134 @@
       "ids": {},
       "registry_name": "glyph_workbench",
       "path": "~/Blocks/Glyph Workbench"
+    },
+    {
+      "name": "OwlHouseItems",
+      "type": "tab",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "owl_house_items",
+      "path": "~/Creative tabs"
+    },
+    {
+      "name": "FireGlyphRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_glyph_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Fire Glyph"
+    },
+    {
+      "name": "FireGlyphProjectileBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_glyph_projectile_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Fire Glyph"
+    },
+    {
+      "name": "FireGlyphProjectile",
+      "type": "gun",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_glyph_projectile",
+      "path": "~/Items/Glyphs/Fire Glyph"
+    },
+    {
+      "name": "FireGlyphEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_glyph_entity_swings_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Fire Glyph"
+    },
+    {
+      "name": "FireGlyph",
+      "type": "item",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_glyph",
+      "path": "~/Items/Glyphs/Fire Glyph"
+    },
+    {
+      "name": "FireGlyphItemInHandTick",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_glyph_item_in_hand_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Fire Glyph"
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "GlyphCooldown",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    }
+  ],
   "sound_elements": [
     {
       "name": "rainesrhapsody",
@@ -61,10 +186,13 @@
   ],
   "language_map": {
     "en_us": {
+      "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "itemGroup.tabowl_house_blocks": "Owl House Blocks",
       "subtitles.gromfright": "",
       "subtitles.rainesrhapsody": "",
+      "itemGroup.tabowl_house_items": "Owl House Items",
       "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
+      "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
       "subtitles.endingtheme": ""
     }
   },
@@ -83,6 +211,40 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Items",
+        "children": [
+          {
+            "name": "Glyphs",
+            "children": [
+              {
+                "name": "Light Glyph",
+                "children": []
+              },
+              {
+                "name": "Ice Glyph",
+                "children": []
+              },
+              {
+                "name": "Plant Glyph",
+                "children": []
+              },
+              {
+                "name": "Fire Glyph",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dimension",
+        "children": []
+      },
+      {
+        "name": "Procedures",
+        "children": []
       }
     ]
   },

@@ -1,0 +1,11 @@
+{
+  "_fv": 18,
+  "_type": "tab",
+  "definition": {
+    "name": "Owl House Items",
+    "icon": {
+      "value": "Blocks.COBBLESTONE"
+    },
+    "showSearch": false
+  }
+}
