@@ -148,6 +148,300 @@
         ]
       },
       "path": "~/Items/Glyphs/Fire Glyph"
+    },
+    {
+      "name": "TempIceBlockAdded",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "temp_ice_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Temporary Ice"
+    },
+    {
+      "name": "TempIceUpdateTick",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "temp_ice_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Temporary Ice"
+    },
+    {
+      "name": "TempIce",
+      "type": "block",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "temp_ice",
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Temporary Ice"
+    },
+    {
+      "name": "BuildIceGlyphUp",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "build_ice_glyph_up",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "BuildIceGlyphDown",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "build_ice_glyph_down",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "BuildIceGlyphWest",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "build_ice_glyph_west",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "BuildIceGlyphSouth",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "build_ice_glyph_south",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "BuildIceGlyphNorth",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "build_ice_glyph_north",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "BuildIceGlyphEast",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "build_ice_glyph_east",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "IceGlyphRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_glyph_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph"
+    },
+    {
+      "name": "IceGlyph",
+      "type": "item",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_glyph",
+      "path": "~/Items/Glyphs/Ice Glyph"
     }
   ],
   "variable_elements": [
@@ -188,11 +482,13 @@
     "en_us": {
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "itemGroup.tabowl_house_blocks": "Owl House Blocks",
+      "item.owlhousemodmc.ice_glyph": "Ice Glyph",
       "subtitles.gromfright": "",
       "subtitles.rainesrhapsody": "",
       "itemGroup.tabowl_house_items": "Owl House Items",
       "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
+      "block.owlhousemodmc.temp_ice": "Temp Ice",
       "subtitles.endingtheme": ""
     }
   },
@@ -224,7 +520,21 @@
               },
               {
                 "name": "Ice Glyph",
-                "children": []
+                "children": [
+                  {
+                    "name": "Build Pillar",
+                    "children": [
+                      {
+                        "name": "Temporary Ice",
+                        "children": []
+                      },
+                      {
+                        "name": "Directional Builds",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "name": "Plant Glyph",

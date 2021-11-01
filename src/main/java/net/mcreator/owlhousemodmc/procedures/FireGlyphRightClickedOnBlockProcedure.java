@@ -3,10 +3,15 @@ package net.mcreator.owlhousemodmc.procedures;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Direction;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.owlhousemodmc.item.FireGlyphItem;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
@@ -49,6 +54,29 @@ public class FireGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModEleme
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(FireGlyphItem.block, (int) (1)).getItem())) {
+			if (entity instanceof LivingEntity) {
+				ItemStack _setstack = new ItemStack(FireGlyphItem.block, (int) (1));
+				_setstack.setCount(
+						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
+								- 1));
+				((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
+				if (entity instanceof ServerPlayerEntity)
+					((ServerPlayerEntity) entity).inventory.markDirty();
+			}
+		} else if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(FireGlyphItem.block, (int) (1)).getItem())) {
+			if (entity instanceof LivingEntity) {
+				ItemStack _setstack = new ItemStack(FireGlyphItem.block, (int) (1));
+				_setstack.setCount(
+						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
+								- 1));
+				((LivingEntity) entity).setHeldItem(Hand.OFF_HAND, _setstack);
+				if (entity instanceof ServerPlayerEntity)
+					((ServerPlayerEntity) entity).inventory.markDirty();
+			}
+		}
 		if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 				entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 				RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.UP)
@@ -64,9 +92,7 @@ public class FireGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModEleme
 							.getBlock())
 							|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.AIR.getDefaultState()
 									.getBlock())))) {
-				if (true) {
-					world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), Blocks.FIRE.getDefaultState(), 3);
-				}
+				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), Blocks.FIRE.getDefaultState(), 3);
 			} else {
 				if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 						entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
@@ -75,9 +101,7 @@ public class FireGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModEleme
 								.getBlock())
 								|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.AIR.getDefaultState()
 										.getBlock())))) {
-					if (true) {
-						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), Blocks.FIRE.getDefaultState(), 3);
-					}
+					world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), Blocks.FIRE.getDefaultState(), 3);
 				} else {
 					if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 							entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
@@ -86,9 +110,7 @@ public class FireGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModEleme
 									.getBlock())
 									|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == Blocks.AIR
 											.getDefaultState().getBlock())))) {
-						if (true) {
-							world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), Blocks.FIRE.getDefaultState(), 3);
-						}
+						world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), Blocks.FIRE.getDefaultState(), 3);
 					} else {
 						if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 								entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),

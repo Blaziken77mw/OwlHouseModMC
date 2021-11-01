@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "owlhousemodmc:blocks/icetexture",
+    "up": "owlhousemodmc:blocks/icetexture",
+    "north": "owlhousemodmc:blocks/icetexture",
+    "east": "owlhousemodmc:blocks/icetexture",
+    "south": "owlhousemodmc:blocks/icetexture",
+    "west": "owlhousemodmc:blocks/icetexture",
+    "particle": "owlhousemodmc:blocks/icetexture"
+  }
+}

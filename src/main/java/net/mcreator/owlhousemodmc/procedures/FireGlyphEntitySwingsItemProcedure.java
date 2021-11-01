@@ -1,9 +1,13 @@
 package net.mcreator.owlhousemodmc.procedures;
 
+import net.minecraft.util.Hand;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.owlhousemodmc.item.FireGlyphProjectileItem;
+import net.mcreator.owlhousemodmc.item.FireGlyphItem;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
@@ -24,6 +28,29 @@ public class FireGlyphEntitySwingsItemProcedure extends OwlhousemodmcModElements
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
+		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(FireGlyphItem.block, (int) (1)).getItem())) {
+			if (entity instanceof LivingEntity) {
+				ItemStack _setstack = new ItemStack(FireGlyphItem.block, (int) (1));
+				_setstack.setCount(
+						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
+								- 1));
+				((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
+				if (entity instanceof ServerPlayerEntity)
+					((ServerPlayerEntity) entity).inventory.markDirty();
+			}
+		} else if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(FireGlyphItem.block, (int) (1)).getItem())) {
+			if (entity instanceof LivingEntity) {
+				ItemStack _setstack = new ItemStack(FireGlyphItem.block, (int) (1));
+				_setstack.setCount(
+						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
+								- 1));
+				((LivingEntity) entity).setHeldItem(Hand.OFF_HAND, _setstack);
+				if (entity instanceof ServerPlayerEntity)
+					((ServerPlayerEntity) entity).inventory.markDirty();
+			}
+		}
 		if ((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown) <= 0)) {
 			if (entity instanceof LivingEntity) {
