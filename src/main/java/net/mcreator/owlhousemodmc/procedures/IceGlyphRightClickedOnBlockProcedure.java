@@ -23,7 +23,7 @@ import java.util.HashMap;
 @OwlhousemodmcModElements.ModElement.Tag
 public class IceGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModElements.ModElement {
 	public IceGlyphRightClickedOnBlockProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 7);
+		super(instance, 22);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

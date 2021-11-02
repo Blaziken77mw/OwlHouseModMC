@@ -2,12 +2,12 @@
   "_fv": 18,
   "_type": "block",
   "definition": {
-    "texture": "icetexture",
-    "textureTop": "icetexture",
-    "textureLeft": "icetexture",
-    "textureFront": "icetexture",
-    "textureRight": "icetexture",
-    "textureBack": "icetexture",
+    "texture": "emptyblocktexture",
+    "textureTop": "emptyblocktexture",
+    "textureLeft": "emptyblocktexture",
+    "textureFront": "emptyblocktexture",
+    "textureRight": "emptyblocktexture",
+    "textureBack": "emptyblocktexture",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -19,7 +19,7 @@
     "isItemTinted": false,
     "hasTransparency": true,
     "connectedSides": true,
-    "transparencyType": "TRANSLUCENT",
+    "transparencyType": "CUTOUT",
     "disableOffset": false,
     "boundingBoxes": [
       {
@@ -32,10 +32,10 @@
         "subtract": false
       }
     ],
-    "name": "Temp Ice",
+    "name": "Light Glyph Block",
     "specialInfo": [],
-    "hardness": 1.0,
-    "resistance": 10.0,
+    "hardness": 0.0,
+    "resistance": 0.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
@@ -43,20 +43,20 @@
     },
     "destroyTool": "Not specified",
     "customDrop": {
-      "value": "Blocks.AIR"
+      "value": ""
     },
     "dropAmount": 0,
     "useLootTableForDrops": false,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canProvidePower": false,
-    "lightOpacity": 255,
+    "lightOpacity": 0,
     "material": {
-      "value": "PACKED_ICE"
+      "value": "AIR"
     },
     "tickRate": 10,
     "tickRandomly": false,
-    "isReplaceable": false,
+    "isReplaceable": true,
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
       "value": ""
@@ -66,15 +66,15 @@
     "flammability": 0,
     "fireSpreadSpeed": 0,
     "isLadder": false,
-    "slipperiness": 0.7,
+    "slipperiness": 0.6,
     "speedFactor": 1.0,
     "jumpFactor": 1.0,
     "reactionToPushing": "NORMAL",
-    "isNotColidable": false,
+    "isNotColidable": true,
     "soundOnStep": {
       "value": "GLASS"
     },
-    "luminance": 0,
+    "luminance": 15,
     "unbreakable": false,
     "breakHarvestLevel": 1,
     "spawnParticles": false,
@@ -84,7 +84,7 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": true,
+    "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
@@ -101,12 +101,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onBlockAdded": {
-      "name": "TempIceBlockAdded"
-    },
-    "onTickUpdate": {
-      "name": "TempIceUpdateTick"
-    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

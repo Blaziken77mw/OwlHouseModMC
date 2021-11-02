@@ -2,11 +2,14 @@
   "item.owlhousemodmc.fire_glyph": "Fire Glyph",
   "itemGroup.tabowl_house_blocks": "Owl House Blocks",
   "item.owlhousemodmc.ice_glyph": "Ice Glyph",
-  "subtitles.gromfright": "",
+  "item.owlhousemodmc.light_glyph": "Light Glyph",
   "subtitles.rainesrhapsody": "",
   "itemGroup.tabowl_house_items": "Owl House Items",
-  "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
   "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
+  "subtitles.endingtheme": "",
+  "subtitles.gromfright": "",
+  "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
   "block.owlhousemodmc.temp_ice": "Temp Ice",
-  "subtitles.endingtheme": ""
+  "item.owlhousemodmc.plant_glyph": "Plant Glyph",
+  "block.owlhousemodmc.light_glyph_block": "Light Glyph Block"
 }

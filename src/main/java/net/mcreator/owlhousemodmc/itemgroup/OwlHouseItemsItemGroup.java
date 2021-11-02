@@ -6,14 +6,14 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.block.Blocks;
 
+import net.mcreator.owlhousemodmc.item.LightGlyphItem;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class OwlHouseItemsItemGroup extends OwlhousemodmcModElements.ModElement {
 	public OwlHouseItemsItemGroup(OwlhousemodmcModElements instance) {
-		super(instance, 3);
+		super(instance, 8);
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class OwlHouseItemsItemGroup extends OwlhousemodmcModElements.ModElement 
 			@OnlyIn(Dist.CLIENT)
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(Blocks.COBBLESTONE, (int) (1));
+				return new ItemStack(LightGlyphItem.block, (int) (1));
 			}
 
 			@OnlyIn(Dist.CLIENT)

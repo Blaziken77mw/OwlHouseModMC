@@ -13,7 +13,7 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 @OwlhousemodmcModElements.ModElement.Tag
 public class OwlHouseBlocksItemGroup extends OwlhousemodmcModElements.ModElement {
 	public OwlHouseBlocksItemGroup(OwlhousemodmcModElements instance) {
-		super(instance, 1);
+		super(instance, 6);
 	}
 
 	@Override

@@ -13,7 +13,7 @@ import java.util.Map;
 @OwlhousemodmcModElements.ModElement.Tag
 public class BuildIceGlyphUpProcedure extends OwlhousemodmcModElements.ModElement {
 	public BuildIceGlyphUpProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 9);
+		super(instance, 16);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

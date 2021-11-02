@@ -4,7 +4,7 @@
     {
       "name": "OwlHouseBlocks",
       "type": "tab",
-      "sortid": 1,
+      "sortid": 6,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -14,7 +14,7 @@
     {
       "name": "GlyphCombination",
       "type": "gui",
-      "sortid": 2,
+      "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -24,7 +24,7 @@
     {
       "name": "GlyphWorkbench",
       "type": "block",
-      "sortid": 2,
+      "sortid": 1,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -34,7 +34,7 @@
     {
       "name": "OwlHouseItems",
       "type": "tab",
-      "sortid": 3,
+      "sortid": 8,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -44,7 +44,7 @@
     {
       "name": "FireGlyphRightClickedOnBlock",
       "type": "procedure",
-      "sortid": 4,
+      "sortid": 9,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -78,7 +78,7 @@
     {
       "name": "FireGlyphProjectileBulletHitsLivingEntity",
       "type": "procedure",
-      "sortid": 5,
+      "sortid": 10,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -96,7 +96,7 @@
     {
       "name": "FireGlyphProjectile",
       "type": "gun",
-      "sortid": 5,
+      "sortid": 11,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -106,7 +106,7 @@
     {
       "name": "FireGlyphEntitySwingsItem",
       "type": "procedure",
-      "sortid": 5,
+      "sortid": 12,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -124,7 +124,7 @@
     {
       "name": "FireGlyph",
       "type": "item",
-      "sortid": 4,
+      "sortid": 5,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -134,7 +134,7 @@
     {
       "name": "FireGlyphItemInHandTick",
       "type": "procedure",
-      "sortid": 6,
+      "sortid": 13,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -152,7 +152,7 @@
     {
       "name": "TempIceBlockAdded",
       "type": "procedure",
-      "sortid": 7,
+      "sortid": 14,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -182,7 +182,7 @@
     {
       "name": "TempIceUpdateTick",
       "type": "procedure",
-      "sortid": 8,
+      "sortid": 15,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -212,7 +212,7 @@
     {
       "name": "TempIce",
       "type": "block",
-      "sortid": 7,
+      "sortid": 2,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -222,7 +222,7 @@
     {
       "name": "BuildIceGlyphUp",
       "type": "procedure",
-      "sortid": 9,
+      "sortid": 16,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -252,7 +252,7 @@
     {
       "name": "BuildIceGlyphDown",
       "type": "procedure",
-      "sortid": 10,
+      "sortid": 17,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -282,7 +282,7 @@
     {
       "name": "BuildIceGlyphWest",
       "type": "procedure",
-      "sortid": 11,
+      "sortid": 18,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -312,7 +312,7 @@
     {
       "name": "BuildIceGlyphSouth",
       "type": "procedure",
-      "sortid": 12,
+      "sortid": 19,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -342,7 +342,7 @@
     {
       "name": "BuildIceGlyphNorth",
       "type": "procedure",
-      "sortid": 13,
+      "sortid": 20,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -372,7 +372,7 @@
     {
       "name": "BuildIceGlyphEast",
       "type": "procedure",
-      "sortid": 14,
+      "sortid": 21,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -402,7 +402,7 @@
     {
       "name": "IceGlyphRightClickedOnBlock",
       "type": "procedure",
-      "sortid": 7,
+      "sortid": 22,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -436,12 +436,106 @@
     {
       "name": "IceGlyph",
       "type": "item",
-      "sortid": 7,
+      "sortid": 4,
       "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "ice_glyph",
       "path": "~/Items/Glyphs/Ice Glyph"
+    },
+    {
+      "name": "LightGlyph",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "light_glyph",
+      "path": "~/Items/Glyphs/Light Glyph"
+    },
+    {
+      "name": "LightGlyphBlock",
+      "type": "block",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "light_glyph_block",
+      "path": "~/Items/Glyphs/Light Glyph"
+    },
+    {
+      "name": "LightGlyphRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "light_glyph_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Light Glyph"
+    },
+    {
+      "name": "PlantGlyphRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plant_glyph_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Plant Glyph"
+    },
+    {
+      "name": "PlantGlyph",
+      "type": "item",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plant_glyph",
+      "path": "~/Items/Glyphs/Plant Glyph"
     }
   ],
   "variable_elements": [
@@ -483,13 +577,16 @@
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "itemGroup.tabowl_house_blocks": "Owl House Blocks",
       "item.owlhousemodmc.ice_glyph": "Ice Glyph",
-      "subtitles.gromfright": "",
+      "item.owlhousemodmc.light_glyph": "Light Glyph",
       "subtitles.rainesrhapsody": "",
       "itemGroup.tabowl_house_items": "Owl House Items",
-      "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
+      "subtitles.endingtheme": "",
+      "subtitles.gromfright": "",
+      "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
       "block.owlhousemodmc.temp_ice": "Temp Ice",
-      "subtitles.endingtheme": ""
+      "item.owlhousemodmc.plant_glyph": "Plant Glyph",
+      "block.owlhousemodmc.light_glyph_block": "Light Glyph Block"
     }
   },
   "foldersRoot": {

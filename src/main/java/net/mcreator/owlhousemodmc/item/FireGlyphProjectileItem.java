@@ -46,7 +46,7 @@ public class FireGlyphProjectileItem extends OwlhousemodmcModElements.ModElement
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
 			.size(0.5f, 0.5f)).build("entitybulletfire_glyph_projectile").setRegistryName("entitybulletfire_glyph_projectile");
 	public FireGlyphProjectileItem(OwlhousemodmcModElements instance) {
-		super(instance, 5);
+		super(instance, 11);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FireGlyphProjectileRenderer.ModelRegisterHandler());
 	}
 

@@ -26,7 +26,7 @@ public class IceGlyphItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:ice_glyph")
 	public static final Item block = null;
 	public IceGlyphItem(OwlhousemodmcModElements instance) {
-		super(instance, 7);
+		super(instance, 4);
 	}
 
 	@Override

@@ -11,7 +11,7 @@ import java.util.Map;
 @OwlhousemodmcModElements.ModElement.Tag
 public class FireGlyphItemInHandTickProcedure extends OwlhousemodmcModElements.ModElement {
 	public FireGlyphItemInHandTickProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 6);
+		super(instance, 13);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

@@ -10,7 +10,7 @@ import java.util.Map;
 @OwlhousemodmcModElements.ModElement.Tag
 public class FireGlyphProjectileBulletHitsLivingEntityProcedure extends OwlhousemodmcModElements.ModElement {
 	public FireGlyphProjectileBulletHitsLivingEntityProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 5);
+		super(instance, 10);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

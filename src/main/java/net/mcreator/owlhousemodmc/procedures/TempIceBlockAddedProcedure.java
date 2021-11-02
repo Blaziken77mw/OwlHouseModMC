@@ -14,7 +14,7 @@ import java.util.Map;
 @OwlhousemodmcModElements.ModElement.Tag
 public class TempIceBlockAddedProcedure extends OwlhousemodmcModElements.ModElement {
 	public TempIceBlockAddedProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 7);
+		super(instance, 14);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

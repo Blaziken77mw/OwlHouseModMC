@@ -66,7 +66,7 @@ public class GlyphWorkbenchBlock extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:glyph_workbench")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public GlyphWorkbenchBlock(OwlhousemodmcModElements instance) {
-		super(instance, 2);
+		super(instance, 1);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 

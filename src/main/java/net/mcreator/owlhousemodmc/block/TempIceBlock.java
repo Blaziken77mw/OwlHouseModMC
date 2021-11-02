@@ -51,7 +51,6 @@ import net.minecraft.block.Block;
 
 import net.mcreator.owlhousemodmc.procedures.TempIceUpdateTickProcedure;
 import net.mcreator.owlhousemodmc.procedures.TempIceBlockAddedProcedure;
-import net.mcreator.owlhousemodmc.itemgroup.OwlHouseBlocksItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
 import javax.annotation.Nullable;
@@ -70,15 +69,14 @@ public class TempIceBlock extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:temp_ice")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public TempIceBlock(OwlhousemodmcModElements instance) {
-		super(instance, 7);
+		super(instance, 2);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(OwlHouseBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(null)).setRegistryName(block.getRegistryName()));
 	}
 	private static class TileEntityRegisterHandler {
 		@SubscribeEvent

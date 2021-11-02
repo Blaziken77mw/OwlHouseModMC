@@ -18,7 +18,7 @@ import java.util.Map;
 @OwlhousemodmcModElements.ModElement.Tag
 public class FireGlyphEntitySwingsItemProcedure extends OwlhousemodmcModElements.ModElement {
 	public FireGlyphEntitySwingsItemProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 5);
+		super(instance, 12);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

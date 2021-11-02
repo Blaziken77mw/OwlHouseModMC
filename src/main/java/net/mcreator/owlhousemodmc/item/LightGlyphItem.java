@@ -12,13 +12,9 @@ import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.owlhousemodmc.procedures.FireGlyphRightClickedOnBlockProcedure;
-import net.mcreator.owlhousemodmc.procedures.FireGlyphItemInHandTickProcedure;
-import net.mcreator.owlhousemodmc.procedures.FireGlyphEntitySwingsItemProcedure;
+import net.mcreator.owlhousemodmc.procedures.LightGlyphRightClickedOnBlockProcedure;
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseItemsItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
@@ -26,11 +22,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
-public class FireGlyphItem extends OwlhousemodmcModElements.ModElement {
-	@ObjectHolder("owlhousemodmc:fire_glyph")
+public class LightGlyphItem extends OwlhousemodmcModElements.ModElement {
+	@ObjectHolder("owlhousemodmc:light_glyph")
 	public static final Item block = null;
-	public FireGlyphItem(OwlhousemodmcModElements instance) {
-		super(instance, 5);
+	public LightGlyphItem(OwlhousemodmcModElements instance) {
+		super(instance, 3);
 	}
 
 	@Override
@@ -40,7 +36,7 @@ public class FireGlyphItem extends OwlhousemodmcModElements.ModElement {
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
-			setRegistryName("fire_glyph");
+			setRegistryName("light_glyph");
 		}
 
 		@Override
@@ -50,7 +46,7 @@ public class FireGlyphItem extends OwlhousemodmcModElements.ModElement {
 
 		@Override
 		public int getUseDuration(ItemStack itemstack) {
-			return 10;
+			return 0;
 		}
 
 		@Override
@@ -76,37 +72,9 @@ public class FireGlyphItem extends OwlhousemodmcModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				FireGlyphRightClickedOnBlockProcedure.executeProcedure($_dependencies);
+				LightGlyphRightClickedOnBlockProcedure.executeProcedure($_dependencies);
 			}
 			return retval;
-		}
-
-		@Override
-		public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
-			boolean retval = super.onEntitySwing(itemstack, entity);
-			double x = entity.getPosX();
-			double y = entity.getPosY();
-			double z = entity.getPosZ();
-			World world = entity.world;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				FireGlyphEntitySwingsItemProcedure.executeProcedure($_dependencies);
-			}
-			return retval;
-		}
-
-		@Override
-		public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
-			super.inventoryTick(itemstack, world, entity, slot, selected);
-			double x = entity.getPosX();
-			double y = entity.getPosY();
-			double z = entity.getPosZ();
-			if (selected) {
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				FireGlyphItemInHandTickProcedure.executeProcedure($_dependencies);
-			}
 		}
 	}
 }

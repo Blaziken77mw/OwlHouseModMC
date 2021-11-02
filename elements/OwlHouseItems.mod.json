@@ -4,7 +4,7 @@
   "definition": {
     "name": "Owl House Items",
     "icon": {
-      "value": "Blocks.COBBLESTONE"
+      "value": "CUSTOM:LightGlyph"
     },
     "showSearch": false
   }
