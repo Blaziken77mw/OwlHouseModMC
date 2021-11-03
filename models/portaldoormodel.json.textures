@@ -1,0 +1,44 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "portaldoortop",
+        "1": "portaldoortopside",
+        "2": "portaldoorupdown"
+      },
+      "name": "default"
+    },
+    "bottom": {
+      "map": {
+        "0": "portaldoorbottom",
+        "1": "portaldoorbottomside",
+        "2": "portaldoorupdown"
+      },
+      "name": "bottom"
+    },
+    "top": {
+      "map": {
+        "0": "portaldoortop",
+        "1": "portaldoortopside",
+        "2": "portaldoorupdown"
+      },
+      "name": "top"
+    },
+    "bottomopen": {
+      "map": {
+        "0": "portaldooropenbottom",
+        "1": "portaldoorbottomside",
+        "2": "portaldoorupdown"
+      },
+      "name": "bottomopen"
+    },
+    "topopen": {
+      "map": {
+        "0": "portaldooropentop",
+        "1": "portaldoortopside",
+        "2": "portaldoorupdown"
+      },
+      "name": "topopen"
+    }
+  }
+}

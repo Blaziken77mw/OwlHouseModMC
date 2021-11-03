@@ -1,9 +1,9 @@
 {
   "parent": "owlhousemodmc:custom/portaldoormodel",
   "textures": {
-    "all": "owlhousemodmc:blocks/portaldoorbottom",
-    "particle": "owlhousemodmc:blocks/portaldoorbottom",
-    "0": "owlhousemodmc:blocks/portaldoorbottom",
+    "all": "owlhousemodmc:blocks/portaldooropenbottom",
+    "particle": "owlhousemodmc:blocks/portaldooropenbottom",
+    "0": "owlhousemodmc:blocks/portaldooropenbottom",
     "1": "owlhousemodmc:blocks/portaldoorbottomside",
     "2": "owlhousemodmc:blocks/portaldoorupdown"
   }

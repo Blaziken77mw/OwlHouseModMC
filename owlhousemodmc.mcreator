@@ -655,23 +655,260 @@
       "path": "~/Dimension"
     },
     {
-      "name": "PortalDoor",
+      "name": "PortalDoorBottom",
       "type": "block",
       "sortid": 31,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "portal_door",
-      "path": "~/Dimension/Portal/Portal Door"
+      "registry_name": "portal_door_bottom",
+      "path": "~/Dimension/Portal/Portal Door/Blocks"
     },
     {
-      "name": "PortalDoorOpenEntityCollidesInTheBlock",
-      "type": "procedure",
+      "name": "PortalDoorTop",
+      "type": "block",
       "sortid": 32,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "portal_door_open_entity_collides_in_the_block",
+      "registry_name": "portal_door_top",
+      "path": "~/Dimension/Portal/Portal Door/Blocks"
+    },
+    {
+      "name": "PortalDoorBottomOpen",
+      "type": "block",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_bottom_open",
+      "path": "~/Dimension/Portal/Portal Door/Blocks"
+    },
+    {
+      "name": "PortalDoorTopOpen",
+      "type": "block",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_top_open",
+      "path": "~/Dimension/Portal/Portal Door/Blocks"
+    },
+    {
+      "name": "PortalDoorBottomBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_bottom_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Dimension/Portal/Portal Door/Procedures"
+    },
+    {
+      "name": "PortalDoorTopBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_top_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Dimension/Portal/Portal Door/Procedures"
+    },
+    {
+      "name": "PortalDoorBottomOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_bottom_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Dimension/Portal/Portal Door/Procedures"
+    },
+    {
+      "name": "PortalDoorTopOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_top_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Dimension/Portal/Portal Door/Procedures"
+    },
+    {
+      "name": "PortalDoorBottomBlockAdded",
+      "type": "procedure",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_bottom_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PortalDoorBottomOpenOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_bottom_open_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PortalDoorTopOpenOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_top_open_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PortalDoorBottomOpenEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_bottom_open_entity_collides_in_the_block",
       "metadata": {
         "dependencies": [
           {
@@ -683,32 +920,6 @@
             "type": "number"
           },
           {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Dimension/Portal/Portal Door"
-    },
-    {
-      "name": "PortalDoorOpenOnBlockRightClicked",
-      "type": "procedure",
-      "sortid": 33,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "portal_door_open_on_block_right_clicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
             "name": "y",
             "type": "number"
           },
@@ -721,48 +932,7 @@
             "type": "world"
           }
         ]
-      },
-      "path": "~/Dimension/Portal/Portal Door"
-    },
-    {
-      "name": "PortalDoorOpen",
-      "type": "block",
-      "sortid": 32,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "portal_door_open",
-      "path": "~/Dimension/Portal/Portal Door"
-    },
-    {
-      "name": "PortalDoorOnBlockRightClicked",
-      "type": "procedure",
-      "sortid": 34,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "portal_door_on_block_right_clicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Dimension/Portal/Portal Door"
+      }
     }
   ],
   "variable_elements": [
@@ -801,27 +971,29 @@
   ],
   "language_map": {
     "en_us": {
-      "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "itemGroup.tabowl_house_blocks": "Owl House Blocks",
       "item.owlhousemodmc.ice_glyph": "Ice Glyph",
       "item.owlhousemodmc.boiling_isles": "Boiling Isles Portal Igniter",
-      "item.owlhousemodmc.light_glyph": "Light Glyph",
-      "subtitles.rainesrhapsody": "",
       "itemGroup.tabowl_house_items": "Owl House Items",
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
       "block.owlhousemodmc.palistrom_leaves": "Palistrom Leaves",
       "biome.owlhousemodmc.forest_boiling_isles": "Forest Boiling Isles",
+      "block.owlhousemodmc.portal_door_bottom": "Portal Door",
+      "block.owlhousemodmc.portal_door_bottom_open": "Portal Door Bottom Open",
+      "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
+      "block.owlhousemodmc.portal_door_top": "Portal Door Top",
+      "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
+      "item.owlhousemodmc.fire_glyph": "Fire Glyph",
+      "item.owlhousemodmc.light_glyph": "Light Glyph",
+      "subtitles.rainesrhapsody": "",
       "subtitles.endingtheme": "",
       "biome.owlhousemodmc.plains_boiling_isles": "Plains Boiling Isles",
-      "block.owlhousemodmc.portal_door_open": "Portal Door Open",
-      "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
       "subtitles.gromfright": "",
       "item.owlhousemodmc.notepad": "Notepad",
-      "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
       "block.owlhousemodmc.temp_ice": "Temp Ice",
       "biome.owlhousemodmc.palistrom_forest": "Palistrom Forest",
+      "block.owlhousemodmc.portal_door_top_open": "Portal Door Top Open",
       "item.owlhousemodmc.plant_glyph": "Plant Glyph",
-      "block.owlhousemodmc.portal_door": "Portal Door",
       "block.owlhousemodmc.light_glyph_block": "Light Glyph Block"
     }
   },
@@ -905,7 +1077,16 @@
             "children": [
               {
                 "name": "Portal Door",
-                "children": []
+                "children": [
+                  {
+                    "name": "Blocks",
+                    "children": []
+                  },
+                  {
+                    "name": "Procedures",
+                    "children": []
+                  }
+                ]
               }
             ]
           }

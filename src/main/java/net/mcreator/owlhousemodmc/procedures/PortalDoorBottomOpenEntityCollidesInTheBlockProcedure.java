@@ -16,6 +16,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.owlhousemodmc.block.PortalDoorBottomBlock;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
@@ -23,39 +24,45 @@ import java.util.Map;
 import java.util.Collections;
 
 @OwlhousemodmcModElements.ModElement.Tag
-public class PortalDoorOpenEntityCollidesInTheBlockProcedure extends OwlhousemodmcModElements.ModElement {
-	public PortalDoorOpenEntityCollidesInTheBlockProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 32);
+public class PortalDoorBottomOpenEntityCollidesInTheBlockProcedure extends OwlhousemodmcModElements.ModElement {
+	public PortalDoorBottomOpenEntityCollidesInTheBlockProcedure(OwlhousemodmcModElements instance) {
+		super(instance, 42);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure PortalDoorOpenEntityCollidesInTheBlock!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure PortalDoorBottomOpenEntityCollidesInTheBlock!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency x for procedure PortalDoorOpenEntityCollidesInTheBlock!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency x for procedure PortalDoorBottomOpenEntityCollidesInTheBlock!");
+			return;
+		}
+		if (dependencies.get("y") == null) {
+			if (!dependencies.containsKey("y"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency y for procedure PortalDoorBottomOpenEntityCollidesInTheBlock!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure PortalDoorOpenEntityCollidesInTheBlock!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure PortalDoorBottomOpenEntityCollidesInTheBlock!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure PortalDoorOpenEntityCollidesInTheBlock!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure PortalDoorBottomOpenEntityCollidesInTheBlock!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
+		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		double yPos = 0;
-		if (((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
-				new ResourceLocation("owlhousemodmc:boiling_isles"))))) {
+		double yTarget = 0;
+		if (((RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("owlhousemodmc:boiling_isles"))) == (entity.world
+				.getDimensionKey()))) {
 			{
 				Entity _ent = entity;
 				if (!_ent.world.isRemote && _ent instanceof ServerPlayerEntity) {
@@ -73,15 +80,16 @@ public class PortalDoorOpenEntityCollidesInTheBlockProcedure extends Owlhousemod
 					}
 				}
 			}
-			yPos = (double) 255;
-			while (((world.getBlockState(new BlockPos((int) x, (int) (yPos), (int) z))).getBlock() == Blocks.AIR.getDefaultState().getBlock())) {
-				yPos = (double) ((yPos) - 1);
+			yTarget = (double) 255;
+			while ((!((world.getBlockState(new BlockPos((int) x, (int) (yTarget), (int) z))).getBlock() == Blocks.AIR.getDefaultState()
+					.getBlock()))) {
+				yTarget = (double) ((yTarget) - 1);
 			}
 			{
 				Entity _ent = entity;
-				_ent.setPositionAndUpdate(x, ((yPos) + 1), z);
+				_ent.setPositionAndUpdate((x - 1), (y + 1), z);
 				if (_ent instanceof ServerPlayerEntity) {
-					((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, ((yPos) + 1), z, _ent.rotationYaw, _ent.rotationPitch,
+					((ServerPlayerEntity) _ent).connection.setPlayerLocation((x - 1), (y + 1), z, _ent.rotationYaw, _ent.rotationPitch,
 							Collections.emptySet());
 				}
 			}
@@ -104,18 +112,21 @@ public class PortalDoorOpenEntityCollidesInTheBlockProcedure extends Owlhousemod
 					}
 				}
 			}
-			yPos = (double) 255;
-			while (((world.getBlockState(new BlockPos((int) x, (int) (yPos), (int) z))).getBlock() == Blocks.AIR.getDefaultState().getBlock())) {
-				yPos = (double) ((yPos) - 1);
+			yTarget = (double) 255;
+			while ((!((world.getBlockState(new BlockPos((int) x, (int) (yTarget), (int) z))).getBlock() == Blocks.AIR.getDefaultState()
+					.getBlock()))) {
+				yTarget = (double) ((yTarget) - 1);
 			}
 			{
 				Entity _ent = entity;
-				_ent.setPositionAndUpdate(x, ((yPos) + 1), z);
+				_ent.setPositionAndUpdate((x - 1), (y + 1), z);
 				if (_ent instanceof ServerPlayerEntity) {
-					((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, ((yPos) + 1), z, _ent.rotationYaw, _ent.rotationPitch,
+					((ServerPlayerEntity) _ent).connection.setPlayerLocation((x - 1), (y + 1), z, _ent.rotationYaw, _ent.rotationPitch,
 							Collections.emptySet());
 				}
 			}
+			world.setBlockState(new BlockPos((int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ())),
+					PortalDoorBottomBlock.block.getDefaultState(), 3);
 		}
 	}
 }

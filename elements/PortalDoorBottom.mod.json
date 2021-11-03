@@ -2,20 +2,19 @@
   "_fv": 18,
   "_type": "block",
   "definition": {
-    "texture": "portaldooropenbottom",
-    "textureTop": "portaldooropentop",
-    "textureLeft": "",
-    "textureFront": "",
-    "textureRight": "",
-    "textureBack": "",
-    "renderType": 11,
-    "customModelName": "Single texture",
-    "rotationMode": 0,
+    "texture": "portaldoorbottom",
+    "textureTop": "portaldoorupdown",
+    "textureLeft": "portaldoorbottomside",
+    "textureFront": "portaldoorbottom",
+    "textureRight": "portaldoorbottomside",
+    "textureBack": "portaldoorbottom",
+    "renderType": 2,
+    "customModelName": "portaldoormodel:bottom",
+    "rotationMode": 1,
     "emissiveRendering": true,
     "displayFluidOverlay": false,
-    "itemTexture": "",
+    "itemTexture": "portaldooritem",
     "particleTexture": "",
-    "blockBase": "Door",
     "tintType": "No tint",
     "isItemTinted": false,
     "hasTransparency": true,
@@ -26,25 +25,25 @@
       {
         "mx": 0.0,
         "my": 0.0,
-        "mz": 0.0,
+        "mz": 6.0,
         "Mx": 16.0,
         "My": 16.0,
-        "Mz": 16.0,
+        "Mz": 10.0,
         "subtract": false
       }
     ],
-    "name": "Portal Door Open",
+    "name": "Portal Door",
     "specialInfo": [],
-    "hardness": 3.0,
+    "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "CUSTOM:OwlHouseBlocks"
     },
     "destroyTool": "axe",
     "customDrop": {
-      "value": "CUSTOM:PortalDoor"
+      "value": ""
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -60,7 +59,7 @@
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
-      "value": "CUSTOM:PortalDoor"
+      "value": ""
     },
     "offsetType": "NONE",
     "aiPathNodeType": "DEFAULT",
@@ -71,16 +70,16 @@
     "speedFactor": 1.0,
     "jumpFactor": 1.0,
     "reactionToPushing": "NORMAL",
-    "isNotColidable": true,
+    "isNotColidable": false,
     "soundOnStep": {
       "value": "WOOD"
     },
-    "luminance": 10,
+    "luminance": 6,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": true,
+    "spawnParticles": false,
     "particleToSpawn": {
-      "value": "ENCHANTMENT_TABLE"
+      "value": "EXPLOSION_NORMAL"
     },
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
@@ -103,10 +102,13 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onRightClicked": {
-      "name": "PortalDoorOpenOnBlockRightClicked"
+      "name": "PortalDoorBottomOnBlockRightClicked"
     },
-    "onEntityCollides": {
-      "name": "PortalDoorOpenEntityCollidesInTheBlock"
+    "onBlockAdded": {
+      "name": "PortalDoorBottomBlockAdded"
+    },
+    "onDestroyedByPlayer": {
+      "name": "PortalDoorBottomBlockDestroyedByPlayer"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

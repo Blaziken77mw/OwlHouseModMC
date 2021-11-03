@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "owlhousemodmc:block/portal_door_top"
+    },
+    "facing=east": {
+      "model": "owlhousemodmc:block/portal_door_top",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "owlhousemodmc:block/portal_door_top",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "owlhousemodmc:block/portal_door_top",
+      "y": 270
+    }
+  }
+}

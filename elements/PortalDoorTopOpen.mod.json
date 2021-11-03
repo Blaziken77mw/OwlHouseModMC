@@ -2,20 +2,19 @@
   "_fv": 18,
   "_type": "block",
   "definition": {
-    "texture": "portaldoorbottom",
-    "textureTop": "portaldoortop",
+    "texture": "portaldooropentop",
+    "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
     "textureRight": "",
     "textureBack": "",
-    "renderType": 11,
-    "customModelName": "Single texture",
-    "rotationMode": 0,
+    "renderType": 2,
+    "customModelName": "portaldoormodel:topopen",
+    "rotationMode": 1,
     "emissiveRendering": true,
     "displayFluidOverlay": false,
-    "itemTexture": "portaldooritem",
+    "itemTexture": "",
     "particleTexture": "",
-    "blockBase": "Door",
     "tintType": "No tint",
     "isItemTinted": false,
     "hasTransparency": true,
@@ -26,25 +25,25 @@
       {
         "mx": 0.0,
         "my": 0.0,
-        "mz": 0.0,
+        "mz": 6.0,
         "Mx": 16.0,
         "My": 16.0,
-        "Mz": 16.0,
+        "Mz": 10.0,
         "subtract": false
       }
     ],
-    "name": "Portal Door",
+    "name": "Portal Door Top Open",
     "specialInfo": [],
     "hardness": 3.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:OwlHouseBlocks"
+      "value": "No creative tab entry"
     },
     "destroyTool": "axe",
     "customDrop": {
-      "value": ""
+      "value": "CUSTOM:PortalDoorBottom"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -60,7 +59,7 @@
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
-      "value": ""
+      "value": "CUSTOM:PortalDoorBottom"
     },
     "offsetType": "NONE",
     "aiPathNodeType": "DEFAULT",
@@ -71,18 +70,18 @@
     "speedFactor": 1.0,
     "jumpFactor": 1.0,
     "reactionToPushing": "NORMAL",
-    "isNotColidable": false,
+    "isNotColidable": true,
     "soundOnStep": {
       "value": "WOOD"
     },
-    "luminance": 7,
+    "luminance": 8,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": true,
+    "spawnParticles": false,
     "particleToSpawn": {
-      "value": "ENCHANTMENT_TABLE"
+      "value": "EXPLOSION_NORMAL"
     },
-    "particleSpawningShape": "Tube",
+    "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": false,
@@ -103,7 +102,10 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onRightClicked": {
-      "name": "PortalDoorOnBlockRightClicked"
+      "name": "PortalDoorTopOpenOnBlockRightClicked"
+    },
+    "onDestroyedByPlayer": {
+      "name": "PortalDoorTopBlockDestroyedByPlayer"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
