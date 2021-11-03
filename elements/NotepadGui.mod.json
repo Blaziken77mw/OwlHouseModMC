@@ -1,0 +1,157 @@
+{
+  "_fv": 18,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 250,
+    "height": 220,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 26,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "lightglyph.png",
+          "use1Xscale": false,
+          "name": "lightglyph.png",
+          "x": 109,
+          "y": 39
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "fireglyph.png",
+          "use1Xscale": false,
+          "name": "fireglyph.png",
+          "x": 285,
+          "y": 39
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "plantglyph.png",
+          "use1Xscale": false,
+          "name": "plantglyph.png",
+          "x": 223,
+          "y": 39
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "iceglyph.png",
+          "use1Xscale": false,
+          "name": "iceglyph.png",
+          "x": 169,
+          "y": 39
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 204,
+          "y": 124
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #1",
+          "x": 116,
+          "y": 102
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 2,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #2",
+          "x": 176,
+          "y": 102
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 3,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #3",
+          "x": 230,
+          "y": 102
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 4,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #4",
+          "x": 291,
+          "y": 102
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Light",
+          "width": 50,
+          "height": 20,
+          "name": "Light",
+          "x": 100,
+          "y": 77
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Ice",
+          "width": 40,
+          "height": 20,
+          "name": "Ice",
+          "x": 165,
+          "y": 77
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Plant",
+          "width": 50,
+          "height": 20,
+          "name": "Plant",
+          "x": 214,
+          "y": 77
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Fire",
+          "width": 45,
+          "height": 20,
+          "name": "Fire",
+          "x": 278,
+          "y": 77
+        }
+      }
+    ]
+  }
+}

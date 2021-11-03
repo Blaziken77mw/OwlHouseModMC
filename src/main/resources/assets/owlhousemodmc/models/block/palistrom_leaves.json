@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "owlhousemodmc:blocks/palistromleaves",
+    "up": "owlhousemodmc:blocks/palistromleaves",
+    "north": "owlhousemodmc:blocks/palistromleaves",
+    "east": "owlhousemodmc:blocks/palistromleaves",
+    "south": "owlhousemodmc:blocks/palistromleaves",
+    "west": "owlhousemodmc:blocks/palistromleaves",
+    "particle": "owlhousemodmc:blocks/palistromleaves"
+  }
+}

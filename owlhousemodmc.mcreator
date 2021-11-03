@@ -536,6 +536,233 @@
       "ids": {},
       "registry_name": "plant_glyph",
       "path": "~/Items/Glyphs/Plant Glyph"
+    },
+    {
+      "name": "NotepadGui",
+      "type": "gui",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad_gui",
+      "path": "~/Items/Notepad"
+    },
+    {
+      "name": "Notepad",
+      "type": "item",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad",
+      "path": "~/Items/Notepad"
+    },
+    {
+      "name": "PlainsBoilingIsles",
+      "type": "biome",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plains_boiling_isles",
+      "path": "~/Dimension/Biomes"
+    },
+    {
+      "name": "PalistromWood",
+      "type": "block",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "palistrom_wood",
+      "path": "~/Blocks/Palistrom Log"
+    },
+    {
+      "name": "PalistromLeavesBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "palistrom_leaves_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Blocks/Palistrom Leaves"
+    },
+    {
+      "name": "PalistromLeaves",
+      "type": "block",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "palistrom_leaves",
+      "path": "~/Blocks/Palistrom Leaves"
+    },
+    {
+      "name": "ForestBoilingIsles",
+      "type": "biome",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "forest_boiling_isles",
+      "path": "~/Dimension/Biomes"
+    },
+    {
+      "name": "PalistromForest",
+      "type": "biome",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "palistrom_forest",
+      "path": "~/Dimension/Biomes"
+    },
+    {
+      "name": "BoilingIsles",
+      "type": "dimension",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "boiling_isles",
+      "metadata": {
+        "ep": false
+      },
+      "path": "~/Dimension"
+    },
+    {
+      "name": "PortalDoor",
+      "type": "block",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door",
+      "path": "~/Dimension/Portal/Portal Door"
+    },
+    {
+      "name": "PortalDoorOpenEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_open_entity_collides_in_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Dimension/Portal/Portal Door"
+    },
+    {
+      "name": "PortalDoorOpenOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_open_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Dimension/Portal/Portal Door"
+    },
+    {
+      "name": "PortalDoorOpen",
+      "type": "block",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_open",
+      "path": "~/Dimension/Portal/Portal Door"
+    },
+    {
+      "name": "PortalDoorOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_door_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Dimension/Portal/Portal Door"
     }
   ],
   "variable_elements": [
@@ -577,15 +804,24 @@
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "itemGroup.tabowl_house_blocks": "Owl House Blocks",
       "item.owlhousemodmc.ice_glyph": "Ice Glyph",
+      "item.owlhousemodmc.boiling_isles": "Boiling Isles Portal Igniter",
       "item.owlhousemodmc.light_glyph": "Light Glyph",
       "subtitles.rainesrhapsody": "",
       "itemGroup.tabowl_house_items": "Owl House Items",
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
+      "block.owlhousemodmc.palistrom_leaves": "Palistrom Leaves",
+      "biome.owlhousemodmc.forest_boiling_isles": "Forest Boiling Isles",
       "subtitles.endingtheme": "",
+      "biome.owlhousemodmc.plains_boiling_isles": "Plains Boiling Isles",
+      "block.owlhousemodmc.portal_door_open": "Portal Door Open",
+      "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
       "subtitles.gromfright": "",
+      "item.owlhousemodmc.notepad": "Notepad",
       "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
       "block.owlhousemodmc.temp_ice": "Temp Ice",
+      "biome.owlhousemodmc.palistrom_forest": "Palistrom Forest",
       "item.owlhousemodmc.plant_glyph": "Plant Glyph",
+      "block.owlhousemodmc.portal_door": "Portal Door",
       "block.owlhousemodmc.light_glyph_block": "Light Glyph Block"
     }
   },
@@ -601,6 +837,14 @@
         "children": [
           {
             "name": "Glyph Workbench",
+            "children": []
+          },
+          {
+            "name": "Palistrom Log",
+            "children": []
+          },
+          {
+            "name": "Palistrom Leaves",
             "children": []
           }
         ]
@@ -642,12 +886,30 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "Notepad",
+            "children": []
           }
         ]
       },
       {
         "name": "Dimension",
-        "children": []
+        "children": [
+          {
+            "name": "Biomes",
+            "children": []
+          },
+          {
+            "name": "Portal",
+            "children": [
+              {
+                "name": "Portal Door",
+                "children": []
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "Procedures",
