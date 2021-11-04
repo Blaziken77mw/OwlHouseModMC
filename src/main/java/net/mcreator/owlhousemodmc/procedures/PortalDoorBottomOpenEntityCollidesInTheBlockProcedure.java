@@ -16,7 +16,6 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.owlhousemodmc.block.PortalDoorBottomBlock;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
@@ -125,8 +124,6 @@ public class PortalDoorBottomOpenEntityCollidesInTheBlockProcedure extends Owlho
 							Collections.emptySet());
 				}
 			}
-			world.setBlockState(new BlockPos((int) (entity.getPosX()), (int) (entity.getPosY()), (int) (entity.getPosZ())),
-					PortalDoorBottomBlock.block.getDefaultState(), 3);
 		}
 	}
 }

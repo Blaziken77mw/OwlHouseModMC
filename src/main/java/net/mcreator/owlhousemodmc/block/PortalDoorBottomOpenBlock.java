@@ -128,7 +128,7 @@ public class PortalDoorBottomOpenBlock extends OwlhousemodmcModElements.ModEleme
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(PortalDoorBottomBlock.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(PortalDoorBottomBlock.block, (int) (0)));
 		}
 
 		@Override

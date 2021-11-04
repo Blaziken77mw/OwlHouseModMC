@@ -1,14 +1,15 @@
 package net.mcreator.owlhousemodmc.procedures;
 
-import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.DirectionProperty;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
+import net.mcreator.owlhousemodmc.block.PortalDoorTopOpenBlock;
 import net.mcreator.owlhousemodmc.block.PortalDoorTopBlock;
 import net.mcreator.owlhousemodmc.block.PortalDoorBottomBlock;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
@@ -47,7 +48,10 @@ public class PortalDoorBottomBlockAddedProcedure extends OwlhousemodmcModElement
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (true) {
+		if (((((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR.getDefaultState().getBlock())
+				|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.CAVE_AIR.getDefaultState().getBlock()))
+				|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == PortalDoorTopOpenBlock.block.getDefaultState()
+						.getBlock()))) {
 			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), PortalDoorTopBlock.block.getDefaultState(), 3);
 			try {
 				BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z));
@@ -90,11 +94,6 @@ public class PortalDoorBottomBlockAddedProcedure extends OwlhousemodmcModElement
 			}
 		} else {
 			world.playEvent(2001, new BlockPos((int) x, (int) y, (int) z), Block.getStateId(PortalDoorBottomBlock.block.getDefaultState()));
-			if (world instanceof World) {
-				Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (World) world,
-						new BlockPos((int) x, (int) y, (int) z));
-				world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
-			}
 		}
 	}
 }

@@ -45,7 +45,7 @@
     "customDrop": {
       "value": "CUSTOM:PortalDoorBottom"
     },
-    "dropAmount": 1,
+    "dropAmount": 0,
     "useLootTableForDrops": false,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,

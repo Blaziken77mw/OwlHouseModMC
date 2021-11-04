@@ -841,7 +841,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Dimension/Portal/Portal Door/Procedures"
     },
     {
       "name": "PortalDoorBottomOpenOnBlockRightClicked",
@@ -870,7 +871,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Dimension/Portal/Portal Door/Procedures"
     },
     {
       "name": "PortalDoorTopOpenOnBlockRightClicked",
@@ -899,7 +901,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Dimension/Portal/Portal Door/Procedures"
     },
     {
       "name": "PortalDoorBottomOpenEntityCollidesInTheBlock",
@@ -932,7 +935,56 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Dimension/Portal/Portal Door/Procedures"
+    },
+    {
+      "name": "PortalKeyRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_key_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Dimension/Portal/Portal Key"
+    },
+    {
+      "name": "PortalKey",
+      "type": "item",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "portal_key",
+      "path": "~/Dimension/Portal/Portal Key"
     }
   ],
   "variable_elements": [
@@ -986,6 +1038,7 @@
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "item.owlhousemodmc.light_glyph": "Light Glyph",
       "subtitles.rainesrhapsody": "",
+      "item.owlhousemodmc.portal_key": "Portal Key",
       "subtitles.endingtheme": "",
       "biome.owlhousemodmc.plains_boiling_isles": "Plains Boiling Isles",
       "subtitles.gromfright": "",
@@ -1087,6 +1140,10 @@
                     "children": []
                   }
                 ]
+              },
+              {
+                "name": "Portal Key",
+                "children": []
               }
             ]
           }
