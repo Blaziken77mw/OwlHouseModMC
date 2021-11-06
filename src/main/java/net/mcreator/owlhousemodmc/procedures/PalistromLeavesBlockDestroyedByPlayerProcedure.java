@@ -10,17 +10,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.owlhousemodmc.block.PalistromLeavesBlock;
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class PalistromLeavesBlockDestroyedByPlayerProcedure extends OwlhousemodmcModElements.ModElement {
-	public PalistromLeavesBlockDestroyedByPlayerProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 28);
-	}
-
+public class PalistromLeavesBlockDestroyedByPlayerProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -55,7 +49,7 @@ public class PalistromLeavesBlockDestroyedByPlayerProcedure extends Owlhousemodm
 		if ((ItemTags.getCollection().getTagByID(new ResourceLocation(("minecraft:shears").toLowerCase(java.util.Locale.ENGLISH)))
 				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))) {
 			if (world instanceof World && !world.isRemote()) {
-				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(PalistromLeavesBlock.block, (int) (1)));
+				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(PalistromLeavesBlock.block));
 				entityToSpawn.setPickupDelay((int) 10);
 				world.addEntity(entityToSpawn);
 			}

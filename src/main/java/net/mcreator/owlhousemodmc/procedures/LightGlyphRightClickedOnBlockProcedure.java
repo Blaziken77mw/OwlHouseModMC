@@ -13,17 +13,11 @@ import net.minecraft.block.Blocks;
 
 import net.mcreator.owlhousemodmc.item.LightGlyphItem;
 import net.mcreator.owlhousemodmc.block.LightGlyphBlockBlock;
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class LightGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModElements.ModElement {
-	public LightGlyphRightClickedOnBlockProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 23);
-	}
-
+public class LightGlyphRightClickedOnBlockProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -56,9 +50,9 @@ public class LightGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModElem
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == new ItemStack(LightGlyphItem.block, (int) (1)).getItem())) {
+				.getItem() == LightGlyphItem.block)) {
 			if (entity instanceof LivingEntity) {
-				ItemStack _setstack = new ItemStack(LightGlyphItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(LightGlyphItem.block);
 				_setstack.setCount(
 						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
 								- 1));
@@ -67,9 +61,9 @@ public class LightGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModElem
 					((ServerPlayerEntity) entity).inventory.markDirty();
 			}
 		} else if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-				.getItem() == new ItemStack(LightGlyphItem.block, (int) (1)).getItem())) {
+				.getItem() == LightGlyphItem.block)) {
 			if (entity instanceof LivingEntity) {
-				ItemStack _setstack = new ItemStack(LightGlyphItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(LightGlyphItem.block);
 				_setstack.setCount(
 						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
 								- 1));
@@ -81,45 +75,36 @@ public class LightGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModElem
 		if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 				entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 				RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.UP)
-				&& (((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.CAVE_AIR.getDefaultState().getBlock())
-						|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR.getDefaultState()
-								.getBlock())))) {
+				&& (((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.CAVE_AIR)
+						|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR)))) {
 			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), LightGlyphBlockBlock.block.getDefaultState(), 3);
 		} else {
 			if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 					entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 					RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.NORTH)
-					&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.CAVE_AIR.getDefaultState()
-							.getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.AIR.getDefaultState()
-									.getBlock())))) {
+					&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.CAVE_AIR)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.AIR)))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), LightGlyphBlockBlock.block.getDefaultState(), 3);
 			} else {
 				if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 						entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 						RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.SOUTH)
-						&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR.getDefaultState()
-								.getBlock())
-								|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.AIR.getDefaultState()
-										.getBlock())))) {
+						&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR)
+								|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.AIR)))) {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), LightGlyphBlockBlock.block.getDefaultState(), 3);
 				} else {
 					if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 							entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 							RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.WEST)
-							&& (((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == Blocks.CAVE_AIR.getDefaultState()
-									.getBlock())
-									|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == Blocks.AIR
-											.getDefaultState().getBlock())))) {
+							&& (((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == Blocks.CAVE_AIR)
+									|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == Blocks.AIR)))) {
 						world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), LightGlyphBlockBlock.block.getDefaultState(), 3);
 					} else {
 						if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 								entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.EAST)
-								&& (((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.CAVE_AIR
-										.getDefaultState().getBlock())
-										|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.AIR
-												.getDefaultState().getBlock())))) {
+								&& (((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.CAVE_AIR)
+										|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.AIR)))) {
 							world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), LightGlyphBlockBlock.block.getDefaultState(), 3);
 						}
 					}

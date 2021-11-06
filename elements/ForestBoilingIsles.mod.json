@@ -1,5 +1,5 @@
 {
-  "_fv": 18,
+  "_fv": 24,
   "_type": "biome",
   "definition": {
     "name": "Forest Boiling Isles",
@@ -10,11 +10,11 @@
       "value": "Blocks.DIRT#0"
     },
     "grassColor": {
-      "value": -52429,
+      "value": -2138787,
       "falpha": 0.0
     },
     "foliageColor": {
-      "value": -52480,
+      "value": -3127481,
       "falpha": 0.0
     },
     "ambientSound": {
@@ -90,15 +90,6 @@
       "DeadBushes"
     ],
     "spawnEntries": [
-      {
-        "entity": {
-          "value": "EntityBat"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 20,
-        "spawnType": "ambient"
-      },
       {
         "entity": {
           "value": "EntityCaveSpider"

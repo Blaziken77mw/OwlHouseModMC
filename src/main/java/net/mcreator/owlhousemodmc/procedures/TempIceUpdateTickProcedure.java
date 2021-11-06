@@ -7,17 +7,11 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class TempIceUpdateTickProcedure extends OwlhousemodmcModElements.ModElement {
-	public TempIceUpdateTickProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 15);
-	}
-
+public class TempIceUpdateTickProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

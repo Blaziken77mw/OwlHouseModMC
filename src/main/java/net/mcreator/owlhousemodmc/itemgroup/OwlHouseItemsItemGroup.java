@@ -22,7 +22,7 @@ public class OwlHouseItemsItemGroup extends OwlhousemodmcModElements.ModElement 
 			@OnlyIn(Dist.CLIENT)
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(LightGlyphItem.block, (int) (1));
+				return new ItemStack(LightGlyphItem.block);
 			}
 
 			@OnlyIn(Dist.CLIENT)

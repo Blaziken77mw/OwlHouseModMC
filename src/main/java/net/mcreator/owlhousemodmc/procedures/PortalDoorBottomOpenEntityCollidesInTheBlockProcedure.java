@@ -16,18 +16,12 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 import java.util.Collections;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class PortalDoorBottomOpenEntityCollidesInTheBlockProcedure extends OwlhousemodmcModElements.ModElement {
-	public PortalDoorBottomOpenEntityCollidesInTheBlockProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 42);
-	}
-
+public class PortalDoorBottomOpenEntityCollidesInTheBlockProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -80,9 +74,8 @@ public class PortalDoorBottomOpenEntityCollidesInTheBlockProcedure extends Owlho
 				}
 			}
 			yTarget = (double) 255;
-			while ((!((world.getBlockState(new BlockPos((int) x, (int) (yTarget), (int) z))).getBlock() == Blocks.AIR.getDefaultState()
-					.getBlock()))) {
-				yTarget = (double) ((yTarget) - 1);
+			while ((!((world.getBlockState(new BlockPos((int) x, (int) yTarget, (int) z))).getBlock() == Blocks.AIR))) {
+				yTarget = (double) (yTarget - 1);
 			}
 			{
 				Entity _ent = entity;
@@ -112,9 +105,8 @@ public class PortalDoorBottomOpenEntityCollidesInTheBlockProcedure extends Owlho
 				}
 			}
 			yTarget = (double) 255;
-			while ((!((world.getBlockState(new BlockPos((int) x, (int) (yTarget), (int) z))).getBlock() == Blocks.AIR.getDefaultState()
-					.getBlock()))) {
-				yTarget = (double) ((yTarget) - 1);
+			while ((!((world.getBlockState(new BlockPos((int) x, (int) yTarget, (int) z))).getBlock() == Blocks.AIR))) {
+				yTarget = (double) (yTarget - 1);
 			}
 			{
 				Entity _ent = entity;

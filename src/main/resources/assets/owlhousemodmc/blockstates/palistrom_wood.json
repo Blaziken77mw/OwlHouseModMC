@@ -1,28 +1,16 @@
 {
   "variants": {
-    "facing=south": {
-      "model": "owlhousemodmc:block/palistrom_wood"
-    },
-    "facing=north": {
-      "model": "owlhousemodmc:block/palistrom_wood"
-    },
-    "facing=east": {
-      "model": "owlhousemodmc:block/palistrom_wood",
-      "x": 90
-    },
-    "facing=west": {
-      "model": "owlhousemodmc:block/palistrom_wood",
-      "x": 90
-    },
-    "facing=up": {
+    "axis=x": {
       "model": "owlhousemodmc:block/palistrom_wood",
       "x": 90,
       "y": 90
     },
-    "facing=down": {
+    "axis=y": {
+      "model": "owlhousemodmc:block/palistrom_wood"
+    },
+    "axis=z": {
       "model": "owlhousemodmc:block/palistrom_wood",
-      "x": 90,
-      "y": 90
+      "x": 90
     }
   }
 }

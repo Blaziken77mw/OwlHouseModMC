@@ -1,5 +1,5 @@
 {
-  "_fv": 18,
+  "_fv": 24,
   "_type": "biome",
   "definition": {
     "name": "Palistrom Forest",
@@ -14,11 +14,11 @@
       "falpha": 0.0
     },
     "grassColor": {
-      "value": -52429,
+      "value": -2590857,
       "falpha": 0.0
     },
     "foliageColor": {
-      "value": -52480,
+      "value": -2730667,
       "falpha": 0.0
     },
     "ambientSound": {
@@ -95,34 +95,6 @@
       "Caves",
       "Ores"
     ],
-    "spawnEntries": [
-      {
-        "entity": {
-          "value": "EntityVex"
-        },
-        "minGroup": 2,
-        "maxGroup": 3,
-        "weight": 10,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "EntitySilverfish"
-        },
-        "minGroup": 1,
-        "maxGroup": 4,
-        "weight": 20,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "EntityCaveSpider"
-        },
-        "minGroup": 3,
-        "maxGroup": 4,
-        "weight": 20,
-        "spawnType": "monster"
-      }
-    ]
+    "spawnEntries": []
   }
 }

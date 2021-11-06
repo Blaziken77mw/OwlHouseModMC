@@ -5,17 +5,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.Blocks;
 
 import net.mcreator.owlhousemodmc.block.TempIceBlock;
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class BuildIceGlyphSouthProcedure extends OwlhousemodmcModElements.ModElement {
-	public BuildIceGlyphSouthProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 19);
-	}
-
+public class BuildIceGlyphSouthProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -41,31 +35,24 @@ public class BuildIceGlyphSouthProcedure extends OwlhousemodmcModElements.ModEle
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.AIR.getDefaultState().getBlock())
-				|| ((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR.getDefaultState()
-						.getBlock()))) {
+		if ((((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.AIR)
+				|| ((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR))) {
 			world.setBlockState(new BlockPos((int) (x + 0), (int) (y + 0), (int) (z + 1)), TempIceBlock.block.getDefaultState(), 3);
 		}
-		if ((((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + 1), (int) (z + 1)))).getBlock() == Blocks.AIR.getDefaultState().getBlock())
-				|| ((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + 1), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR.getDefaultState()
-						.getBlock()))) {
+		if ((((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + 1), (int) (z + 1)))).getBlock() == Blocks.AIR)
+				|| ((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + 1), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR))) {
 			world.setBlockState(new BlockPos((int) (x + 0), (int) (y + 1), (int) (z + 1)), TempIceBlock.block.getDefaultState(), 3);
 		}
-		if ((((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + (-1)), (int) (z + 1)))).getBlock() == Blocks.AIR.getDefaultState()
-				.getBlock())
-				|| ((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + (-1)), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR
-						.getDefaultState().getBlock()))) {
+		if ((((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + (-1)), (int) (z + 1)))).getBlock() == Blocks.AIR)
+				|| ((world.getBlockState(new BlockPos((int) (x + 0), (int) (y + (-1)), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR))) {
 			world.setBlockState(new BlockPos((int) (x + 0), (int) (y + (-1)), (int) (z + 1)), TempIceBlock.block.getDefaultState(), 3);
 		}
-		if ((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 9), (int) (z + 1)))).getBlock() == Blocks.AIR.getDefaultState().getBlock())
-				|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR.getDefaultState()
-						.getBlock()))) {
+		if ((((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 9), (int) (z + 1)))).getBlock() == Blocks.AIR)
+				|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR))) {
 			world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 0), (int) (z + 1)), TempIceBlock.block.getDefaultState(), 3);
 		}
-		if ((((world.getBlockState(new BlockPos((int) (x + (-1)), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.AIR.getDefaultState()
-				.getBlock())
-				|| ((world.getBlockState(new BlockPos((int) (x + (-1)), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR
-						.getDefaultState().getBlock()))) {
+		if ((((world.getBlockState(new BlockPos((int) (x + (-1)), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.AIR)
+				|| ((world.getBlockState(new BlockPos((int) (x + (-1)), (int) (y + 0), (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR))) {
 			world.setBlockState(new BlockPos((int) (x + (-1)), (int) (y + 0), (int) (z + 1)), TempIceBlock.block.getDefaultState(), 3);
 		}
 	}

@@ -4,17 +4,11 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class PortalDoorTopBlockDestroyedByPlayerProcedure extends OwlhousemodmcModElements.ModElement {
-	public PortalDoorTopBlockDestroyedByPlayerProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 36);
-	}
-
+public class PortalDoorTopBlockDestroyedByPlayerProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

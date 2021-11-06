@@ -14,18 +14,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.owlhousemodmc.item.IceGlyphItem;
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 import java.util.HashMap;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class IceGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModElements.ModElement {
-	public IceGlyphRightClickedOnBlockProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 22);
-	}
-
+public class IceGlyphRightClickedOnBlockProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -57,10 +51,9 @@ public class IceGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModElemen
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == new ItemStack(IceGlyphItem.block, (int) (1)).getItem())) {
+		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == IceGlyphItem.block)) {
 			if (entity instanceof LivingEntity) {
-				ItemStack _setstack = new ItemStack(IceGlyphItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(IceGlyphItem.block);
 				_setstack.setCount(
 						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
 								- 1));
@@ -69,9 +62,9 @@ public class IceGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModElemen
 					((ServerPlayerEntity) entity).inventory.markDirty();
 			}
 		} else if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-				.getItem() == new ItemStack(IceGlyphItem.block, (int) (1)).getItem())) {
+				.getItem() == IceGlyphItem.block)) {
 			if (entity instanceof LivingEntity) {
-				ItemStack _setstack = new ItemStack(IceGlyphItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(IceGlyphItem.block);
 				_setstack.setCount(
 						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
 								- 1));

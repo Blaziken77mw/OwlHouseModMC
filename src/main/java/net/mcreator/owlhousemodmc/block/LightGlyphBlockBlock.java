@@ -70,6 +70,11 @@ public class LightGlyphBlockBlock extends OwlhousemodmcModElements.ModElement {
 		}
 
 		@Override
+		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return 0;
+		}
+
+		@Override
 		public boolean isReplaceable(BlockState state, BlockItemUseContext context) {
 			return context.getItem().getItem() != this.asItem();
 		}

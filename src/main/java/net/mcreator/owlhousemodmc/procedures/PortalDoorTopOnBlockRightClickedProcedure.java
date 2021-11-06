@@ -8,17 +8,11 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.owlhousemodmc.block.PortalDoorTopOpenBlock;
 import net.mcreator.owlhousemodmc.block.PortalDoorBottomOpenBlock;
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class PortalDoorTopOnBlockRightClickedProcedure extends OwlhousemodmcModElements.ModElement {
-	public PortalDoorTopOnBlockRightClickedProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 38);
-	}
-
+public class PortalDoorTopOnBlockRightClickedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

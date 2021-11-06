@@ -95,7 +95,7 @@
     },
     {
       "name": "FireGlyphProjectile",
-      "type": "gun",
+      "type": "rangeditem",
       "sortid": 11,
       "compiles": true,
       "locked_code": false,
@@ -985,6 +985,36 @@
       "ids": {},
       "registry_name": "portal_key",
       "path": "~/Dimension/Portal/Portal Key"
+    },
+    {
+      "name": "OwlHouseStaffs",
+      "type": "tab",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "owl_house_staffs",
+      "path": "~/Creative tabs"
+    },
+    {
+      "name": "House",
+      "type": "structure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "house",
+      "path": "~/structures"
+    },
+    {
+      "name": "OwlStaff",
+      "type": "item",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "owl_staff",
+      "path": "~/Items/staffs"
     }
   ],
   "variable_elements": [
@@ -1027,14 +1057,16 @@
       "item.owlhousemodmc.ice_glyph": "Ice Glyph",
       "item.owlhousemodmc.boiling_isles": "Boiling Isles Portal Igniter",
       "itemGroup.tabowl_house_items": "Owl House Items",
-      "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
       "block.owlhousemodmc.palistrom_leaves": "Palistrom Leaves",
+      "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
       "biome.owlhousemodmc.forest_boiling_isles": "Forest Boiling Isles",
+      "item.owlhousemodmc.owl_staff": "Owl Staff",
       "block.owlhousemodmc.portal_door_bottom": "Portal Door",
       "block.owlhousemodmc.portal_door_bottom_open": "Portal Door Bottom Open",
       "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
       "block.owlhousemodmc.portal_door_top": "Portal Door Top",
       "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
+      "itemGroup.tabowl_house_staffs": "Owl House Staffs",
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "item.owlhousemodmc.light_glyph": "Light Glyph",
       "subtitles.rainesrhapsody": "",
@@ -1115,6 +1147,10 @@
           {
             "name": "Notepad",
             "children": []
+          },
+          {
+            "name": "staffs",
+            "children": []
           }
         ]
       },
@@ -1152,6 +1188,10 @@
       {
         "name": "Procedures",
         "children": []
+      },
+      {
+        "name": "structures",
+        "children": []
       }
     ]
   },
@@ -1172,5 +1212,5 @@
     "modElementsPackage": "net.mcreator.owlhousemodmc",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100118117
+  "mcreatorVersion": 202100235315
 }

@@ -8,17 +8,11 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.BoneMealItem;
 
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class PlantGlyphRightClickedOnBlockProcedure extends OwlhousemodmcModElements.ModElement {
-	public PlantGlyphRightClickedOnBlockProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 24);
-	}
-
+public class PlantGlyphRightClickedOnBlockProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

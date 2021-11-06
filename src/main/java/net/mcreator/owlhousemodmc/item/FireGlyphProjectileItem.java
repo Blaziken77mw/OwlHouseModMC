@@ -119,7 +119,7 @@ public class FireGlyphProjectileItem extends OwlhousemodmcModElements.ModElement
 		@Override
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack getItem() {
-			return new ItemStack(Blocks.FIRE, (int) (1));
+			return new ItemStack(Blocks.FIRE);
 		}
 
 		@Override
@@ -136,6 +136,7 @@ public class FireGlyphProjectileItem extends OwlhousemodmcModElements.ModElement
 			double y = this.getPosY();
 			double z = this.getPosZ();
 			World world = this.world;
+			Entity imediatesourceentity = this;
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
@@ -151,6 +152,7 @@ public class FireGlyphProjectileItem extends OwlhousemodmcModElements.ModElement
 			double z = this.getPosZ();
 			World world = this.world;
 			Entity entity = this.func_234616_v_();
+			Entity imediatesourceentity = this;
 			if (this.inGround) {
 				this.remove();
 			}

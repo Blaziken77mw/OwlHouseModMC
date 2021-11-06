@@ -9,18 +9,12 @@ import net.minecraft.entity.Entity;
 import net.mcreator.owlhousemodmc.item.FireGlyphProjectileItem;
 import net.mcreator.owlhousemodmc.item.FireGlyphItem;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Random;
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class FireGlyphEntitySwingsItemProcedure extends OwlhousemodmcModElements.ModElement {
-	public FireGlyphEntitySwingsItemProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 12);
-	}
-
+public class FireGlyphEntitySwingsItemProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -28,10 +22,9 @@ public class FireGlyphEntitySwingsItemProcedure extends OwlhousemodmcModElements
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == new ItemStack(FireGlyphItem.block, (int) (1)).getItem())) {
+		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == FireGlyphItem.block)) {
 			if (entity instanceof LivingEntity) {
-				ItemStack _setstack = new ItemStack(FireGlyphItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(FireGlyphItem.block);
 				_setstack.setCount(
 						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
 								- 1));
@@ -40,9 +33,9 @@ public class FireGlyphEntitySwingsItemProcedure extends OwlhousemodmcModElements
 					((ServerPlayerEntity) entity).inventory.markDirty();
 			}
 		} else if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-				.getItem() == new ItemStack(FireGlyphItem.block, (int) (1)).getItem())) {
+				.getItem() == FireGlyphItem.block)) {
 			if (entity instanceof LivingEntity) {
-				ItemStack _setstack = new ItemStack(FireGlyphItem.block, (int) (1));
+				ItemStack _setstack = new ItemStack(FireGlyphItem.block);
 				_setstack.setCount(
 						(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
 								- 1));

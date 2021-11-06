@@ -6,17 +6,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class TempIceBlockAddedProcedure extends OwlhousemodmcModElements.ModElement {
-	public TempIceBlockAddedProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 14);
-	}
-
+public class TempIceBlockAddedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))

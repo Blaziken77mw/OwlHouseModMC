@@ -1,5 +1,5 @@
 {
-  "_fv": 18,
+  "_fv": 24,
   "_type": "biome",
   "definition": {
     "name": "Plains Boiling Isles",
@@ -10,11 +10,11 @@
       "value": "Blocks.DIRT#0"
     },
     "grassColor": {
-      "value": -52429,
+      "value": -2204837,
       "falpha": 0.0
     },
     "foliageColor": {
-      "value": -52480,
+      "value": -3121559,
       "falpha": 0.0
     },
     "ambientSound": {
@@ -91,52 +91,6 @@
       "Ores",
       "Fossils"
     ],
-    "spawnEntries": [
-      {
-        "entity": {
-          "value": "EntityPhantom"
-        },
-        "minGroup": 1,
-        "maxGroup": 2,
-        "weight": 20,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "EntityEnderman"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 5,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "EntityWitch"
-        },
-        "minGroup": 1,
-        "maxGroup": 3,
-        "weight": 15,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "EntitySlime"
-        },
-        "minGroup": 2,
-        "maxGroup": 4,
-        "weight": 20,
-        "spawnType": "monster"
-      },
-      {
-        "entity": {
-          "value": "EntityEvoker"
-        },
-        "minGroup": 1,
-        "maxGroup": 1,
-        "weight": 1,
-        "spawnType": "monster"
-      }
-    ]
+    "spawnEntries": []
   }
 }

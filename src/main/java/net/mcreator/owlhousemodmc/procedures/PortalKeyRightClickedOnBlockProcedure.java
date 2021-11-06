@@ -16,17 +16,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.owlhousemodmc.block.PortalDoorBottomBlock;
-import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
 
-@OwlhousemodmcModElements.ModElement.Tag
-public class PortalKeyRightClickedOnBlockProcedure extends OwlhousemodmcModElements.ModElement {
-	public PortalKeyRightClickedOnBlockProcedure(OwlhousemodmcModElements instance) {
-		super(instance, 43);
-	}
-
+public class PortalKeyRightClickedOnBlockProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -93,10 +87,8 @@ public class PortalKeyRightClickedOnBlockProcedure extends OwlhousemodmcModEleme
 			if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 					entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 					RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.UP)
-					&& (((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.CAVE_AIR.getDefaultState()
-							.getBlock())
-							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR.getDefaultState()
-									.getBlock())))) {
+					&& (((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.CAVE_AIR)
+							|| ((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == Blocks.AIR)))) {
 				world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), PortalDoorBottomBlock.block.getDefaultState(), 3);
 				try {
 					BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
@@ -115,10 +107,8 @@ public class PortalKeyRightClickedOnBlockProcedure extends OwlhousemodmcModEleme
 				if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 						entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 						RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.NORTH)
-						&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.CAVE_AIR.getDefaultState()
-								.getBlock())
-								|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.AIR.getDefaultState()
-										.getBlock())))) {
+						&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.CAVE_AIR)
+								|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock() == Blocks.AIR)))) {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)), PortalDoorBottomBlock.block.getDefaultState(), 3);
 					try {
 						BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
@@ -137,10 +127,8 @@ public class PortalKeyRightClickedOnBlockProcedure extends OwlhousemodmcModEleme
 					if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 							entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 							RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.SOUTH)
-							&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR.getDefaultState()
-									.getBlock())
-									|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.AIR
-											.getDefaultState().getBlock())))) {
+							&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.CAVE_AIR)
+									|| ((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == Blocks.AIR)))) {
 						world.setBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)), PortalDoorBottomBlock.block.getDefaultState(), 3);
 						try {
 							BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
@@ -159,10 +147,8 @@ public class PortalKeyRightClickedOnBlockProcedure extends OwlhousemodmcModEleme
 						if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 								entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.WEST)
-								&& (((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == Blocks.CAVE_AIR
-										.getDefaultState().getBlock())
-										|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == Blocks.AIR
-												.getDefaultState().getBlock())))) {
+								&& (((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == Blocks.CAVE_AIR)
+										|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == Blocks.AIR)))) {
 							world.setBlockState(new BlockPos((int) (x - 1), (int) y, (int) z), PortalDoorBottomBlock.block.getDefaultState(), 3);
 							try {
 								BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
@@ -181,10 +167,8 @@ public class PortalKeyRightClickedOnBlockProcedure extends OwlhousemodmcModEleme
 							if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 									entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 									RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.EAST)
-									&& (((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.CAVE_AIR
-											.getDefaultState().getBlock())
-											|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.AIR
-													.getDefaultState().getBlock())))) {
+									&& (((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.CAVE_AIR)
+											|| ((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == Blocks.AIR)))) {
 								world.setBlockState(new BlockPos((int) (x + 1), (int) y, (int) z), PortalDoorBottomBlock.block.getDefaultState(), 3);
 								try {
 									BlockState _bs = world.getBlockState(new BlockPos((int) x, (int) y, (int) z));
