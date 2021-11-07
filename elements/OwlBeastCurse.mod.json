@@ -3,12 +3,12 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "owl_staff",
+    "texture": "owl_beast_curse",
     "customModelName": "Normal",
-    "name": "Owl Staff",
+    "name": "Owl Beast Curse",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "CUSTOM:OwlHouseStaffs"
+      "value": "CUSTOM:OwlHouseCurses"
     },
     "stackSize": 1,
     "enchantability": 0,
@@ -24,11 +24,19 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [],
+    "specialInfo": [
+      "Left click an entity to curse them. They will transform into the owl beast every 10 minutes and will be unable to use magic! Of course you could curse yourself by right clicking..."
+    ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 1,
+    "onRightClickedInAir": {
+      "name": "OwlBeastCurseLivingEntityIsHitWithItem"
+    },
+    "onEntityHitWith": {
+      "name": "OwlBeastCurseLivingEntityIsHitWithItem"
+    },
     "hasDispenseBehavior": false
   }
 }

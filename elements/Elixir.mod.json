@@ -3,14 +3,14 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "owl_staff",
+    "texture": "elixir",
     "customModelName": "Normal",
-    "name": "Owl Staff",
+    "name": "Elixir",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "CUSTOM:OwlHouseStaffs"
+      "value": "CUSTOM:OwlHouseItems"
     },
-    "stackSize": 1,
+    "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
@@ -28,7 +28,10 @@
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
-    "inventoryStackSize": 1,
+    "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "ElixirRightClickedInAir"
+    },
     "hasDispenseBehavior": false
   }
 }
