@@ -1083,6 +1083,27 @@
           }
         ]
       }
+    },
+    {
+      "name": "OwlBeastCurseLivingEntityIsHitWithItem2",
+      "type": "procedure",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "owl_beast_curse_living_entity_is_hit_with_item_2",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

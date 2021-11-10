@@ -17,6 +17,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.owlhousemodmc.procedures.OwlBeastCurseLivingEntityIsHitWithItemProcedure;
+import net.mcreator.owlhousemodmc.procedures.OwlBeastCurseLivingEntityIsHitWithItem2Procedure;
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseCursesItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
@@ -91,7 +92,7 @@ public class OwlBeastCurseItem extends OwlhousemodmcModElements.ModElement {
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
 				$_dependencies.put("world", world);
-				OwlBeastCurseLivingEntityIsHitWithItemProcedure.executeProcedure($_dependencies);
+				OwlBeastCurseLivingEntityIsHitWithItem2Procedure.executeProcedure($_dependencies);
 			}
 			return retval;
 		}
