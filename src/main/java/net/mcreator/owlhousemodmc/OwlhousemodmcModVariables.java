@@ -68,6 +68,9 @@ public class OwlhousemodmcModVariables {
 		public INBT writeNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side) {
 			CompoundNBT nbt = new CompoundNBT();
 			nbt.putDouble("GlyphCooldown", instance.GlyphCooldown);
+			nbt.putDouble("RechargeRate", instance.RechargeRate);
+			nbt.putDouble("SpellRecharging", instance.SpellRecharging);
+			nbt.putDouble("SpellCharge", instance.SpellCharge);
 			return nbt;
 		}
 
@@ -75,11 +78,17 @@ public class OwlhousemodmcModVariables {
 		public void readNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side, INBT inbt) {
 			CompoundNBT nbt = (CompoundNBT) inbt;
 			instance.GlyphCooldown = nbt.getDouble("GlyphCooldown");
+			instance.RechargeRate = nbt.getDouble("RechargeRate");
+			instance.SpellRecharging = nbt.getDouble("SpellRecharging");
+			instance.SpellCharge = nbt.getDouble("SpellCharge");
 		}
 	}
 
 	public static class PlayerVariables {
 		public double GlyphCooldown = 0;
+		public double RechargeRate = 0.5;
+		public double SpellRecharging = 1.0;
+		public double SpellCharge = -1.0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				OwlhousemodmcMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -112,8 +121,11 @@ public class OwlhousemodmcModVariables {
 		PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new PlayerVariables()));
 		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+		clone.RechargeRate = original.RechargeRate;
+		clone.SpellCharge = original.SpellCharge;
 		if (!event.isWasDeath()) {
 			clone.GlyphCooldown = original.GlyphCooldown;
+			clone.SpellRecharging = original.SpellRecharging;
 		}
 	}
 	public static class PlayerVariablesSyncMessage {
@@ -138,6 +150,9 @@ public class OwlhousemodmcModVariables {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new PlayerVariables()));
 					variables.GlyphCooldown = message.data.GlyphCooldown;
+					variables.RechargeRate = message.data.RechargeRate;
+					variables.SpellRecharging = message.data.SpellRecharging;
+					variables.SpellCharge = message.data.SpellCharge;
 				}
 			});
 			context.setPacketHandled(true);

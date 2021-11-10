@@ -2,13 +2,13 @@
 package net.mcreator.owlhousemodmc.item;
 
 @OwlhousemodmcModElements.ModElement.Tag
-public class ElixirItem extends OwlhousemodmcModElements.ModElement {
+public class SpellCircleTestItem extends OwlhousemodmcModElements.ModElement {
 
-	@ObjectHolder("owlhousemodmc:elixir")
+	@ObjectHolder("owlhousemodmc:spell_circle_test")
 	public static final Item block = null;
 
-	public ElixirItem(OwlhousemodmcModElements instance) {
-		super(instance, 49);
+	public SpellCircleTestItem(OwlhousemodmcModElements instance) {
+		super(instance, 54);
 
 	}
 
@@ -21,7 +21,7 @@ public class ElixirItem extends OwlhousemodmcModElements.ModElement {
 
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
-			setRegistryName("elixir");
+			setRegistryName("spell_circle_test");
 		}
 
 		@Override
@@ -50,9 +50,12 @@ public class ElixirItem extends OwlhousemodmcModElements.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 
-				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
 
-				ElixirRightClickedInAirProcedure.executeProcedure($_dependencies);
+				SpellCircleTestRightClickedInAirProcedure.executeProcedure($_dependencies);
 			}
 			return ar;
 		}
