@@ -985,14 +985,242 @@
       "ids": {},
       "registry_name": "portal_key",
       "path": "~/Dimension/Portal/Portal Key"
+    },
+    {
+      "name": "BileCharge",
+      "type": "overlay",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bile_charge",
+      "path": "~/Spellcasting/Bile HUD"
+    },
+    {
+      "name": "BileChargeDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bile_charge_display_overlay_ingame",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Bile HUD/Display Conditions"
+    },
+    {
+      "name": "Charge100Display",
+      "type": "procedure",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charge_100_display",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Bile HUD/Display Conditions"
+    },
+    {
+      "name": "Charge75Display",
+      "type": "procedure",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charge_75_display",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Bile HUD/Display Conditions"
+    },
+    {
+      "name": "Charge50Display",
+      "type": "procedure",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charge_50_display",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Bile HUD/Display Conditions"
+    },
+    {
+      "name": "Charge25Display",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charge_25_display",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Bile HUD/Display Conditions"
+    },
+    {
+      "name": "Charge10Display",
+      "type": "procedure",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charge_10_display",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Bile HUD/Display Conditions"
+    },
+    {
+      "name": "ChargeEmptyDisplay",
+      "type": "procedure",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "charge_empty_display",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Bile HUD/Display Conditions"
+    },
+    {
+      "name": "BileRecharge",
+      "type": "procedure",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bile_recharge",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Spellcasting"
+    },
+    {
+      "name": "SpellCircle",
+      "type": "particle",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spell_circle",
+      "path": "~/Spellcasting"
+    },
+    {
+      "name": "SpellCircleTestRightClickedInAir",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spell_circle_test_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SpellCircleTest",
+      "type": "item",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spell_circle_test",
+      "path": "~/Spellcasting"
     }
   ],
   "variable_elements": [
+    {
+      "name": "SpellRecharging",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "1.0"
+    },
     {
       "name": "GlyphCooldown",
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
+    },
+    {
+      "name": "SpellCharge",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "-1.0"
+    },
+    {
+      "name": "RechargeRate",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.5"
     }
   ],
   "sound_elements": [
@@ -1035,6 +1263,7 @@
       "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
       "block.owlhousemodmc.portal_door_top": "Portal Door Top",
       "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
+      "item.owlhousemodmc.spell_circle_test": "Spell Circle Test",
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "item.owlhousemodmc.light_glyph": "Light Glyph",
       "subtitles.rainesrhapsody": "",
@@ -1152,6 +1381,20 @@
       {
         "name": "Procedures",
         "children": []
+      },
+      {
+        "name": "Spellcasting",
+        "children": [
+          {
+            "name": "Bile HUD",
+            "children": [
+              {
+                "name": "Display Conditions",
+                "children": []
+              }
+            ]
+          }
+        ]
       }
     ]
   },

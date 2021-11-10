@@ -1,0 +1,91 @@
+{
+  "_fv": 18,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "charged0.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ChargeEmptyDisplay"
+          },
+          "name": "charged0.png",
+          "x": 15,
+          "y": 116
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "charged10.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Charge10Display"
+          },
+          "name": "charged10.png",
+          "x": 15,
+          "y": 116
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "charged25.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Charge25Display"
+          },
+          "name": "charged25.png",
+          "x": 15,
+          "y": 116
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "charged50.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Charge50Display"
+          },
+          "name": "charged50.png",
+          "x": 15,
+          "y": 116
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "charged75.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Charge75Display"
+          },
+          "name": "charged75.png",
+          "x": 15,
+          "y": 116
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "charged100.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "Charge100Display"
+          },
+          "name": "charged100.png",
+          "x": 15,
+          "y": 116
+        }
+      }
+    ],
+    "baseTexture": "",
+    "displayCondition": {
+      "name": "BileChargeDisplayOverlayIngame"
+    }
+  }
+}
