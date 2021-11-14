@@ -69,8 +69,12 @@ public class OwlhousemodmcModVariables {
 			CompoundNBT nbt = new CompoundNBT();
 			nbt.putDouble("GlyphCooldown", instance.GlyphCooldown);
 			nbt.putDouble("RechargeRate", instance.RechargeRate);
-			nbt.putDouble("SpellRecharging", instance.SpellRecharging);
 			nbt.putDouble("SpellCharge", instance.SpellCharge);
+			nbt.putBoolean("SpellRecharging", instance.SpellRecharging);
+			nbt.putString("Spell1", instance.Spell1);
+			nbt.putString("Spell2", instance.Spell2);
+			nbt.putString("Spell3", instance.Spell3);
+			nbt.putString("Spell4", instance.Spell4);
 			return nbt;
 		}
 
@@ -79,16 +83,24 @@ public class OwlhousemodmcModVariables {
 			CompoundNBT nbt = (CompoundNBT) inbt;
 			instance.GlyphCooldown = nbt.getDouble("GlyphCooldown");
 			instance.RechargeRate = nbt.getDouble("RechargeRate");
-			instance.SpellRecharging = nbt.getDouble("SpellRecharging");
 			instance.SpellCharge = nbt.getDouble("SpellCharge");
+			instance.SpellRecharging = nbt.getBoolean("SpellRecharging");
+			instance.Spell1 = nbt.getString("Spell1");
+			instance.Spell2 = nbt.getString("Spell2");
+			instance.Spell3 = nbt.getString("Spell3");
+			instance.Spell4 = nbt.getString("Spell4");
 		}
 	}
 
 	public static class PlayerVariables {
 		public double GlyphCooldown = 0;
 		public double RechargeRate = 0.5;
-		public double SpellRecharging = 1.0;
 		public double SpellCharge = -1.0;
+		public boolean SpellRecharging = false;
+		public String Spell1 = "\"\"";
+		public String Spell2 = "\"\"";
+		public String Spell3 = "\"\"";
+		public String Spell4 = "\"\"";
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				OwlhousemodmcMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -123,6 +135,10 @@ public class OwlhousemodmcModVariables {
 		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 		clone.RechargeRate = original.RechargeRate;
 		clone.SpellCharge = original.SpellCharge;
+		clone.Spell1 = original.Spell1;
+		clone.Spell2 = original.Spell2;
+		clone.Spell3 = original.Spell3;
+		clone.Spell4 = original.Spell4;
 		if (!event.isWasDeath()) {
 			clone.GlyphCooldown = original.GlyphCooldown;
 			clone.SpellRecharging = original.SpellRecharging;
@@ -151,8 +167,12 @@ public class OwlhousemodmcModVariables {
 							.orElse(new PlayerVariables()));
 					variables.GlyphCooldown = message.data.GlyphCooldown;
 					variables.RechargeRate = message.data.RechargeRate;
-					variables.SpellRecharging = message.data.SpellRecharging;
 					variables.SpellCharge = message.data.SpellCharge;
+					variables.SpellRecharging = message.data.SpellRecharging;
+					variables.Spell1 = message.data.Spell1;
+					variables.Spell2 = message.data.Spell2;
+					variables.Spell3 = message.data.Spell3;
+					variables.Spell4 = message.data.Spell4;
 				}
 			});
 			context.setPacketHandled(true);

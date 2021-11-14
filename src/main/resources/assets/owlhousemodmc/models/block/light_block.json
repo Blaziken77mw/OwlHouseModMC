@@ -1,0 +1,8 @@
+{
+  "parent": "owlhousemodmc:custom/lightspell",
+  "textures": {
+    "all": "owlhousemodmc:blocks/lightblock",
+    "particle": "owlhousemodmc:blocks/lightblock",
+    "0": "owlhousemodmc:blocks/lightblock"
+  }
+}

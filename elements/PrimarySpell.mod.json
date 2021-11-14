@@ -1,0 +1,12 @@
+{
+  "_fv": 24,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "Z",
+    "keyBindingName": "Primary Spell",
+    "keyBindingCategoryKey": "owlspells",
+    "onKeyPressed": {
+      "name": "PrimarySpellOnKeyPressed"
+    }
+  }
+}

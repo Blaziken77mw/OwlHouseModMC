@@ -1,0 +1,98 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 300,
+    "height": 200,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Spell 1",
+          "name": "Spell1",
+          "x": 69,
+          "y": 44
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Spell 2",
+          "name": "Spell2",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Spell 3",
+          "name": "Spell3",
+          "x": 204,
+          "y": 44
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Spell 4",
+          "name": "Spell4",
+          "x": 276,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Spell being set:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Spell being set:",
+          "x": 168,
+          "y": 26
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Set to:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Set to:",
+          "x": 195,
+          "y": 71
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Light",
+          "onClick": {
+            "name": "LightButtonPressed"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "Light",
+          "x": 78,
+          "y": 89
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

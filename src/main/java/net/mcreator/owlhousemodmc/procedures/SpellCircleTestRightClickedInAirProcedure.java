@@ -1,7 +1,13 @@
 package net.mcreator.owlhousemodmc.procedures;
 
-public class SpellCircleTestRightClickedInAirProcedure {
+import net.minecraft.world.IWorld;
 
+import net.mcreator.owlhousemodmc.particle.SpellCircleParticle;
+import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
+
+import java.util.Map;
+
+public class SpellCircleTestRightClickedInAirProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
@@ -23,13 +29,10 @@ public class SpellCircleTestRightClickedInAirProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure SpellCircleTestRightClickedInAir!");
 			return;
 		}
-
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-
 		world.addParticle(SpellCircleParticle.particle, x, (y + 1), z, 0, 0, 0);
 	}
-
 }

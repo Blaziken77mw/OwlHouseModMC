@@ -1,7 +1,19 @@
 package net.mcreator.owlhousemodmc.procedures;
 
-public class BileRechargeProcedure {
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.World;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
+import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
+
+import java.util.Map;
+import java.util.HashMap;
+
+public class BileRechargeProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
 		@SubscribeEvent
@@ -23,12 +35,37 @@ public class BileRechargeProcedure {
 			}
 		}
 	}
-
-	public static void executeProcedure(Map<String, Object> dependencies){
-
-
-
-		if ((==1)) {if ((<100)) {}}if ((>100)) {}
+	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure BileRecharge!");
+			return;
+		}
+		Entity entity = (Entity) dependencies.get("entity");
+		if ((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellRecharging)
+				&& (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown) < 100))) {
+			{
+				double _setval = (double) (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge)
+						+ ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new OwlhousemodmcModVariables.PlayerVariables())).RechargeRate));
+				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.SpellCharge = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if ((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown) > 100)) {
+				{
+					double _setval = (double) 100;
+					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.GlyphCooldown = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			}
+		}
 	}
-
 }

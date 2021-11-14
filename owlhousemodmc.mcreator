@@ -1109,13 +1109,18 @@
       "name": "ChargeEmptyDisplay",
       "type": "procedure",
       "sortid": 51,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "charge_empty_display",
       "metadata": {
         "return_type": "logic",
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Spellcasting/Bile HUD/Display Conditions"
     },
@@ -1156,19 +1161,25 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Spellcasting"
     },
     {
       "name": "Charge25Display",
       "type": "procedure",
       "sortid": 49,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "charge_25_display",
       "metadata": {
         "return_type": "logic",
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Spellcasting/Bile HUD/Display Conditions"
     },
@@ -1186,13 +1197,18 @@
       "name": "Charge100Display",
       "type": "procedure",
       "sortid": 46,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "charge_100_display",
       "metadata": {
         "return_type": "logic",
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Spellcasting/Bile HUD/Display Conditions"
     },
@@ -1200,13 +1216,18 @@
       "name": "Charge75Display",
       "type": "procedure",
       "sortid": 47,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "charge_75_display",
       "metadata": {
         "return_type": "logic",
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Spellcasting/Bile HUD/Display Conditions"
     },
@@ -1214,40 +1235,37 @@
       "name": "Charge50Display",
       "type": "procedure",
       "sortid": 48,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "charge_50_display",
       "metadata": {
         "return_type": "logic",
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Spellcasting/Bile HUD/Display Conditions"
-    },
-    {
-      "name": "BileRecharge",
-      "type": "procedure",
-      "sortid": 52,
-      "compiles": false,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "bile_recharge",
-      "metadata": {
-        "dependencies": []
-      },
-      "path": "~/Spellcasting"
     },
     {
       "name": "Charge10Display",
       "type": "procedure",
       "sortid": 50,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "charge_10_display",
       "metadata": {
         "return_type": "logic",
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Spellcasting/Bile HUD/Display Conditions"
     },
@@ -1255,13 +1273,18 @@
       "name": "BileChargeDisplayOverlayIngame",
       "type": "procedure",
       "sortid": 45,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "bile_charge_display_overlay_ingame",
       "metadata": {
         "return_type": "logic",
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/Spellcasting/Bile HUD/Display Conditions"
     },
@@ -1274,6 +1297,115 @@
       "ids": {},
       "registry_name": "spell_circle_test",
       "path": "~/Spellcasting"
+    },
+    {
+      "name": "BileRecharge",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bile_recharge",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Spellcasting"
+    },
+    {
+      "name": "PrimarySpell",
+      "type": "keybind",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "primary_spell",
+      "path": "~/Spellcasting/Keybinds"
+    },
+    {
+      "name": "PrimarySpellOnKeyPressed",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "primary_spell_on_key_pressed",
+      "metadata": {
+        "dependencies": []
+      },
+      "path": "~/Spellcasting/Keybinds"
+    },
+    {
+      "name": "SpellCast",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spell_cast",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Spells"
+    },
+    {
+      "name": "LightSpellCast",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "light_spell_cast",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Spells/Light Spell"
     }
   ],
   "variable_elements": [
@@ -1290,16 +1422,40 @@
       "value": "0.5"
     },
     {
-      "name": "SpellRecharging",
-      "type": "number",
-      "scope": "player_lifetime",
-      "value": "1.0"
-    },
-    {
       "name": "SpellCharge",
       "type": "number",
       "scope": "player_persistent",
       "value": "-1.0"
+    },
+    {
+      "name": "SpellRecharging",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "Spell1",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "Spell2",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "Spell3",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "Spell4",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [
@@ -1334,23 +1490,29 @@
       "item.owlhousemodmc.ice_glyph": "Ice Glyph",
       "item.owlhousemodmc.boiling_isles": "Boiling Isles Portal Igniter",
       "itemGroup.tabowl_house_items": "Owl House Items",
-      "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
       "block.owlhousemodmc.palistrom_leaves": "Palistrom Leaves",
+      "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
       "biome.owlhousemodmc.forest_boiling_isles": "Forest Boiling Isles",
+      "item.owlhousemodmc.owl_staff": "Owl Staff",
       "block.owlhousemodmc.portal_door_bottom": "Portal Door",
       "block.owlhousemodmc.portal_door_bottom_open": "Portal Door Bottom Open",
       "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
       "block.owlhousemodmc.portal_door_top": "Portal Door Top",
+      "key.owlhousemodmc.primary_spell": "Primary Spell",
       "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
+      "item.owlhousemodmc.spell_circle_test": "Spell Circle Test",
+      "itemGroup.tabowl_house_staffs": "Owl House Staffs",
       "item.owlhousemodmc.owl_beast_curse": "Owl Beast Curse",
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "item.owlhousemodmc.light_glyph": "Light Glyph",
       "subtitles.rainesrhapsody": "",
+      "itemGroup.tabowl_house_curses": "Owl House Curses",
       "item.owlhousemodmc.portal_key": "Portal Key",
       "subtitles.endingtheme": "",
       "biome.owlhousemodmc.plains_boiling_isles": "Plains Boiling Isles",
       "subtitles.gromfright": "",
       "item.owlhousemodmc.notepad": "Notepad",
+      "item.owlhousemodmc.elixir": "Elixir",
       "block.owlhousemodmc.temp_ice": "Temp Ice",
       "biome.owlhousemodmc.palistrom_forest": "Palistrom Forest",
       "block.owlhousemodmc.portal_door_top_open": "Portal Door Top Open",
@@ -1425,6 +1587,19 @@
             "children": [
               {
                 "name": "Display Conditions",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Keybinds",
+            "children": []
+          },
+          {
+            "name": "Spells",
+            "children": [
+              {
+                "name": "Light Spell",
                 "children": []
               }
             ]
@@ -1510,5 +1685,5 @@
     "modElementsPackage": "net.mcreator.owlhousemodmc",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100118117
+  "mcreatorVersion": 202100236710
 }
