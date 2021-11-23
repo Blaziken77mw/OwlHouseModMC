@@ -50,6 +50,9 @@
         "type": "button",
         "data": {
           "text": "Light",
+          "onClick": {
+            "name": "LightButtonPushed"
+          },
           "width": 54,
           "height": 20,
           "name": "Light",
@@ -61,6 +64,9 @@
         "type": "button",
         "data": {
           "text": "Ice",
+          "onClick": {
+            "name": "IceButtonPushed"
+          },
           "width": 54,
           "height": 20,
           "name": "Ice",
@@ -72,6 +78,9 @@
         "type": "button",
         "data": {
           "text": "Plant",
+          "onClick": {
+            "name": "GrowthButtonPushed"
+          },
           "width": 54,
           "height": 20,
           "name": "Plant",
@@ -83,6 +92,9 @@
         "type": "button",
         "data": {
           "text": "Fire",
+          "onClick": {
+            "name": "FireButtonPushed"
+          },
           "width": 54,
           "height": 20,
           "name": "Fire",

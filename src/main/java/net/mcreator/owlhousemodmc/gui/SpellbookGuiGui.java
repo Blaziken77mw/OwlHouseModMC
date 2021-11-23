@@ -22,6 +22,10 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
+import net.mcreator.owlhousemodmc.procedures.LightButtonPushedProcedure;
+import net.mcreator.owlhousemodmc.procedures.IceButtonPushedProcedure;
+import net.mcreator.owlhousemodmc.procedures.GrowthButtonPushedProcedure;
+import net.mcreator.owlhousemodmc.procedures.FireButtonPushedProcedure;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
 import java.util.function.Supplier;
@@ -174,6 +178,38 @@ public class SpellbookGuiGui extends OwlhousemodmcModElements.ModElement {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
+		if (buttonID == 0) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("guistate", guistate);
+				LightButtonPushedProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 1) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("guistate", guistate);
+				IceButtonPushedProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 2) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("guistate", guistate);
+				GrowthButtonPushedProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 3) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("guistate", guistate);
+				FireButtonPushedProcedure.executeProcedure($_dependencies);
+			}
+		}
 	}
 
 	private static void handleSlotAction(PlayerEntity entity, int slotID, int changeType, int meta, int x, int y, int z) {
