@@ -1,14 +1,17 @@
 modLoader="javafml"
 loaderVersion="[36,)"
-license="Academic Free License v3.0"
+license="GNU General Public License version 3 (GPLv3)"
 
 [[mods]]
 modId="owlhousemodmc"
-version="1.0.0"
+version="0.3.0"
 displayName="OwlHouseModMC"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="maswi, MCreator"
+authors="Blaziken77mw, "
+description='''
+Use the magic of The Owl House in Minecraft!
+'''
 
 [[dependencies.owlhousemodmc]]
     modId="minecraft"

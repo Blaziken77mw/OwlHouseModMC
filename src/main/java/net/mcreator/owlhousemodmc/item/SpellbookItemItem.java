@@ -36,8 +36,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseItemsItemGroup;
-import net.mcreator.owlhousemodmc.gui.SpellBookGuiGuiWindow;
-import net.mcreator.owlhousemodmc.gui.SpellBookGuiGui;
+import net.mcreator.owlhousemodmc.gui.SpellbookGuiGuiWindow;
+import net.mcreator.owlhousemodmc.gui.SpellbookGuiGui;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
 import javax.annotation.Nullable;
@@ -46,11 +46,11 @@ import javax.annotation.Nonnull;
 import io.netty.buffer.Unpooled;
 
 @OwlhousemodmcModElements.ModElement.Tag
-public class SpellBookItemItem extends OwlhousemodmcModElements.ModElement {
-	@ObjectHolder("owlhousemodmc:spell_book_item")
+public class SpellbookItemItem extends OwlhousemodmcModElements.ModElement {
+	@ObjectHolder("owlhousemodmc:spellbook_item")
 	public static final Item block = null;
-	public SpellBookItemItem(OwlhousemodmcModElements instance) {
-		super(instance, 62);
+	public SpellbookItemItem(OwlhousemodmcModElements instance) {
+		super(instance, 67);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
@@ -58,7 +58,7 @@ public class SpellBookItemItem extends OwlhousemodmcModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	public void onItemDropped(ItemTossEvent event) {
 		if (event.getEntityItem().getItem().getItem() == block) {
-			if (Minecraft.getInstance().currentScreen instanceof SpellBookGuiGuiWindow) {
+			if (Minecraft.getInstance().currentScreen instanceof SpellbookGuiGuiWindow) {
 				Minecraft.getInstance().player.closeScreen();
 			}
 		}
@@ -71,7 +71,7 @@ public class SpellBookItemItem extends OwlhousemodmcModElements.ModElement {
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
-			setRegistryName("spell_book_item");
+			setRegistryName("spellbook_item");
 		}
 
 		@Override
@@ -100,7 +100,7 @@ public class SpellBookItemItem extends OwlhousemodmcModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Spell Book Item");
+						return new StringTextComponent("Spellbook Item");
 					}
 
 					@Override
@@ -108,7 +108,7 @@ public class SpellBookItemItem extends OwlhousemodmcModElements.ModElement {
 						PacketBuffer packetBuffer = new PacketBuffer(Unpooled.buffer());
 						packetBuffer.writeBlockPos(new BlockPos(x, y, z));
 						packetBuffer.writeByte(hand == Hand.MAIN_HAND ? 0 : 1);
-						return new SpellBookGuiGui.GuiContainerMod(id, inventory, packetBuffer);
+						return new SpellbookGuiGui.GuiContainerMod(id, inventory, packetBuffer);
 					}
 				}, buf -> {
 					buf.writeBlockPos(new BlockPos(x, y, z));

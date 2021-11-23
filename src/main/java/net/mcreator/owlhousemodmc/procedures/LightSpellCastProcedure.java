@@ -7,7 +7,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
-import net.mcreator.owlhousemodmc.block.LightBlockBlock;
+import net.mcreator.owlhousemodmc.block.LightGlyphBlockBlock;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
@@ -62,34 +62,35 @@ public class LightSpellCastProcedure {
 					RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ());
 			if ((((world.getBlockState(new BlockPos((int) xPos, (int) yPos, (int) zPos))).getBlock() == Blocks.AIR)
 					|| ((world.getBlockState(new BlockPos((int) xPos, (int) yPos, (int) zPos))).getBlock() == Blocks.CAVE_AIR))) {
-				world.setBlockState(new BlockPos((int) xPos, (int) yPos, (int) zPos), LightBlockBlock.block.getDefaultState(), 3);
+				world.setBlockState(new BlockPos((int) xPos, (int) yPos, (int) zPos), LightGlyphBlockBlock.block.getDefaultState(), 3);
 			} else {
 				if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 						entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 						RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.UP)) {
-					world.setBlockState(new BlockPos((int) xPos, (int) (yPos + 1), (int) zPos), LightBlockBlock.block.getDefaultState(), 3);
+					world.setBlockState(new BlockPos((int) xPos, (int) (yPos + 1), (int) zPos), LightGlyphBlockBlock.block.getDefaultState(), 3);
 				} else {
 					if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 							entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 							RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.DOWN)) {
-						world.setBlockState(new BlockPos((int) xPos, (int) (yPos - 1), (int) zPos), LightBlockBlock.block.getDefaultState(), 3);
+						world.setBlockState(new BlockPos((int) xPos, (int) (yPos - 1), (int) zPos), LightGlyphBlockBlock.block.getDefaultState(), 3);
 					} else {
 						if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 								entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.NORTH)) {
-							world.setBlockState(new BlockPos((int) xPos, (int) yPos, (int) (zPos - 1)), LightBlockBlock.block.getDefaultState(), 3);
+							world.setBlockState(new BlockPos((int) xPos, (int) yPos, (int) (zPos - 1)), LightGlyphBlockBlock.block.getDefaultState(),
+									3);
 						} else {
 							if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 									entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 									RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.SOUTH)) {
-								world.setBlockState(new BlockPos((int) xPos, (int) yPos, (int) (zPos + 1)), LightBlockBlock.block.getDefaultState(),
-										3);
+								world.setBlockState(new BlockPos((int) xPos, (int) yPos, (int) (zPos + 1)),
+										LightGlyphBlockBlock.block.getDefaultState(), 3);
 							} else {
 								if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 										entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
 										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.WEST)) {
 									world.setBlockState(new BlockPos((int) (xPos + 1), (int) yPos, (int) zPos),
-											LightBlockBlock.block.getDefaultState(), 3);
+											LightGlyphBlockBlock.block.getDefaultState(), 3);
 								} else {
 									if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 											entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5,
@@ -97,7 +98,7 @@ public class LightSpellCastProcedure {
 											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
 											.getFace()) == Direction.EAST)) {
 										world.setBlockState(new BlockPos((int) (xPos - 1), (int) yPos, (int) zPos),
-												LightBlockBlock.block.getDefaultState(), 3);
+												LightGlyphBlockBlock.block.getDefaultState(), 3);
 									}
 								}
 							}

@@ -9,31 +9,31 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 import java.util.HashMap;
 
-public class PrimarySpellOnKeyPressedProcedure {
+public class SecondarySpellOnKeyPressedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure PrimarySpellOnKeyPressed!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure SecondarySpellOnKeyPressed!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency x for procedure PrimarySpellOnKeyPressed!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency x for procedure SecondarySpellOnKeyPressed!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency y for procedure PrimarySpellOnKeyPressed!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency y for procedure SecondarySpellOnKeyPressed!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure PrimarySpellOnKeyPressed!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure SecondarySpellOnKeyPressed!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure PrimarySpellOnKeyPressed!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure SecondarySpellOnKeyPressed!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -42,7 +42,7 @@ public class PrimarySpellOnKeyPressedProcedure {
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell1)).equals("light"))) {
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2)).equals("fire"))) {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
@@ -50,11 +50,11 @@ public class PrimarySpellOnKeyPressedProcedure {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				LightSpellCastProcedure.executeProcedure($_dependencies);
+				FireGlyphRightClickedOnBlockProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell1)).equals("fire"))) {
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2)).equals("fire"))) {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
@@ -66,7 +66,7 @@ public class PrimarySpellOnKeyPressedProcedure {
 			}
 		}
 		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell1)).equals("growth"))) {
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2)).equals("growth"))) {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
@@ -78,7 +78,7 @@ public class PrimarySpellOnKeyPressedProcedure {
 			}
 		}
 		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell1)).equals("ice"))) {
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2)).equals("ice"))) {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);

@@ -1,0 +1,102 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 280,
+    "height": 220,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Primary Spell",
+          "name": "Spell1",
+          "x": 123,
+          "y": 26
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Secondary Spell",
+          "name": "Spell2",
+          "x": 123,
+          "y": 53
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Spell 3",
+          "name": "Spell3",
+          "x": 240,
+          "y": 26
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Spell 4",
+          "name": "Spell4",
+          "x": 240,
+          "y": 53
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Light",
+          "width": 54,
+          "height": 20,
+          "name": "Light",
+          "x": 87,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Ice",
+          "width": 54,
+          "height": 20,
+          "name": "Ice",
+          "x": 87,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Plant",
+          "width": 54,
+          "height": 20,
+          "name": "Plant",
+          "x": 87,
+          "y": 143
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Fire",
+          "width": 54,
+          "height": 20,
+          "name": "Fire",
+          "x": 87,
+          "y": 170
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

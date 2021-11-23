@@ -23,26 +23,26 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
-public class SpellBookGuiGuiWindow extends ContainerScreen<SpellBookGuiGui.GuiContainerMod> {
+public class SpellbookGuiGuiWindow extends ContainerScreen<SpellbookGuiGui.GuiContainerMod> {
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
-	private final static HashMap guistate = SpellBookGuiGui.guistate;
+	private final static HashMap guistate = SpellbookGuiGui.guistate;
 	CheckboxButton Spell1;
 	CheckboxButton Spell2;
 	CheckboxButton Spell3;
 	CheckboxButton Spell4;
-	public SpellBookGuiGuiWindow(SpellBookGuiGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
+	public SpellbookGuiGuiWindow(SpellbookGuiGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.xSize = 300;
-		this.ySize = 200;
+		this.xSize = 280;
+		this.ySize = 220;
 	}
-	private static final ResourceLocation texture = new ResourceLocation("owlhousemodmc:textures/spell_book_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("owlhousemodmc:textures/spellbook_gui.png");
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
@@ -78,8 +78,6 @@ public class SpellBookGuiGuiWindow extends ContainerScreen<SpellBookGuiGui.GuiCo
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Spell being set:", 104, 6, -12829636);
-		this.font.drawString(ms, "Set to:", 131, 51, -12829636);
 	}
 
 	@Override
@@ -92,22 +90,40 @@ public class SpellBookGuiGuiWindow extends ContainerScreen<SpellBookGuiGui.GuiCo
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		Spell1 = new CheckboxButton(this.guiLeft + 5, this.guiTop + 24, 150, 20, new StringTextComponent("Spell 1"), false);
-		SpellBookGuiGui.guistate.put("checkbox:Spell1", Spell1);
+		Spell1 = new CheckboxButton(this.guiLeft + 49, this.guiTop + 16, 150, 20, new StringTextComponent("Primary Spell"), false);
+		SpellbookGuiGui.guistate.put("checkbox:Spell1", Spell1);
 		this.addButton(Spell1);
-		Spell2 = new CheckboxButton(this.guiLeft + 68, this.guiTop + 24, 150, 20, new StringTextComponent("Spell 2"), false);
-		SpellBookGuiGui.guistate.put("checkbox:Spell2", Spell2);
+		Spell2 = new CheckboxButton(this.guiLeft + 49, this.guiTop + 43, 150, 20, new StringTextComponent("Secondary Spell"), false);
+		SpellbookGuiGui.guistate.put("checkbox:Spell2", Spell2);
 		this.addButton(Spell2);
-		Spell3 = new CheckboxButton(this.guiLeft + 140, this.guiTop + 24, 150, 20, new StringTextComponent("Spell 3"), false);
-		SpellBookGuiGui.guistate.put("checkbox:Spell3", Spell3);
+		Spell3 = new CheckboxButton(this.guiLeft + 166, this.guiTop + 16, 150, 20, new StringTextComponent("Spell 3"), false);
+		SpellbookGuiGui.guistate.put("checkbox:Spell3", Spell3);
 		this.addButton(Spell3);
-		Spell4 = new CheckboxButton(this.guiLeft + 212, this.guiTop + 24, 150, 20, new StringTextComponent("Spell 4"), false);
-		SpellBookGuiGui.guistate.put("checkbox:Spell4", Spell4);
+		Spell4 = new CheckboxButton(this.guiLeft + 166, this.guiTop + 43, 150, 20, new StringTextComponent("Spell 4"), false);
+		SpellbookGuiGui.guistate.put("checkbox:Spell4", Spell4);
 		this.addButton(Spell4);
-		this.addButton(new Button(this.guiLeft + 14, this.guiTop + 69, 50, 20, new StringTextComponent("Light"), e -> {
+		this.addButton(new Button(this.guiLeft + 13, this.guiTop + 79, 54, 20, new StringTextComponent("Light"), e -> {
 			if (true) {
-				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new SpellBookGuiGui.ButtonPressedMessage(0, x, y, z));
-				SpellBookGuiGui.handleButtonAction(entity, 0, x, y, z);
+				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new SpellbookGuiGui.ButtonPressedMessage(0, x, y, z));
+				SpellbookGuiGui.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 13, this.guiTop + 106, 54, 20, new StringTextComponent("Ice"), e -> {
+			if (true) {
+				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new SpellbookGuiGui.ButtonPressedMessage(1, x, y, z));
+				SpellbookGuiGui.handleButtonAction(entity, 1, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 13, this.guiTop + 133, 54, 20, new StringTextComponent("Plant"), e -> {
+			if (true) {
+				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new SpellbookGuiGui.ButtonPressedMessage(2, x, y, z));
+				SpellbookGuiGui.handleButtonAction(entity, 2, x, y, z);
+			}
+		}));
+		this.addButton(new Button(this.guiLeft + 13, this.guiTop + 160, 54, 20, new StringTextComponent("Fire"), e -> {
+			if (true) {
+				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new SpellbookGuiGui.ButtonPressedMessage(3, x, y, z));
+				SpellbookGuiGui.handleButtonAction(entity, 3, x, y, z);
 			}
 		}));
 	}

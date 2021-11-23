@@ -1,12 +1,8 @@
 {
-  "parent": "block/cube",
+  "parent": "owlhousemodmc:custom/lightspell",
   "textures": {
-    "down": "owlhousemodmc:blocks/emptyblocktexture",
-    "up": "owlhousemodmc:blocks/emptyblocktexture",
-    "north": "owlhousemodmc:blocks/emptyblocktexture",
-    "east": "owlhousemodmc:blocks/emptyblocktexture",
-    "south": "owlhousemodmc:blocks/emptyblocktexture",
-    "west": "owlhousemodmc:blocks/emptyblocktexture",
-    "particle": "owlhousemodmc:blocks/emptyblocktexture"
+    "all": "owlhousemodmc:blocks/lightblock",
+    "particle": "owlhousemodmc:blocks/lightblock",
+    "0": "owlhousemodmc:blocks/lightblock"
   }
 }

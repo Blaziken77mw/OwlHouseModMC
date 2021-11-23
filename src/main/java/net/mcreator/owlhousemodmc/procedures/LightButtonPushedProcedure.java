@@ -9,16 +9,16 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 import java.util.HashMap;
 
-public class LightButtonPressedProcedure {
+public class LightButtonPushedProcedure {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure LightButtonPressed!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure LightButtonPushed!");
 			return;
 		}
 		if (dependencies.get("guistate") == null) {
 			if (!dependencies.containsKey("guistate"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency guistate for procedure LightButtonPressed!");
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency guistate for procedure LightButtonPushed!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -52,7 +52,7 @@ public class LightButtonPressedProcedure {
 			{
 				String _setval = (String) "light";
 				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.Spell1 = _setval;
+					capability.Spell2 = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}

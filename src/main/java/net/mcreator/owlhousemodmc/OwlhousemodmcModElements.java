@@ -52,6 +52,8 @@ public class OwlhousemodmcModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("owlhousemodmc", "endingtheme")));
 		sounds.put(new ResourceLocation("owlhousemodmc", "gromfright"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("owlhousemodmc", "gromfright")));
+		sounds.put(new ResourceLocation("owlhousemodmc", "spellcast"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("owlhousemodmc", "spellcast")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("owlhousemodmc").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

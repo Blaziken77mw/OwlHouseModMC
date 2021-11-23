@@ -50,7 +50,8 @@ public class LightGlyphBlockBlock extends OwlhousemodmcModElements.ModElement {
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.AIR).sound(SoundType.GLASS).hardnessAndResistance(0f, 0f).setLightLevel(s -> 15)
-					.doesNotBlockMovement().notSolid().setOpaque((bs, br, bp) -> false));
+					.doesNotBlockMovement().notSolid().setNeedsPostProcessing((bs, br, bp) -> true).setEmmisiveRendering((bs, br, bp) -> true)
+					.setOpaque((bs, br, bp) -> false));
 			setRegistryName("light_glyph_block");
 		}
 

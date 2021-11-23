@@ -2,16 +2,16 @@
   "_fv": 24,
   "_type": "block",
   "definition": {
-    "texture": "emptyblocktexture",
+    "texture": "lightblock",
     "textureTop": "emptyblocktexture",
     "textureLeft": "emptyblocktexture",
     "textureFront": "emptyblocktexture",
     "textureRight": "emptyblocktexture",
     "textureBack": "emptyblocktexture",
-    "renderType": 10,
-    "customModelName": "Normal",
+    "renderType": 2,
+    "customModelName": "lightspell:default",
     "rotationMode": 0,
-    "emissiveRendering": false,
+    "emissiveRendering": true,
     "displayFluidOverlay": true,
     "itemTexture": "",
     "particleTexture": "",
@@ -58,6 +58,9 @@
     "tickRandomly": false,
     "isReplaceable": true,
     "canProvidePower": false,
+    "emittedRedstonePower": {
+      "fixedValue": 15.0
+    },
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
       "value": ""
@@ -75,6 +78,21 @@
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "GLASS"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
     },
     "luminance": 15,
     "unbreakable": false,

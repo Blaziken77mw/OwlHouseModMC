@@ -25,5 +25,15 @@
         "stream": true
       }
     ]
+  },
+  "spellcast": {
+    "category": "player",
+    "subtitle": "subtitles.spellcast",
+    "sounds": [
+      {
+        "name": "owlhousemodmc:spellcast",
+        "stream": false
+      }
+    ]
   }
 }

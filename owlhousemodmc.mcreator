@@ -1135,36 +1135,6 @@
       "path": "~/Spellcasting"
     },
     {
-      "name": "SpellCircleTestRightClickedInAir",
-      "type": "procedure",
-      "sortid": 54,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "spell_circle_test_right_clicked_in_air",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Spellcasting"
-    },
-    {
       "name": "Charge25Display",
       "type": "procedure",
       "sortid": 49,
@@ -1289,16 +1259,6 @@
       "path": "~/Spellcasting/Bile HUD/Display Conditions"
     },
     {
-      "name": "SpellCircleTest",
-      "type": "item",
-      "sortid": 54,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "spell_circle_test",
-      "path": "~/Spellcasting"
-    },
-    {
       "name": "BileRecharge",
       "type": "procedure",
       "sortid": 55,
@@ -1335,7 +1295,28 @@
       "ids": {},
       "registry_name": "primary_spell_on_key_pressed",
       "metadata": {
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       },
       "path": "~/Spellcasting/Keybinds"
     },
@@ -1406,6 +1387,348 @@
         ]
       },
       "path": "~/Spellcasting/Spells/Light Spell"
+    },
+    {
+      "name": "FireSpellCast",
+      "type": "procedure",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_spell_cast",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Spells/Fire Spell"
+    },
+    {
+      "name": "SecondarySpellOnKeyPressed",
+      "type": "procedure",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "secondary_spell_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Keybinds"
+    },
+    {
+      "name": "SecondarySpell",
+      "type": "keybind",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "secondary_spell",
+      "path": "~/Spellcasting/Keybinds"
+    },
+    {
+      "name": "GrowthSpellCast",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "growth_spell_cast",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Spells/Growth Spell"
+    },
+    {
+      "name": "Spell3OnKeyPressed",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spell_3_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Keybinds"
+    },
+    {
+      "name": "Spell3",
+      "type": "keybind",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spell_3",
+      "path": "~/Spellcasting/Keybinds"
+    },
+    {
+      "name": "Spell4OnKeyPressed",
+      "type": "procedure",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spell_4_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Keybinds"
+    },
+    {
+      "name": "Spell4",
+      "type": "keybind",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spell_4",
+      "path": "~/Spellcasting/Keybinds"
+    },
+    {
+      "name": "IceSpellCast",
+      "type": "procedure",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_spell_cast",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Spells/Ice Spell"
+    },
+    {
+      "name": "LightButtonPushed",
+      "type": "procedure",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "light_button_pushed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Spellbook/Gui Triggers"
+    },
+    {
+      "name": "GrowthButtonPushed",
+      "type": "procedure",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "growth_button_pushed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Spellbook/Gui Triggers"
+    },
+    {
+      "name": "FireButtonPushed",
+      "type": "procedure",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fire_button_pushed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Spellbook/Gui Triggers"
+    },
+    {
+      "name": "IceButtonPushed",
+      "type": "procedure",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_button_pushed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Spellcasting/Spellbook/Gui Triggers"
+    },
+    {
+      "name": "SpellbookGui",
+      "type": "gui",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spellbook_gui",
+      "path": "~/Spellcasting/Spellbook"
+    },
+    {
+      "name": "SpellbookItem",
+      "type": "item",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "spellbook_item",
+      "path": "~/Spellcasting/Spellbook"
     }
   ],
   "variable_elements": [
@@ -1482,6 +1805,14 @@
       ],
       "category": "music",
       "subtitle": ""
+    },
+    {
+      "name": "spellcast",
+      "files": [
+        "spellcast"
+      ],
+      "category": "player",
+      "subtitle": "Spell cast"
     }
   ],
   "language_map": {
@@ -1489,6 +1820,7 @@
       "itemGroup.tabowl_house_blocks": "Owl House Blocks",
       "item.owlhousemodmc.ice_glyph": "Ice Glyph",
       "item.owlhousemodmc.boiling_isles": "Boiling Isles Portal Igniter",
+      "key.category.owlspells": "Spellcasting",
       "itemGroup.tabowl_house_items": "Owl House Items",
       "block.owlhousemodmc.palistrom_leaves": "Palistrom Leaves",
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
@@ -1500,10 +1832,13 @@
       "block.owlhousemodmc.portal_door_top": "Portal Door Top",
       "key.owlhousemodmc.primary_spell": "Primary Spell",
       "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
-      "item.owlhousemodmc.spell_circle_test": "Spell Circle Test",
+      "key.owlhousemodmc.spell_3": "Spell 3",
+      "key.owlhousemodmc.spell_4": "Spell 4",
       "itemGroup.tabowl_house_staffs": "Owl House Staffs",
+      "key.owlhousemodmc.secondary_spell": "Secondary Spell",
       "item.owlhousemodmc.owl_beast_curse": "Owl Beast Curse",
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
+      "item.owlhousemodmc.spellbook_item": "Spellbook Item",
       "item.owlhousemodmc.light_glyph": "Light Glyph",
       "subtitles.rainesrhapsody": "",
       "itemGroup.tabowl_house_curses": "Owl House Curses",
@@ -1513,6 +1848,7 @@
       "subtitles.gromfright": "",
       "item.owlhousemodmc.notepad": "Notepad",
       "item.owlhousemodmc.elixir": "Elixir",
+      "subtitles.spellcast": "Spell cast",
       "block.owlhousemodmc.temp_ice": "Temp Ice",
       "biome.owlhousemodmc.palistrom_forest": "Palistrom Forest",
       "block.owlhousemodmc.portal_door_top_open": "Portal Door Top Open",
@@ -1601,6 +1937,27 @@
               {
                 "name": "Light Spell",
                 "children": []
+              },
+              {
+                "name": "Fire Spell",
+                "children": []
+              },
+              {
+                "name": "Growth Spell",
+                "children": []
+              },
+              {
+                "name": "Ice Spell",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Spellbook",
+            "children": [
+              {
+                "name": "Gui Triggers",
+                "children": []
               }
             ]
           }
@@ -1671,10 +2028,11 @@
   "workspaceSettings": {
     "modid": "owlhousemodmc",
     "modName": "OwlHouseModMC",
-    "version": "1.0.0",
-    "author": "maswi, MCreator",
+    "version": "0.3.0",
+    "description": "Use the magic of The Owl House in Minecraft!",
+    "author": "Blaziken77mw, ",
     "websiteURL": "https://mcreator.net",
-    "license": "Academic Free License v3.0",
+    "license": "GNU General Public License version 3 (GPLv3)",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
@@ -1682,6 +2040,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.16.5",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.owlhousemodmc",
     "lockBaseModFiles": false
   },

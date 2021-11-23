@@ -1,0 +1,12 @@
+{
+  "_fv": 24,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "V",
+    "keyBindingName": "Spell 4",
+    "keyBindingCategoryKey": "owlspells",
+    "onKeyPressed": {
+      "name": "Spell4OnKeyPressed"
+    }
+  }
+}

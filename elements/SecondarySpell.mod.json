@@ -1,0 +1,12 @@
+{
+  "_fv": 24,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "X",
+    "keyBindingName": "Secondary Spell",
+    "keyBindingCategoryKey": "owlspells",
+    "onKeyPressed": {
+      "name": "SecondarySpellOnKeyPressed"
+    }
+  }
+}

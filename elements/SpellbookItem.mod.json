@@ -3,14 +3,14 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "portalkey",
+    "texture": "spellbook",
     "customModelName": "Normal",
-    "name": "Spell Circle Test",
+    "name": "Spellbook Item",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:OwlHouseItems"
     },
-    "stackSize": 64,
+    "stackSize": 1,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
@@ -26,12 +26,9 @@
     "damageVsEntity": 0.0,
     "specialInfo": [],
     "hasGlow": false,
-    "guiBoundTo": "<NONE>",
-    "inventorySize": 9,
+    "guiBoundTo": "SpellbookGui",
+    "inventorySize": 0,
     "inventoryStackSize": 64,
-    "onRightClickedInAir": {
-      "name": "SpellCircleTestRightClickedInAir"
-    },
     "hasDispenseBehavior": false
   }
 }
