@@ -1,0 +1,29 @@
+{
+  "display": {
+    "background": "owlhousemodmc:textures/4glyphs.png",
+    "icon": {
+      "item": "owlhousemodmc:portal_key"
+    },
+    "title": {
+      "translate": "advancements.root_advancement.title"
+    },
+    "description": {
+      "translate": "advancements.root_advancement.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "root_advancement": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "owlhousemodmc:boiling_isles"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 1
+  }
+}

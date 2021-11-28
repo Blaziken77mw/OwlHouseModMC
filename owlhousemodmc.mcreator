@@ -1760,6 +1760,249 @@
       "ids": {},
       "registry_name": "witchifier",
       "path": "~/Spellcasting"
+    },
+    {
+      "name": "RootAdvancement",
+      "type": "achievement",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "root_advancement",
+      "path": "~/Advancements"
+    },
+    {
+      "name": "GetComboGlyphInfo",
+      "type": "procedure",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "get_combo_glyph_info",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Combo Glyph"
+    },
+    {
+      "name": "ComboGlyph",
+      "type": "item",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combo_glyph",
+      "path": "~/Items/Glyphs/Combo Glyph"
+    },
+    {
+      "name": "ComboGlyphInfoDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combo_glyph_info_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Combo Glyph"
+    },
+    {
+      "name": "ComboGlyphInfo",
+      "type": "overlay",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combo_glyph_info",
+      "path": "~/Items/Glyphs/Combo Glyph"
+    },
+    {
+      "name": "NotepadLight",
+      "type": "procedure",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad_light",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Notepad/Buttons"
+    },
+    {
+      "name": "NotepadIce",
+      "type": "procedure",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad_ice",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Notepad/Buttons"
+    },
+    {
+      "name": "NotepadPlant",
+      "type": "procedure",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad_plant",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Notepad/Buttons"
+    },
+    {
+      "name": "NotepadFire",
+      "type": "procedure",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad_fire",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Notepad/Buttons"
+    },
+    {
+      "name": "GlyphUnlockRightClickedInAir",
+      "type": "procedure",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "glyph_unlock_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Creative Items"
+    },
+    {
+      "name": "GlyphUnlock",
+      "type": "item",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "glyph_unlock",
+      "path": "~/Items/Creative Items"
+    },
+    {
+      "name": "NotepadShowLight",
+      "type": "procedure",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad_show_light",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Notepad/Visibility Conditions"
+    },
+    {
+      "name": "NotepadShowIce",
+      "type": "procedure",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad_show_ice",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Notepad/Visibility Conditions"
+    },
+    {
+      "name": "NotepadShowPlant",
+      "type": "procedure",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad_show_plant",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Notepad/Visibility Conditions"
+    },
+    {
+      "name": "NotepadShowFire",
+      "type": "procedure",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "notepad_show_fire",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/Notepad/Visibility Conditions"
     }
   ],
   "variable_elements": [
@@ -1810,6 +2053,54 @@
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
+    },
+    {
+      "name": "ComboGlyphMedium",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "\" \""
+    },
+    {
+      "name": "ComboGlyphPrimary",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "\" \""
+    },
+    {
+      "name": "ComboGlyphSecondary",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "\" \""
+    },
+    {
+      "name": "ComboGlyphModifier",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "\" \""
+    },
+    {
+      "name": "LightGlyphFound",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "IceGlyphFound",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "PlantGlyphFound",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "FireGlyphFound",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -1857,11 +2148,13 @@
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
       "biome.owlhousemodmc.forest_boiling_isles": "Forest Boiling Isles",
       "item.owlhousemodmc.owl_staff": "Owl Staff",
+      "advancements.root_advancement.descr": "Well, you\u0027ve managed to get yourself stuck in the Boiling Isles, a world full of strange and terrifying creatures",
       "block.owlhousemodmc.portal_door_bottom": "Portal Door",
       "block.owlhousemodmc.portal_door_bottom_open": "Portal Door Bottom Open",
       "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
       "block.owlhousemodmc.portal_door_top": "Portal Door Top",
       "key.owlhousemodmc.primary_spell": "Primary Spell",
+      "advancements.root_advancement.title": "A world of magic and demons",
       "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
       "key.owlhousemodmc.spell_3": "Spell 3",
       "key.owlhousemodmc.spell_4": "Spell 4",
@@ -1870,6 +2163,7 @@
       "item.owlhousemodmc.owl_beast_curse": "Owl Beast Curse",
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "item.owlhousemodmc.spellbook_item": "Spellbook Item",
+      "item.owlhousemodmc.glyph_unlock": "Glyph Unlock",
       "item.owlhousemodmc.light_glyph": "Light Glyph",
       "item.owlhousemodmc.witchifier": "Witchifier",
       "subtitles.rainesrhapsody": "",
@@ -1881,6 +2175,7 @@
       "item.owlhousemodmc.notepad": "Notepad",
       "item.owlhousemodmc.elixir": "Elixir",
       "subtitles.spellcast": "Spell cast",
+      "item.owlhousemodmc.combo_glyph": "Combo Glyph",
       "block.owlhousemodmc.temp_ice": "Temp Ice",
       "biome.owlhousemodmc.palistrom_forest": "Palistrom Forest",
       "block.owlhousemodmc.portal_door_top_open": "Portal Door Top Open",
@@ -1908,7 +2203,16 @@
           },
           {
             "name": "Notepad",
-            "children": []
+            "children": [
+              {
+                "name": "Buttons",
+                "children": []
+              },
+              {
+                "name": "Visibility Conditions",
+                "children": []
+              }
+            ]
           },
           {
             "name": "Glyphs",
@@ -1942,8 +2246,16 @@
                     ]
                   }
                 ]
+              },
+              {
+                "name": "Combo Glyph",
+                "children": []
               }
             ]
+          },
+          {
+            "name": "Creative Items",
+            "children": []
           }
         ]
       },
@@ -2054,6 +2366,10 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Advancements",
+        "children": []
       }
     ]
   },

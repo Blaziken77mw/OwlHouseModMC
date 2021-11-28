@@ -1,0 +1,73 @@
+{
+  "_fv": 24,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Medium: <VAR:ComboGlyphMedium>",
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "name": "Medium: <VAR:ComboGlyphMedium>",
+          "x": 312,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Primary: <VAR:ComboGlyphPrimary>",
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "name": "Primary: <VAR:ComboGlyphPrimary>",
+          "x": 312,
+          "y": 170
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Secondary: <VAR:ComboGlyphSecondary>",
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "name": "Secondary: <VAR:ComboGlyphSecondary>",
+          "x": 312,
+          "y": 179
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Modifier: <VAR:ComboGlyphModifier>",
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "name": "Modifier: <VAR:ComboGlyphModifier>",
+          "x": 312,
+          "y": 188
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "ComboGlyphInfoDisplayOverlayIngame"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

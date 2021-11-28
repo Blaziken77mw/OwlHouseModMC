@@ -14,12 +14,18 @@ import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.owlhousemodmc.procedures.NotepadShowPlantProcedure;
+import net.mcreator.owlhousemodmc.procedures.NotepadShowLightProcedure;
+import net.mcreator.owlhousemodmc.procedures.NotepadShowIceProcedure;
+import net.mcreator.owlhousemodmc.procedures.NotepadShowFireProcedure;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.HashMap;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
+
+import com.google.common.collect.ImmutableMap;
 
 @OnlyIn(Dist.CLIENT)
 public class NotepadGuiGuiWindow extends ContainerScreen<NotepadGuiGui.GuiContainerMod> {
@@ -55,13 +61,13 @@ public class NotepadGuiGuiWindow extends ContainerScreen<NotepadGuiGui.GuiContai
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/lightglyph.png"));
-		this.blit(ms, this.guiLeft + 20, this.guiTop + 29, 0, 0, 33, 33, 33, 33);
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/fireglyph.png"));
-		this.blit(ms, this.guiLeft + 196, this.guiTop + 29, 0, 0, 33, 33, 33, 33);
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/plantglyph.png"));
-		this.blit(ms, this.guiLeft + 134, this.guiTop + 29, 0, 0, 33, 33, 33, 33);
+		this.blit(ms, this.guiLeft + 25, this.guiTop + 25, 0, 0, 33, 33, 33, 33);
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/iceglyph.png"));
-		this.blit(ms, this.guiLeft + 80, this.guiTop + 29, 0, 0, 33, 33, 33, 33);
+		this.blit(ms, this.guiLeft + 79, this.guiTop + 25, 0, 0, 33, 33, 33, 33);
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/plantglyph.png"));
+		this.blit(ms, this.guiLeft + 133, this.guiTop + 25, 0, 0, 33, 33, 33, 33);
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/fireglyph.png"));
+		this.blit(ms, this.guiLeft + 187, this.guiTop + 25, 0, 0, 33, 33, 33, 33);
 		RenderSystem.disableBlend();
 	}
 
@@ -93,29 +99,53 @@ public class NotepadGuiGuiWindow extends ContainerScreen<NotepadGuiGui.GuiContai
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		this.addButton(new Button(this.guiLeft + 11, this.guiTop + 67, 50, 20, new StringTextComponent("Light"), e -> {
-			if (true) {
+		this.addButton(new Button(this.guiLeft + 16, this.guiTop + 70, 45, 20, new StringTextComponent("Light"), e -> {
+			if (NotepadShowLightProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
 				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new NotepadGuiGui.ButtonPressedMessage(0, x, y, z));
 				NotepadGuiGui.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
-		this.addButton(new Button(this.guiLeft + 76, this.guiTop + 67, 40, 20, new StringTextComponent("Ice"), e -> {
-			if (true) {
+		}) {
+			@Override
+			public void render(MatrixStack ms, int gx, int gy, float ticks) {
+				if (NotepadShowLightProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+					super.render(ms, gx, gy, ticks);
+			}
+		});
+		this.addButton(new Button(this.guiLeft + 70, this.guiTop + 70, 45, 20, new StringTextComponent("Ice"), e -> {
+			if (NotepadShowIceProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
 				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new NotepadGuiGui.ButtonPressedMessage(1, x, y, z));
 				NotepadGuiGui.handleButtonAction(entity, 1, x, y, z);
 			}
-		}));
-		this.addButton(new Button(this.guiLeft + 125, this.guiTop + 67, 50, 20, new StringTextComponent("Plant"), e -> {
-			if (true) {
+		}) {
+			@Override
+			public void render(MatrixStack ms, int gx, int gy, float ticks) {
+				if (NotepadShowIceProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+					super.render(ms, gx, gy, ticks);
+			}
+		});
+		this.addButton(new Button(this.guiLeft + 124, this.guiTop + 70, 45, 20, new StringTextComponent("Plant"), e -> {
+			if (NotepadShowPlantProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
 				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new NotepadGuiGui.ButtonPressedMessage(2, x, y, z));
 				NotepadGuiGui.handleButtonAction(entity, 2, x, y, z);
 			}
-		}));
-		this.addButton(new Button(this.guiLeft + 189, this.guiTop + 67, 45, 20, new StringTextComponent("Fire"), e -> {
-			if (true) {
+		}) {
+			@Override
+			public void render(MatrixStack ms, int gx, int gy, float ticks) {
+				if (NotepadShowPlantProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+					super.render(ms, gx, gy, ticks);
+			}
+		});
+		this.addButton(new Button(this.guiLeft + 178, this.guiTop + 70, 45, 20, new StringTextComponent("Fire"), e -> {
+			if (NotepadShowFireProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
 				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new NotepadGuiGui.ButtonPressedMessage(3, x, y, z));
 				NotepadGuiGui.handleButtonAction(entity, 3, x, y, z);
 			}
-		}));
+		}) {
+			@Override
+			public void render(MatrixStack ms, int gx, int gy, float ticks) {
+				if (NotepadShowFireProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+					super.render(ms, gx, gy, ticks);
+			}
+		});
 	}
 }

@@ -75,6 +75,14 @@ public class OwlhousemodmcModVariables {
 			nbt.putString("Spell2", instance.Spell2);
 			nbt.putString("Spell3", instance.Spell3);
 			nbt.putString("Spell4", instance.Spell4);
+			nbt.putString("ComboGlyphMedium", instance.ComboGlyphMedium);
+			nbt.putString("ComboGlyphPrimary", instance.ComboGlyphPrimary);
+			nbt.putString("ComboGlyphSecondary", instance.ComboGlyphSecondary);
+			nbt.putString("ComboGlyphModifier", instance.ComboGlyphModifier);
+			nbt.putBoolean("LightGlyphFound", instance.LightGlyphFound);
+			nbt.putBoolean("IceGlyphFound", instance.IceGlyphFound);
+			nbt.putBoolean("PlantGlyphFound", instance.PlantGlyphFound);
+			nbt.putBoolean("FireGlyphFound", instance.FireGlyphFound);
 			return nbt;
 		}
 
@@ -89,6 +97,14 @@ public class OwlhousemodmcModVariables {
 			instance.Spell2 = nbt.getString("Spell2");
 			instance.Spell3 = nbt.getString("Spell3");
 			instance.Spell4 = nbt.getString("Spell4");
+			instance.ComboGlyphMedium = nbt.getString("ComboGlyphMedium");
+			instance.ComboGlyphPrimary = nbt.getString("ComboGlyphPrimary");
+			instance.ComboGlyphSecondary = nbt.getString("ComboGlyphSecondary");
+			instance.ComboGlyphModifier = nbt.getString("ComboGlyphModifier");
+			instance.LightGlyphFound = nbt.getBoolean("LightGlyphFound");
+			instance.IceGlyphFound = nbt.getBoolean("IceGlyphFound");
+			instance.PlantGlyphFound = nbt.getBoolean("PlantGlyphFound");
+			instance.FireGlyphFound = nbt.getBoolean("FireGlyphFound");
 		}
 	}
 
@@ -101,6 +117,14 @@ public class OwlhousemodmcModVariables {
 		public String Spell2 = "\"\"";
 		public String Spell3 = "\"\"";
 		public String Spell4 = "\"\"";
+		public String ComboGlyphMedium = "\" \"";
+		public String ComboGlyphPrimary = "\" \"";
+		public String ComboGlyphSecondary = "\" \"";
+		public String ComboGlyphModifier = "\" \"";
+		public boolean LightGlyphFound = false;
+		public boolean IceGlyphFound = false;
+		public boolean PlantGlyphFound = false;
+		public boolean FireGlyphFound = false;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				OwlhousemodmcMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -139,9 +163,17 @@ public class OwlhousemodmcModVariables {
 		clone.Spell2 = original.Spell2;
 		clone.Spell3 = original.Spell3;
 		clone.Spell4 = original.Spell4;
+		clone.LightGlyphFound = original.LightGlyphFound;
+		clone.IceGlyphFound = original.IceGlyphFound;
+		clone.PlantGlyphFound = original.PlantGlyphFound;
+		clone.FireGlyphFound = original.FireGlyphFound;
 		if (!event.isWasDeath()) {
 			clone.GlyphCooldown = original.GlyphCooldown;
 			clone.SpellRecharging = original.SpellRecharging;
+			clone.ComboGlyphMedium = original.ComboGlyphMedium;
+			clone.ComboGlyphPrimary = original.ComboGlyphPrimary;
+			clone.ComboGlyphSecondary = original.ComboGlyphSecondary;
+			clone.ComboGlyphModifier = original.ComboGlyphModifier;
 		}
 	}
 	public static class PlayerVariablesSyncMessage {
@@ -173,6 +205,14 @@ public class OwlhousemodmcModVariables {
 					variables.Spell2 = message.data.Spell2;
 					variables.Spell3 = message.data.Spell3;
 					variables.Spell4 = message.data.Spell4;
+					variables.ComboGlyphMedium = message.data.ComboGlyphMedium;
+					variables.ComboGlyphPrimary = message.data.ComboGlyphPrimary;
+					variables.ComboGlyphSecondary = message.data.ComboGlyphSecondary;
+					variables.ComboGlyphModifier = message.data.ComboGlyphModifier;
+					variables.LightGlyphFound = message.data.LightGlyphFound;
+					variables.IceGlyphFound = message.data.IceGlyphFound;
+					variables.PlantGlyphFound = message.data.PlantGlyphFound;
+					variables.FireGlyphFound = message.data.FireGlyphFound;
 				}
 			});
 			context.setPacketHandled(true);

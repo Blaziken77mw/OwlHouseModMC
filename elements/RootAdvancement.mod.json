@@ -1,0 +1,25 @@
+{
+  "_fv": 24,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "A world of magic and demons",
+    "achievementDescription": "Well, you've managed to get yourself stuck in the Boiling Isles, a world full of strange and terrifying creatures",
+    "achievementIcon": {
+      "value": "CUSTOM:PortalKey"
+    },
+    "background": "4glyphs.png",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": true,
+    "rewardLoot": [],
+    "rewardRecipes": [],
+    "rewardFunction": "No function",
+    "rewardXP": 1,
+    "achievementType": "task",
+    "parent": {
+      "value": "No parent: root"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"dimension_entered\" x=\"118\" y=\"141\"><field name=\"dimension\">CUSTOM:BoilingIsles</field><next><block type=\"advancement_trigger\" deletable=\"false\"></block></next></block></xml>"
+  }
+}

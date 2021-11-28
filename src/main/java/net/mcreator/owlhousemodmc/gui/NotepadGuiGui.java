@@ -28,6 +28,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.gui.ScreenManager;
 
+import net.mcreator.owlhousemodmc.procedures.NotepadPlantProcedure;
+import net.mcreator.owlhousemodmc.procedures.NotepadLightProcedure;
+import net.mcreator.owlhousemodmc.procedures.NotepadIceProcedure;
+import net.mcreator.owlhousemodmc.procedures.NotepadFireProcedure;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
@@ -75,7 +79,7 @@ public class NotepadGuiGui extends OwlhousemodmcModElements.ModElement {
 			super(containerType, id);
 			this.entity = inv.player;
 			this.world = inv.player.world;
-			this.internal = new ItemStackHandler(5);
+			this.internal = new ItemStackHandler(2);
 			BlockPos pos = null;
 			if (extraData != null) {
 				pos = extraData.readBlockPos();
@@ -113,27 +117,9 @@ public class NotepadGuiGui extends OwlhousemodmcModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 116, 115) {
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 26, 107) {
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 28, 93) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
-				}
-			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 88, 93) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
-				}
-			}));
-			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 142, 93) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
-				}
-			}));
-			this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 203, 93) {
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 206, 107) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
@@ -164,18 +150,18 @@ public class NotepadGuiGui extends OwlhousemodmcModElements.ModElement {
 			if (slot != null && slot.getHasStack()) {
 				ItemStack itemstack1 = slot.getStack();
 				itemstack = itemstack1.copy();
-				if (index < 5) {
-					if (!this.mergeItemStack(itemstack1, 5, this.inventorySlots.size(), true)) {
+				if (index < 2) {
+					if (!this.mergeItemStack(itemstack1, 2, this.inventorySlots.size(), true)) {
 						return ItemStack.EMPTY;
 					}
 					slot.onSlotChange(itemstack1, itemstack);
-				} else if (!this.mergeItemStack(itemstack1, 0, 5, false)) {
-					if (index < 5 + 27) {
-						if (!this.mergeItemStack(itemstack1, 5 + 27, this.inventorySlots.size(), true)) {
+				} else if (!this.mergeItemStack(itemstack1, 0, 2, false)) {
+					if (index < 2 + 27) {
+						if (!this.mergeItemStack(itemstack1, 2 + 27, this.inventorySlots.size(), true)) {
 							return ItemStack.EMPTY;
 						}
 					} else {
-						if (!this.mergeItemStack(itemstack1, 5, 5 + 27, false)) {
+						if (!this.mergeItemStack(itemstack1, 2, 2 + 27, false)) {
 							return ItemStack.EMPTY;
 						}
 					}
@@ -386,6 +372,34 @@ public class NotepadGuiGui extends OwlhousemodmcModElements.ModElement {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
+		if (buttonID == 0) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				NotepadLightProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 1) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				NotepadIceProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 2) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				NotepadPlantProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 3) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				NotepadFireProcedure.executeProcedure($_dependencies);
+			}
+		}
 	}
 
 	private static void handleSlotAction(PlayerEntity entity, int slotID, int changeType, int meta, int x, int y, int z) {
