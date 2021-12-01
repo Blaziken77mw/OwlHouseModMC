@@ -2003,6 +2003,75 @@
         ]
       },
       "path": "~/Items/Notepad/Visibility Conditions"
+    },
+    {
+      "name": "Artificialmagic",
+      "type": "particle",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "artificialmagic"
+    },
+    {
+      "name": "MechanicalstaffRightClickedInAir",
+      "type": "procedure",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mechanicalstaff_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Mechanicalstaff",
+      "type": "item",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mechanicalstaff"
+    },
+    {
+      "name": "Boilingrain",
+      "type": "procedure",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "boilingrain",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [
@@ -2139,6 +2208,7 @@
   ],
   "language_map": {
     "en_us": {
+      "item.owlhousemodmc.mechanicalstaff": "Mechanical staff",
       "itemGroup.tabowl_house_blocks": "Owl House Blocks",
       "item.owlhousemodmc.ice_glyph": "Ice Glyph",
       "item.owlhousemodmc.boiling_isles": "Boiling Isles Portal Igniter",
