@@ -2,9 +2,9 @@
   "_fv": 24,
   "_type": "item",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "mechanical_staff",
-    "customModelName": "Normal",
+    "customModelName": "mechanical_staff:default",
     "name": "Mechanical staff",
     "rarity": "COMMON",
     "creativeTab": {

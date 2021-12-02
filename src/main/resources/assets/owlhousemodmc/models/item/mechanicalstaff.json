@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
+  "parent": "owlhousemodmc:custom/mechanical_staff",
   "textures": {
-    "layer0": "owlhousemodmc:items/mechanical_staff"
+    "0": "owlhousemodmc:blocks/mechanicalstafffffff",
+    "particle": "owlhousemodmc:items/mechanical_staff"
   }
 }
