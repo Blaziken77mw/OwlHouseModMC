@@ -7,7 +7,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 
-import net.mcreator.owlhousemodmc.item.PortalKeyItem;
+import net.mcreator.owlhousemodmc.item.MechanicalstaffItem;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
 @OwlhousemodmcModElements.ModElement.Tag
@@ -22,7 +22,7 @@ public class OwlHouseStaffsItemGroup extends OwlhousemodmcModElements.ModElement
 			@OnlyIn(Dist.CLIENT)
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(PortalKeyItem.block);
+				return new ItemStack(MechanicalstaffItem.block);
 			}
 
 			@OnlyIn(Dist.CLIENT)

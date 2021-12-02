@@ -2072,6 +2072,32 @@
         ]
       },
       "path": "~/Procedures"
+    },
+    {
+      "name": "Artificialportalkey",
+      "type": "item",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "artificialportalkey"
+    },
+    {
+      "name": "ArtificialportalkeyRightClickedInAir",
+      "type": "procedure",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "artificialportalkey_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -2239,6 +2265,7 @@
       "subtitles.rainesrhapsody": "",
       "itemGroup.tabowl_house_curses": "Owl House Curses",
       "item.owlhousemodmc.portal_key": "Portal Key",
+      "item.owlhousemodmc.artificialportalkey": "Artificial Portal Key",
       "subtitles.endingtheme": "",
       "biome.owlhousemodmc.plains_boiling_isles": "Plains Boiling Isles",
       "subtitles.gromfright": "",
