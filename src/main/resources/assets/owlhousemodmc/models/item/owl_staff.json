@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
+  "parent": "owlhousemodmc:custom/owlbertmodel",
   "textures": {
-    "layer0": "owlhousemodmc:items/owl_staff"
+    "0": "owlhousemodmc:blocks/edasstaff",
+    "particle": "owlhousemodmc:items/owl_staff"
   }
 }

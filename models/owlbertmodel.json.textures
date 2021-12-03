@@ -2,7 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "owlbertmodel"
+        "0": "edasstaff"
       },
       "name": "default"
     }
