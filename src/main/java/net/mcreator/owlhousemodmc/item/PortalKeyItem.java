@@ -35,7 +35,7 @@ public class PortalKeyItem extends OwlhousemodmcModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxDamage(15).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxDamage(1).rarity(Rarity.COMMON));
 			setRegistryName("portal_key");
 		}
 

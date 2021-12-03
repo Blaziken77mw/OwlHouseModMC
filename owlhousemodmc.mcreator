@@ -1009,7 +1009,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Procedures"
     },
     {
       "name": "OwlBeastCurse",
@@ -1036,7 +1037,8 @@
             "type": "entity"
           }
         ]
-      }
+      },
+      "path": "~/Procedures"
     },
     {
       "name": "OwlHouseStaffs",
@@ -1107,7 +1109,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Procedures"
     },
     {
       "name": "ChargeEmptyDisplay",
@@ -1749,7 +1752,8 @@
             "type": "entity"
           }
         ]
-      }
+      },
+      "path": "~/Procedures"
     },
     {
       "name": "Witchifier",
@@ -2011,7 +2015,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "artificialmagic"
+      "registry_name": "artificialmagic",
+      "path": "~/Procedures"
     },
     {
       "name": "MechanicalstaffRightClickedInAir",
@@ -2044,7 +2049,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Procedures"
     },
     {
       "name": "Mechanicalstaff",
@@ -2053,7 +2059,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "mechanicalstaff"
+      "registry_name": "mechanicalstaff",
+      "path": "~/Items/staffs"
     },
     {
       "name": "Boilingrain",
@@ -2080,7 +2087,8 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "artificialportalkey"
+      "registry_name": "artificialportalkey",
+      "path": "~/Items"
     },
     {
       "name": "ArtificialportalkeyRightClickedInAir",
@@ -2097,7 +2105,18 @@
             "type": "entity"
           }
         ]
-      }
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "Brokenportalkey",
+      "type": "item",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "brokenportalkey",
+      "path": "~/Dimension/Portal/Portal Key"
     }
   ],
   "variable_elements": [
@@ -2269,6 +2288,7 @@
       "subtitles.endingtheme": "",
       "biome.owlhousemodmc.plains_boiling_isles": "Plains Boiling Isles",
       "subtitles.gromfright": "",
+      "item.owlhousemodmc.brokenportalkey": "Broken Portal Key",
       "item.owlhousemodmc.notepad": "Notepad",
       "item.owlhousemodmc.elixir": "Elixir",
       "subtitles.spellcast": "Spell cast",

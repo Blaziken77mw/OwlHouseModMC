@@ -3,9 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "portalkey",
+    "texture": "broken_portal_key",
     "customModelName": "Normal",
-    "name": "Portal Key",
+    "name": "Broken Portal Key",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:OwlHouseItems"
@@ -14,7 +14,7 @@
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
-    "damageCount": 1,
+    "damageCount": 0,
     "recipeRemainder": {
       "value": ""
     },
@@ -29,9 +29,6 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "onRightClickedOnBlock": {
-      "name": "PortalKeyRightClickedOnBlock"
-    },
     "hasDispenseBehavior": false
   }
 }
