@@ -10,9 +10,11 @@ import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.owlhousemodmc.procedures.MechanicalstaffRightClickedInAirProcedure;
+import net.mcreator.owlhousemodmc.procedures.StaffItemRightClickedProcedure;
+import net.mcreator.owlhousemodmc.procedures.StaffItemInHandProcedure;
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseStaffsItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
@@ -62,13 +64,26 @@ public class MechanicalstaffItem extends OwlhousemodmcModElements.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
+				StaffItemRightClickedProcedure.executeProcedure($_dependencies);
+			}
+			return ar;
+		}
+
+		@Override
+		public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
+			super.inventoryTick(itemstack, world, entity, slot, selected);
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			if (selected) {
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				MechanicalstaffRightClickedInAirProcedure.executeProcedure($_dependencies);
+				StaffItemInHandProcedure.executeProcedure($_dependencies);
 			}
-			return ar;
 		}
 	}
 }

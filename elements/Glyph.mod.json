@@ -1,0 +1,29 @@
+{
+  "_fv": 24,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:FireGlyph"
+      },
+      {
+        "value": "CUSTOM:IceGlyph"
+      },
+      {
+        "value": "CUSTOM:LightGlyph"
+      },
+      {
+        "value": "CUSTOM:PlantGlyph"
+      },
+      {
+        "value": "CUSTOM:ComboGlyph"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "glyph",
+    "namespace": "mod"
+  }
+}

@@ -2117,6 +2117,78 @@
       "ids": {},
       "registry_name": "brokenportalkey",
       "path": "~/Dimension/Portal/Portal Key"
+    },
+    {
+      "name": "Glyph",
+      "type": "tag",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "glyph",
+      "path": "~/Tags"
+    },
+    {
+      "name": "Staff",
+      "type": "tag",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "staff",
+      "path": "~/Tags"
+    },
+    {
+      "name": "StaffItemInHand",
+      "type": "procedure",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "staff_item_in_hand",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/staffs"
+    },
+    {
+      "name": "StaffItemRightClicked",
+      "type": "procedure",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "staff_item_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Items/staffs"
     }
   ],
   "variable_elements": [
@@ -2486,6 +2558,10 @@
       },
       {
         "name": "Advancements",
+        "children": []
+      },
+      {
+        "name": "Tags",
         "children": []
       }
     ]
