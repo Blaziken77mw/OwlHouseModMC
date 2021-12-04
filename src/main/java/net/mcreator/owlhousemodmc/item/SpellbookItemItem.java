@@ -32,9 +32,11 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.owlhousemodmc.procedures.SpellbookItemItemInHandTickProcedure;
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseItemsItemGroup;
 import net.mcreator.owlhousemodmc.gui.SpellbookGuiGuiWindow;
 import net.mcreator.owlhousemodmc.gui.SpellbookGuiGui;
@@ -42,6 +44,9 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
+
+import java.util.Map;
+import java.util.HashMap;
 
 import io.netty.buffer.Unpooled;
 
@@ -100,7 +105,7 @@ public class SpellbookItemItem extends OwlhousemodmcModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Spellbook Item");
+						return new StringTextComponent("Spellbook");
 					}
 
 					@Override
@@ -116,6 +121,19 @@ public class SpellbookItemItem extends OwlhousemodmcModElements.ModElement {
 				});
 			}
 			return ar;
+		}
+
+		@Override
+		public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
+			super.inventoryTick(itemstack, world, entity, slot, selected);
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			if (selected) {
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				SpellbookItemItemInHandTickProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		@Override

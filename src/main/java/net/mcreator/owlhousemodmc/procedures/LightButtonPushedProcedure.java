@@ -1,9 +1,10 @@
 package net.mcreator.owlhousemodmc.procedures;
 
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.gui.widget.button.CheckboxButton;
 
-import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
 import java.util.Map;
@@ -32,13 +33,8 @@ public class LightButtonPushedProcedure {
 				return false;
 			}
 		}.getValue())) {
-			{
-				String _setval = (String) "light";
-				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.Spell1 = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell1",
+					"light");
 		}
 		if ((new Object() {
 			public boolean getValue() {
@@ -49,13 +45,8 @@ public class LightButtonPushedProcedure {
 				return false;
 			}
 		}.getValue())) {
-			{
-				String _setval = (String) "light";
-				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.Spell2 = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell2",
+					"light");
 		}
 		if ((new Object() {
 			public boolean getValue() {
@@ -66,13 +57,8 @@ public class LightButtonPushedProcedure {
 				return false;
 			}
 		}.getValue())) {
-			{
-				String _setval = (String) "light";
-				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.Spell3 = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell3",
+					"light");
 		}
 		if ((new Object() {
 			public boolean getValue() {
@@ -83,13 +69,8 @@ public class LightButtonPushedProcedure {
 				return false;
 			}
 		}.getValue())) {
-			{
-				String _setval = (String) "light";
-				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.Spell4 = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell4",
+					"light");
 		}
 	}
 }

@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "spellbook",
     "customModelName": "Normal",
-    "name": "Spellbook Item",
+    "name": "Spellbook",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:OwlHouseItems"
@@ -29,6 +29,9 @@
     "guiBoundTo": "SpellbookGui",
     "inventorySize": 0,
     "inventoryStackSize": 64,
+    "onItemInUseTick": {
+      "name": "SpellbookItemItemInHandTick"
+    },
     "hasDispenseBehavior": false
   }
 }
