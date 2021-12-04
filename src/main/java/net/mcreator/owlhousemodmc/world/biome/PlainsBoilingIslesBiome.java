@@ -47,8 +47,8 @@ public class PlainsBoilingIslesBiome extends OwlhousemodmcModElements.ModElement
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
 			if (biome == null) {
-				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(12638463).setWaterColor(4159204).setWaterFogColor(329011)
-						.withSkyColor(7972607).withFoliageColor(-3121559).withGrassColor(-2204837)
+				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-6750004).setWaterColor(4159204).setWaterFogColor(329011)
+						.withSkyColor(-6750004).withFoliageColor(-3121559).withGrassColor(-2204837)
 						.setMusic(new BackgroundMusicSelector((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 								.getValue(new ResourceLocation("owlhousemodmc:endingtheme")), 12000, 24000, true))
 						.build();

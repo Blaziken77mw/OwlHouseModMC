@@ -2475,6 +2475,79 @@
         ]
       },
       "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "Largebonewithkey",
+      "type": "structure",
+      "sortid": 99,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "largebonewithkey",
+      "path": "~/structures"
+    },
+    {
+      "name": "Largebone",
+      "type": "structure",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "largebone",
+      "path": "~/structures"
+    },
+    {
+      "name": "StrangeDiaryRightClickedInAir",
+      "type": "procedure",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "strange_diary_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Insidediary",
+      "type": "gui",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "insidediary",
+      "path": "~/guis"
+    },
+    {
+      "name": "StrangeDiary",
+      "type": "item",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "strange_diary",
+      "path": "~/Items"
     }
   ],
   "variable_elements": [
@@ -2684,11 +2757,11 @@
             "name": "Notepad",
             "children": [
               {
-                "name": "Buttons",
+                "name": "Visibility Conditions",
                 "children": []
               },
               {
-                "name": "Visibility Conditions",
+                "name": "Buttons",
                 "children": []
               }
             ]
@@ -2698,6 +2771,10 @@
             "children": [
               {
                 "name": "Plant Glyph",
+                "children": []
+              },
+              {
+                "name": "Combo Glyph",
                 "children": []
               },
               {
@@ -2725,10 +2802,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "name": "Combo Glyph",
-                "children": []
               }
             ]
           },
@@ -2737,6 +2810,10 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "guis",
+        "children": []
       },
       {
         "name": "Spellcasting",
@@ -2751,18 +2828,10 @@
             ]
           },
           {
-            "name": "Keybinds",
-            "children": []
-          },
-          {
             "name": "Spells",
             "children": [
               {
-                "name": "Light Spell",
-                "children": []
-              },
-              {
-                "name": "Fire Spell",
+                "name": "Ice Spell",
                 "children": []
               },
               {
@@ -2770,7 +2839,11 @@
                 "children": []
               },
               {
-                "name": "Ice Spell",
+                "name": "Light Spell",
+                "children": []
+              },
+              {
+                "name": "Fire Spell",
                 "children": []
               }
             ]
@@ -2783,6 +2856,10 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "Keybinds",
+            "children": []
           }
         ]
       },
@@ -2796,6 +2873,10 @@
       },
       {
         "name": "structures",
+        "children": []
+      },
+      {
+        "name": "Advancements",
         "children": []
       },
       {
@@ -2815,6 +2896,10 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Tags",
+        "children": []
       },
       {
         "name": "Dimension",
@@ -2846,14 +2931,6 @@
             ]
           }
         ]
-      },
-      {
-        "name": "Advancements",
-        "children": []
-      },
-      {
-        "name": "Tags",
-        "children": []
       }
     ]
   },

@@ -9,6 +9,10 @@
     "undergroundBlock": {
       "value": "CUSTOM:TitanStone"
     },
+    "airColor": {
+      "value": -6750004,
+      "falpha": 0.0
+    },
     "grassColor": {
       "value": -39373,
       "falpha": 0.0
@@ -47,7 +51,7 @@
     "parent": {
       "value": "No parent"
     },
-    "rainingPossibility": 0.5,
+    "rainingPossibility": 0.7000000000000001,
     "temperature": 0.5,
     "baseHeight": -0.4,
     "heightVariation": 0.0,

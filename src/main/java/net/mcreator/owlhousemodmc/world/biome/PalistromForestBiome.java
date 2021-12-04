@@ -48,8 +48,8 @@ public class PalistromForestBiome extends OwlhousemodmcModElements.ModElement {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
 			if (biome == null) {
-				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-3407821).setWaterColor(4159204).setWaterFogColor(329011)
-						.withSkyColor(-3407821).withFoliageColor(-2730667).withGrassColor(-2590857)
+				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-6750004).setWaterColor(4159204).setWaterFogColor(329011)
+						.withSkyColor(-6750004).withFoliageColor(-2730667).withGrassColor(-2590857)
 						.setMusic(new BackgroundMusicSelector((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 								.getValue(new ResourceLocation("owlhousemodmc:rainesrhapsody")), 12000, 24000, true))
 						.build();

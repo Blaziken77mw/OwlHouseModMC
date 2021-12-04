@@ -9,6 +9,10 @@
     "undergroundBlock": {
       "value": "Blocks.DIRT#0"
     },
+    "airColor": {
+      "value": -6750004,
+      "falpha": 0.0
+    },
     "grassColor": {
       "value": -2138787,
       "falpha": 0.0
@@ -39,13 +43,13 @@
     "parent": {
       "value": "No parent"
     },
-    "rainingPossibility": 0.5,
+    "rainingPossibility": 0.7000000000000001,
     "temperature": 0.5,
     "baseHeight": 0.1,
     "heightVariation": 0.3,
     "biomeType": "WARM",
     "spawnBiome": false,
-    "biomeWeight": 10,
+    "biomeWeight": 30,
     "biomeDictionaryTypes": [],
     "grassPerChunk": 0,
     "seagrassPerChunk": 0,
