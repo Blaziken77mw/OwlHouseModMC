@@ -1,32 +1,17 @@
 
 package net.mcreator.owlhousemodmc.gui;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
-import net.minecraft.client.Minecraft;
-
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
-
-import java.util.HashMap;
-
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
 public class InsidediaryGuiWindow extends ContainerScreen<InsidediaryGui.GuiContainerMod> {
+
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
+
 	private final static HashMap guistate = InsidediaryGui.guistate;
+
 	public InsidediaryGuiWindow(InsidediaryGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -37,12 +22,15 @@ public class InsidediaryGuiWindow extends ContainerScreen<InsidediaryGui.GuiCont
 		this.xSize = 176;
 		this.ySize = 166;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("owlhousemodmc:textures/insidediary.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
 		super.render(ms, mouseX, mouseY, partialTicks);
 		this.renderHoveredTooltip(ms, mouseX, mouseY);
+
 	}
 
 	@Override
@@ -50,13 +38,16 @@ public class InsidediaryGuiWindow extends ContainerScreen<InsidediaryGui.GuiCont
 		RenderSystem.color4f(1, 1, 1, 1);
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
+
 		Minecraft.getInstance().getTextureManager().bindTexture(texture);
 		int k = (this.width - this.xSize) / 2;
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
+
 		Minecraft.getInstance().getTextureManager()
 				.bindTexture(new ResourceLocation("owlhousemodmc:textures/static-assets-upload2874270387487832228.png"));
 		this.blit(ms, this.guiLeft + -17, this.guiTop + -2, 0, 0, 197, 170, 197, 170);
+
 		RenderSystem.disableBlend();
 	}
 
@@ -66,6 +57,7 @@ public class InsidediaryGuiWindow extends ContainerScreen<InsidediaryGui.GuiCont
 			this.minecraft.player.closeScreen();
 			return true;
 		}
+
 		return super.keyPressed(key, b, c);
 	}
 
@@ -88,6 +80,7 @@ public class InsidediaryGuiWindow extends ContainerScreen<InsidediaryGui.GuiCont
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
+
 		this.addButton(new Button(this.guiLeft + 106, this.guiTop + 146, 70, 20, new StringTextComponent("Next Page"), e -> {
 			if (true) {
 				OwlhousemodmcMod.PACKET_HANDLER.sendToServer(new InsidediaryGui.ButtonPressedMessage(0, x, y, z));
@@ -95,4 +88,5 @@ public class InsidediaryGuiWindow extends ContainerScreen<InsidediaryGui.GuiCont
 			}
 		}));
 	}
+
 }

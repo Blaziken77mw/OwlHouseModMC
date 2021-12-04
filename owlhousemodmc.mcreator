@@ -2537,8 +2537,7 @@
             "type": "world"
           }
         ]
-      },
-      "path": "~/Procedures"
+      }
     },
     {
       "name": "StrangeDiary",
@@ -2759,11 +2758,11 @@
             "name": "Notepad",
             "children": [
               {
-                "name": "Buttons",
+                "name": "Visibility Conditions",
                 "children": []
               },
               {
-                "name": "Visibility Conditions",
+                "name": "Buttons",
                 "children": []
               }
             ]
@@ -2773,6 +2772,10 @@
             "children": [
               {
                 "name": "Plant Glyph",
+                "children": []
+              },
+              {
+                "name": "Combo Glyph",
                 "children": []
               },
               {
@@ -2800,10 +2803,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "name": "Combo Glyph",
-                "children": []
               }
             ]
           },
@@ -2812,6 +2811,10 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "guis",
+        "children": []
       },
       {
         "name": "Spellcasting",
@@ -2826,18 +2829,10 @@
             ]
           },
           {
-            "name": "Keybinds",
-            "children": []
-          },
-          {
             "name": "Spells",
             "children": [
               {
-                "name": "Light Spell",
-                "children": []
-              },
-              {
-                "name": "Fire Spell",
+                "name": "Ice Spell",
                 "children": []
               },
               {
@@ -2845,7 +2840,11 @@
                 "children": []
               },
               {
-                "name": "Ice Spell",
+                "name": "Light Spell",
+                "children": []
+              },
+              {
+                "name": "Fire Spell",
                 "children": []
               }
             ]
@@ -2858,6 +2857,10 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "Keybinds",
+            "children": []
           }
         ]
       },
@@ -2871,6 +2874,10 @@
       },
       {
         "name": "structures",
+        "children": []
+      },
+      {
+        "name": "Advancements",
         "children": []
       },
       {
@@ -2890,6 +2897,10 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Tags",
+        "children": []
       },
       {
         "name": "Dimension",
@@ -2921,18 +2932,6 @@
             ]
           }
         ]
-      },
-      {
-        "name": "Advancements",
-        "children": []
-      },
-      {
-        "name": "Tags",
-        "children": []
-      },
-      {
-        "name": "guis",
-        "children": []
       }
     ]
   },
