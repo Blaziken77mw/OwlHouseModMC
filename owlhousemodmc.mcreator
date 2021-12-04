@@ -2537,7 +2537,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Procedures"
     },
     {
       "name": "StrangeDiary",
@@ -2689,9 +2690,9 @@
       "itemGroup.tabowl_house_items": "Owl House Items",
       "block.owlhousemodmc.palistrom_leaves": "Palistrom Leaves",
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
-      "item.owlhousemodmc.owl_staff": "Owl Staff",
-      "advancements.root_advancement.descr": "Well, you\u0027ve managed to get yourself stuck in the Boiling Isles, a world full of strange and terrifying creatures",
       "item.owlhousemodmc.strange_diary": "Strange Diary",
+      "advancements.root_advancement.descr": "Well, you\u0027ve managed to get yourself stuck in the Boiling Isles, a world full of strange and terrifying creatures",
+      "item.owlhousemodmc.owl_staff": "Owl Staff",
       "block.owlhousemodmc.portal_door_bottom": "Portal Door",
       "block.owlhousemodmc.portal_door_bottom_open": "Portal Door Bottom Open",
       "key.owlhousemodmc.primary_spell": "Primary Spell",
