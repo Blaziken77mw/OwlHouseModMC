@@ -1,0 +1,43 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "static-assets-upload2874270387487832228.png",
+          "use1Xscale": true,
+          "name": "static-assets-upload2874270387487832228.png",
+          "x": 108,
+          "y": 35
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Next Page",
+          "width": 70,
+          "height": 20,
+          "name": "Next Page",
+          "x": 232,
+          "y": 183
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -11,6 +11,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.item.ItemStack;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
@@ -18,6 +19,7 @@ import net.minecraft.block.BlockState;
 import net.mcreator.owlhousemodmc.block.PortalDoorBottomBlock;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
+import java.util.Random;
 import java.util.Map;
 
 public class PortalKeyRightClickedOnBlockProcedure {
@@ -68,6 +70,13 @@ public class PortalKeyRightClickedOnBlockProcedure {
 			(itemstack).getOrCreateTag().putDouble("surfaceX", x);
 			(itemstack).getOrCreateTag().putDouble("surfaceY", y);
 			(itemstack).getOrCreateTag().putDouble("surfaceZ", z);
+			{
+				ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+				if (_ist.attemptDamageItem((int) 0.2, new Random(), null)) {
+					_ist.shrink(1);
+					_ist.setDamage(0);
+				}
+			}
 		} else if (((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
 				new ResourceLocation("owlhousemodmc:boiling_isles"))))) {
 			world.setBlockState(
@@ -81,6 +90,13 @@ public class PortalKeyRightClickedOnBlockProcedure {
 			(itemstack).getOrCreateTag().putDouble("islesX", x);
 			(itemstack).getOrCreateTag().putDouble("islesY", y);
 			(itemstack).getOrCreateTag().putDouble("islesZ", z);
+			{
+				ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+				if (_ist.attemptDamageItem((int) 0.2, new Random(), null)) {
+					_ist.shrink(1);
+					_ist.setDamage(0);
+				}
+			}
 		}
 		if ((((entity.world.getDimensionKey()) == (World.OVERWORLD)) || ((entity.world.getDimensionKey()) == (RegistryKey
 				.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("owlhousemodmc:boiling_isles")))))) {
@@ -103,6 +119,13 @@ public class PortalKeyRightClickedOnBlockProcedure {
 					}
 				} catch (Exception e) {
 				}
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 0.2, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
 			} else {
 				if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 						entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
@@ -122,6 +145,13 @@ public class PortalKeyRightClickedOnBlockProcedure {
 									3);
 						}
 					} catch (Exception e) {
+					}
+					{
+						ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+						if (_ist.attemptDamageItem((int) 0.2, new Random(), null)) {
+							_ist.shrink(1);
+							_ist.setDamage(0);
+						}
 					}
 				} else {
 					if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
@@ -143,6 +173,13 @@ public class PortalKeyRightClickedOnBlockProcedure {
 							}
 						} catch (Exception e) {
 						}
+						{
+							ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+							if (_ist.attemptDamageItem((int) 0.2, new Random(), null)) {
+								_ist.shrink(1);
+								_ist.setDamage(0);
+							}
+						}
 					} else {
 						if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 								entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
@@ -163,6 +200,13 @@ public class PortalKeyRightClickedOnBlockProcedure {
 								}
 							} catch (Exception e) {
 							}
+							{
+								ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+								if (_ist.attemptDamageItem((int) 0.2, new Random(), null)) {
+									_ist.shrink(1);
+									_ist.setDamage(0);
+								}
+							}
 						} else {
 							if ((((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 									entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
@@ -182,6 +226,15 @@ public class PortalKeyRightClickedOnBlockProcedure {
 												3);
 									}
 								} catch (Exception e) {
+								}
+								{
+									ItemStack _ist = ((entity instanceof LivingEntity)
+											? ((LivingEntity) entity).getHeldItemMainhand()
+											: ItemStack.EMPTY);
+									if (_ist.attemptDamageItem((int) 0.2, new Random(), null)) {
+										_ist.shrink(1);
+										_ist.setDamage(0);
+									}
 								}
 							}
 						}

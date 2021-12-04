@@ -1,5 +1,5 @@
 {
-  "parent": "owlhousemodmc:custom/owlbertmodel",
+  "parent": "owlhousemodmc:custom/owlstaff",
   "textures": {
     "0": "owlhousemodmc:blocks/edasstaff",
     "particle": "owlhousemodmc:items/owl_staff"

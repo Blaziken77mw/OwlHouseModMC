@@ -2475,6 +2475,79 @@
         ]
       },
       "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "Largebonewithkey",
+      "type": "structure",
+      "sortid": 99,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "largebonewithkey",
+      "path": "~/structures"
+    },
+    {
+      "name": "Largebone",
+      "type": "structure",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "largebone",
+      "path": "~/structures"
+    },
+    {
+      "name": "Insidediary",
+      "type": "gui",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "insidediary",
+      "path": "~/guis"
+    },
+    {
+      "name": "StrangeDiaryRightClickedInAir",
+      "type": "procedure",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "strange_diary_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StrangeDiary",
+      "type": "item",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "strange_diary",
+      "path": "~/Items"
     }
   ],
   "variable_elements": [
@@ -2618,6 +2691,7 @@
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
       "item.owlhousemodmc.owl_staff": "Owl Staff",
       "advancements.root_advancement.descr": "Well, you\u0027ve managed to get yourself stuck in the Boiling Isles, a world full of strange and terrifying creatures",
+      "item.owlhousemodmc.strange_diary": "Strange Diary",
       "block.owlhousemodmc.portal_door_bottom": "Portal Door",
       "block.owlhousemodmc.portal_door_bottom_open": "Portal Door Bottom Open",
       "key.owlhousemodmc.primary_spell": "Primary Spell",
@@ -2853,6 +2927,10 @@
       },
       {
         "name": "Tags",
+        "children": []
+      },
+      {
+        "name": "guis",
         "children": []
       }
     ]

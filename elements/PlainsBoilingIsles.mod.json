@@ -9,6 +9,10 @@
     "undergroundBlock": {
       "value": "Blocks.DIRT#0"
     },
+    "airColor": {
+      "value": -6750004,
+      "falpha": 0.0
+    },
     "grassColor": {
       "value": -2204837,
       "falpha": 0.0
@@ -45,7 +49,7 @@
     "heightVariation": 0.2,
     "biomeType": "WARM",
     "spawnBiome": false,
-    "biomeWeight": 10,
+    "biomeWeight": 30,
     "biomeDictionaryTypes": [
       "PLAINS"
     ],

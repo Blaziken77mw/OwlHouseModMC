@@ -28,8 +28,8 @@ public class EclipseLakeBiome extends OwlhousemodmcModElements.ModElement {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
 			if (biome == null) {
-				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(12638463).setWaterColor(-16724788).setWaterFogColor(-16724737)
-						.withSkyColor(7972607).withFoliageColor(-26266).withGrassColor(-39373).build();
+				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-6750004).setWaterColor(-16724788).setWaterFogColor(-16724737)
+						.withSkyColor(-6750004).withFoliageColor(-26266).withGrassColor(-39373).build();
 				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder()
 						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(TitanStoneBlock.block.getDefaultState(),
 								TitanStoneBlock.block.getDefaultState(), TitanStoneBlock.block.getDefaultState())));
@@ -38,7 +38,7 @@ public class EclipseLakeBiome extends OwlhousemodmcModElements.ModElement {
 				DefaultBiomeFeatures.withFrozenTopLayer(biomeGenerationSettings);
 				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
 				biome = new Biome.Builder().precipitation(Biome.RainType.RAIN).category(Biome.Category.OCEAN).depth(-0.4f).scale(0f).temperature(0.5f)
-						.downfall(0.5f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
+						.downfall(0.7000000000000001f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
 						.withGenerationSettings(biomeGenerationSettings.build()).build();
 				event.getRegistry().register(biome.setRegistryName("owlhousemodmc:eclipse_lake"));
 			}

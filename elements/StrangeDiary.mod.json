@@ -2,13 +2,13 @@
   "_fv": 24,
   "_type": "item",
   "definition": {
-    "renderType": 1,
-    "texture": "owl_staff",
-    "customModelName": "owlstaff:default",
-    "name": "Owl Staff",
+    "renderType": 0,
+    "texture": "strange_diary",
+    "customModelName": "Normal",
+    "name": "Strange Diary",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "CUSTOM:OwlHouseStaffs"
+      "value": "CUSTOM:OwlHouseItems"
     },
     "stackSize": 1,
     "enchantability": 0,
@@ -28,12 +28,9 @@
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
-    "inventoryStackSize": 1,
+    "inventoryStackSize": 64,
     "onRightClickedInAir": {
-      "name": "StaffItemRightClicked"
-    },
-    "onItemInUseTick": {
-      "name": "StaffItemInHand"
+      "name": "StrangeDiaryRightClickedInAir"
     },
     "hasDispenseBehavior": false
   }
