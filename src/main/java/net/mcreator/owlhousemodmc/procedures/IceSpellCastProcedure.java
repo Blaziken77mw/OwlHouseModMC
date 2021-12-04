@@ -1,13 +1,11 @@
 package net.mcreator.owlhousemodmc.procedures;
 
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
-
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.RayTraceContext;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.entity.Entity;
+import net.minecraft.block.Blocks;
 
 import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
@@ -66,116 +64,42 @@ public class IceSpellCastProcedure {
 				$_dependencies.put("world", world);
 				SpellCastProcedure.executeProcedure($_dependencies);
 			}
-			if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-					entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-					RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.UP)) {
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("world", world);
-					$_dependencies.put("x",
-							(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-									entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-									RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()));
-					$_dependencies.put("y",
-							(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-									entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-									RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()));
-					$_dependencies.put("z",
-							(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-									entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-									RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-					BuildIceGlyphUpProcedure.executeProcedure($_dependencies);
-				}
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private IWorld world;
-					public void start(IWorld world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("world", world);
-							$_dependencies.put("x",
-									(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+			if ((!(((world
+					.getBlockState(
+							new BlockPos(
+									(int) (entity.world.rayTraceBlocks(
+											new RayTraceContext(entity.getEyePosition(1f),
+													entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
+															entity.getLook(1f).z * 7),
+													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
+											.getPos().getX()),
+									(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 											entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
 													entity.getLook(1f).z * 7),
-											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()));
-							$_dependencies.put("y",
-									((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
+									(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 											entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
 													entity.getLook(1f).z * 7),
-											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()) + 1));
-							$_dependencies.put("z",
-									(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()))))
+													.getBlock() == Blocks.AIR)
+					|| ((world
+							.getBlockState(new BlockPos(
+									(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 											entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
 													entity.getLook(1f).z * 7),
-											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-							BuildIceGlyphUpProcedure.executeProcedure($_dependencies);
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, (int) 10);
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private IWorld world;
-					public void start(IWorld world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("world", world);
-							$_dependencies.put("x",
-									(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
+									(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 											entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
 													entity.getLook(1f).z * 7),
-											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()));
-							$_dependencies.put("y",
-									((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
+									(int) (entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 											entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
 													entity.getLook(1f).z * 7),
-											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()) + 2));
-							$_dependencies.put("z",
-									(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-											entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-													entity.getLook(1f).z * 7),
-											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-							BuildIceGlyphUpProcedure.executeProcedure($_dependencies);
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, (int) 10);
-			} else {
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()))))
+													.getBlock() == Blocks.AIR)))) {
 				if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 						entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-						RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.DOWN)) {
+						RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.UP)) {
 					{
 						Map<String, Object> $_dependencies = new HashMap<>();
 						$_dependencies.put("world", world);
@@ -184,105 +108,19 @@ public class IceSpellCastProcedure {
 										entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
 										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()));
 						$_dependencies.put("y",
-								((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+								(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 										entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()) - 2));
+										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()));
 						$_dependencies.put("z",
 								(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 										entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
 										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-						BuildIceGlyphDownProcedure.executeProcedure($_dependencies);
+						IceGlyphUpFullProcedure.executeProcedure($_dependencies);
 					}
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private IWorld world;
-						public void start(IWorld world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
-						}
-
-						private void run() {
-							{
-								Map<String, Object> $_dependencies = new HashMap<>();
-								$_dependencies.put("world", world);
-								$_dependencies.put("x",
-										(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-												entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-														entity.getLook(1f).z * 7),
-												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()));
-								$_dependencies.put("y",
-										((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-												entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-														entity.getLook(1f).z * 7),
-												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()) - 3));
-								$_dependencies.put("z",
-										(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-												entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-														entity.getLook(1f).z * 7),
-												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-								BuildIceGlyphDownProcedure.executeProcedure($_dependencies);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
-						}
-					}.start(world, (int) 10);
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private IWorld world;
-						public void start(IWorld world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
-						}
-
-						private void run() {
-							{
-								Map<String, Object> $_dependencies = new HashMap<>();
-								$_dependencies.put("world", world);
-								$_dependencies.put("x",
-										(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-												entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-														entity.getLook(1f).z * 7),
-												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()));
-								$_dependencies.put("y",
-										((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-												entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-														entity.getLook(1f).z * 7),
-												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()) - 4));
-								$_dependencies.put("z",
-										(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-												entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-														entity.getLook(1f).z * 7),
-												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-								BuildIceGlyphDownProcedure.executeProcedure($_dependencies);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
-						}
-					}.start(world, (int) 10);
 				} else {
 					if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 							entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-							RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.NORTH)) {
+							RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.DOWN)) {
 						{
 							Map<String, Object> $_dependencies = new HashMap<>();
 							$_dependencies.put("world", world);
@@ -292,109 +130,21 @@ public class IceSpellCastProcedure {
 													entity.getLook(1f).z * 7),
 											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()));
 							$_dependencies.put("y",
-									(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+									((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 											entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
 													entity.getLook(1f).z * 7),
-											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()));
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()) - 2));
 							$_dependencies.put("z",
 									(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 											entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
 													entity.getLook(1f).z * 7),
 											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-							BuildIceGlyphNorthProcedure.executeProcedure($_dependencies);
+							IceGlyphDownFullProcedure.executeProcedure($_dependencies);
 						}
-						new Object() {
-							private int ticks = 0;
-							private float waitTicks;
-							private IWorld world;
-							public void start(IWorld world, int waitTicks) {
-								this.waitTicks = waitTicks;
-								MinecraftForge.EVENT_BUS.register(this);
-								this.world = world;
-							}
-
-							@SubscribeEvent
-							public void tick(TickEvent.ServerTickEvent event) {
-								if (event.phase == TickEvent.Phase.END) {
-									this.ticks += 1;
-									if (this.ticks >= this.waitTicks)
-										run();
-								}
-							}
-
-							private void run() {
-								{
-									Map<String, Object> $_dependencies = new HashMap<>();
-									$_dependencies.put("world", world);
-									$_dependencies.put("x",
-											(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-													entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-															entity.getLook(1f).z * 7),
-													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()));
-									$_dependencies.put("y",
-											(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-													entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-															entity.getLook(1f).z * 7),
-													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()));
-									$_dependencies.put("z",
-											((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-													entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-															entity.getLook(1f).z * 7),
-													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ())
-													- 1));
-									BuildIceGlyphNorthProcedure.executeProcedure($_dependencies);
-								}
-								MinecraftForge.EVENT_BUS.unregister(this);
-							}
-						}.start(world, (int) 10);
-						new Object() {
-							private int ticks = 0;
-							private float waitTicks;
-							private IWorld world;
-							public void start(IWorld world, int waitTicks) {
-								this.waitTicks = waitTicks;
-								MinecraftForge.EVENT_BUS.register(this);
-								this.world = world;
-							}
-
-							@SubscribeEvent
-							public void tick(TickEvent.ServerTickEvent event) {
-								if (event.phase == TickEvent.Phase.END) {
-									this.ticks += 1;
-									if (this.ticks >= this.waitTicks)
-										run();
-								}
-							}
-
-							private void run() {
-								{
-									Map<String, Object> $_dependencies = new HashMap<>();
-									$_dependencies.put("world", world);
-									$_dependencies.put("x",
-											(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-													entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-															entity.getLook(1f).z * 7),
-													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()));
-									$_dependencies.put("y",
-											(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-													entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-															entity.getLook(1f).z * 7),
-													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()));
-									$_dependencies.put("z",
-											((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-													entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-															entity.getLook(1f).z * 7),
-													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ())
-													- 2));
-									BuildIceGlyphNorthProcedure.executeProcedure($_dependencies);
-								}
-								MinecraftForge.EVENT_BUS.unregister(this);
-							}
-						}.start(world, (int) 10);
 					} else {
 						if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 								entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.SOUTH)) {
+								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.NORTH)) {
 							{
 								Map<String, Object> $_dependencies = new HashMap<>();
 								$_dependencies.put("world", world);
@@ -413,119 +163,14 @@ public class IceSpellCastProcedure {
 												entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
 														entity.getLook(1f).z * 7),
 												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-								BuildIceGlyphSouthProcedure.executeProcedure($_dependencies);
+								IceGlyphNorthFullProcedure.executeProcedure($_dependencies);
 							}
-							new Object() {
-								private int ticks = 0;
-								private float waitTicks;
-								private IWorld world;
-								public void start(IWorld world, int waitTicks) {
-									this.waitTicks = waitTicks;
-									MinecraftForge.EVENT_BUS.register(this);
-									this.world = world;
-								}
-
-								@SubscribeEvent
-								public void tick(TickEvent.ServerTickEvent event) {
-									if (event.phase == TickEvent.Phase.END) {
-										this.ticks += 1;
-										if (this.ticks >= this.waitTicks)
-											run();
-									}
-								}
-
-								private void run() {
-									{
-										Map<String, Object> $_dependencies = new HashMap<>();
-										$_dependencies.put("world", world);
-										$_dependencies
-												.put("x",
-														(entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getX()));
-										$_dependencies
-												.put("y",
-														(entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getY()));
-										$_dependencies
-												.put("z",
-														((entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getZ()) + 1));
-										BuildIceGlyphSouthProcedure.executeProcedure($_dependencies);
-									}
-									MinecraftForge.EVENT_BUS.unregister(this);
-								}
-							}.start(world, (int) 10);
-							new Object() {
-								private int ticks = 0;
-								private float waitTicks;
-								private IWorld world;
-								public void start(IWorld world, int waitTicks) {
-									this.waitTicks = waitTicks;
-									MinecraftForge.EVENT_BUS.register(this);
-									this.world = world;
-								}
-
-								@SubscribeEvent
-								public void tick(TickEvent.ServerTickEvent event) {
-									if (event.phase == TickEvent.Phase.END) {
-										this.ticks += 1;
-										if (this.ticks >= this.waitTicks)
-											run();
-									}
-								}
-
-								private void run() {
-									{
-										Map<String, Object> $_dependencies = new HashMap<>();
-										$_dependencies.put("world", world);
-										$_dependencies
-												.put("x",
-														(entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getX()));
-										$_dependencies
-												.put("y",
-														(entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getY()));
-										$_dependencies
-												.put("z",
-														((entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getZ()) + 2));
-										BuildIceGlyphSouthProcedure.executeProcedure($_dependencies);
-									}
-									MinecraftForge.EVENT_BUS.unregister(this);
-								}
-							}.start(world, (int) 10);
 						} else {
 							if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 									entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-									RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.WEST)) {
+									RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.SOUTH)) {
 								{
 									Map<String, Object> $_dependencies = new HashMap<>();
-									$_dependencies.put("entity", entity);
 									$_dependencies.put("world", world);
 									$_dependencies.put("x",
 											(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
@@ -542,104 +187,12 @@ public class IceSpellCastProcedure {
 													entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
 															entity.getLook(1f).z * 7),
 													RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-									FireGlyphRightClickedOnBlockProcedure.executeProcedure($_dependencies);
+									IceGlyphSouthFullProcedure.executeProcedure($_dependencies);
 								}
-								new Object() {
-									private int ticks = 0;
-									private float waitTicks;
-									private IWorld world;
-									public void start(IWorld world, int waitTicks) {
-										this.waitTicks = waitTicks;
-										MinecraftForge.EVENT_BUS.register(this);
-										this.world = world;
-									}
-
-									@SubscribeEvent
-									public void tick(TickEvent.ServerTickEvent event) {
-										if (event.phase == TickEvent.Phase.END) {
-											this.ticks += 1;
-											if (this.ticks >= this.waitTicks)
-												run();
-										}
-									}
-
-									private void run() {
-										{
-											Map<String, Object> $_dependencies = new HashMap<>();
-											$_dependencies.put("world", world);
-											$_dependencies.put("x",
-													((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-															entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-																	entity.getLook(1f).z * 7),
-															RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos()
-															.getX()) - 1));
-											$_dependencies.put("y",
-													(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-															entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-																	entity.getLook(1f).z * 7),
-															RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos()
-															.getY()));
-											$_dependencies.put("z",
-													(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-															entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-																	entity.getLook(1f).z * 7),
-															RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos()
-															.getZ()));
-											BuildIceGlyphWestProcedure.executeProcedure($_dependencies);
-										}
-										MinecraftForge.EVENT_BUS.unregister(this);
-									}
-								}.start(world, (int) 10);
-								new Object() {
-									private int ticks = 0;
-									private float waitTicks;
-									private IWorld world;
-									public void start(IWorld world, int waitTicks) {
-										this.waitTicks = waitTicks;
-										MinecraftForge.EVENT_BUS.register(this);
-										this.world = world;
-									}
-
-									@SubscribeEvent
-									public void tick(TickEvent.ServerTickEvent event) {
-										if (event.phase == TickEvent.Phase.END) {
-											this.ticks += 1;
-											if (this.ticks >= this.waitTicks)
-												run();
-										}
-									}
-
-									private void run() {
-										{
-											Map<String, Object> $_dependencies = new HashMap<>();
-											$_dependencies.put("world", world);
-											$_dependencies.put("x",
-													((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-															entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-																	entity.getLook(1f).z * 7),
-															RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos()
-															.getX()) - 2));
-											$_dependencies.put("y",
-													(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-															entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-																	entity.getLook(1f).z * 7),
-															RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos()
-															.getY()));
-											$_dependencies.put("z",
-													(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-															entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
-																	entity.getLook(1f).z * 7),
-															RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos()
-															.getZ()));
-											BuildIceGlyphWestProcedure.executeProcedure($_dependencies);
-										}
-										MinecraftForge.EVENT_BUS.unregister(this);
-									}
-								}.start(world, (int) 10);
 							} else {
 								if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 										entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.EAST)) {
+										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.WEST)) {
 									{
 										Map<String, Object> $_dependencies = new HashMap<>();
 										$_dependencies.put("world", world);
@@ -667,106 +220,38 @@ public class IceSpellCastProcedure {
 																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
 																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
 																.getPos().getZ()));
-										BuildIceGlyphEastProcedure.executeProcedure($_dependencies);
+										IceGlyphWestFullProcedure.executeProcedure($_dependencies);
 									}
-									new Object() {
-										private int ticks = 0;
-										private float waitTicks;
-										private IWorld world;
-										public void start(IWorld world, int waitTicks) {
-											this.waitTicks = waitTicks;
-											MinecraftForge.EVENT_BUS.register(this);
-											this.world = world;
+								} else {
+									if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+											entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
+													entity.getLook(1f).z * 7),
+											RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
+											.getFace()) == Direction.EAST)) {
+										{
+											Map<String, Object> $_dependencies = new HashMap<>();
+											$_dependencies.put("world", world);
+											$_dependencies.put("x",
+													(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+															entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
+																	entity.getLook(1f).z * 7),
+															RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos()
+															.getX()));
+											$_dependencies.put("y",
+													(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+															entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
+																	entity.getLook(1f).z * 7),
+															RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos()
+															.getY()));
+											$_dependencies.put("z",
+													(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+															entity.getEyePosition(1f).add(entity.getLook(1f).x * 7, entity.getLook(1f).y * 7,
+																	entity.getLook(1f).z * 7),
+															RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos()
+															.getZ()));
+											IceGlyphEastFullProcedure.executeProcedure($_dependencies);
 										}
-
-										@SubscribeEvent
-										public void tick(TickEvent.ServerTickEvent event) {
-											if (event.phase == TickEvent.Phase.END) {
-												this.ticks += 1;
-												if (this.ticks >= this.waitTicks)
-													run();
-											}
-										}
-
-										private void run() {
-											{
-												Map<String, Object> $_dependencies = new HashMap<>();
-												$_dependencies.put("world", world);
-												$_dependencies.put("x",
-														((entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getX()) + 1));
-												$_dependencies.put("y",
-														(entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getY()));
-												$_dependencies.put("z",
-														(entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getZ()));
-												BuildIceGlyphEastProcedure.executeProcedure($_dependencies);
-											}
-											MinecraftForge.EVENT_BUS.unregister(this);
-										}
-									}.start(world, (int) 10);
-									new Object() {
-										private int ticks = 0;
-										private float waitTicks;
-										private IWorld world;
-										public void start(IWorld world, int waitTicks) {
-											this.waitTicks = waitTicks;
-											MinecraftForge.EVENT_BUS.register(this);
-											this.world = world;
-										}
-
-										@SubscribeEvent
-										public void tick(TickEvent.ServerTickEvent event) {
-											if (event.phase == TickEvent.Phase.END) {
-												this.ticks += 1;
-												if (this.ticks >= this.waitTicks)
-													run();
-											}
-										}
-
-										private void run() {
-											{
-												Map<String, Object> $_dependencies = new HashMap<>();
-												$_dependencies.put("world", world);
-												$_dependencies.put("x",
-														((entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getX()) + 2));
-												$_dependencies.put("y",
-														(entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getY()));
-												$_dependencies.put("z",
-														(entity.world
-																.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-																		entity.getEyePosition(1f).add(entity.getLook(1f).x * 7,
-																				entity.getLook(1f).y * 7, entity.getLook(1f).z * 7),
-																		RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-																.getPos().getZ()));
-												BuildIceGlyphEastProcedure.executeProcedure($_dependencies);
-											}
-											MinecraftForge.EVENT_BUS.unregister(this);
-										}
-									}.start(world, (int) 10);
+									}
 								}
 							}
 						}

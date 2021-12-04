@@ -45,7 +45,7 @@ public class BileRechargeProcedure {
 		if ((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellRecharging)
 				&& (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown) < 100))) {
+						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge) < 100))) {
 			{
 				double _setval = (double) (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge)

@@ -90,10 +90,10 @@ public class SpellbookGuiGuiWindow extends ContainerScreen<SpellbookGuiGui.GuiCo
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		Spell1 = new CheckboxButton(this.guiLeft + 49, this.guiTop + 16, 150, 20, new StringTextComponent("Primary Spell"), false);
+		Spell1 = new CheckboxButton(this.guiLeft + 31, this.guiTop + 16, 150, 20, new StringTextComponent("Primary Spell"), false);
 		SpellbookGuiGui.guistate.put("checkbox:Spell1", Spell1);
 		this.addButton(Spell1);
-		Spell2 = new CheckboxButton(this.guiLeft + 49, this.guiTop + 43, 150, 20, new StringTextComponent("Secondary Spell"), false);
+		Spell2 = new CheckboxButton(this.guiLeft + 31, this.guiTop + 43, 150, 20, new StringTextComponent("Secondary Spell"), false);
 		SpellbookGuiGui.guistate.put("checkbox:Spell2", Spell2);
 		this.addButton(Spell2);
 		Spell3 = new CheckboxButton(this.guiLeft + 166, this.guiTop + 16, 150, 20, new StringTextComponent("Spell 3"), false);

@@ -15,7 +15,7 @@
         "data": {
           "text": "Primary Spell",
           "name": "Spell1",
-          "x": 123,
+          "x": 105,
           "y": 26
         }
       },
@@ -24,7 +24,7 @@
         "data": {
           "text": "Secondary Spell",
           "name": "Spell2",
-          "x": 123,
+          "x": 105,
           "y": 53
         }
       },

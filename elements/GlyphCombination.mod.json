@@ -30,6 +30,12 @@
           "id": 0,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
+          "onTakenFromSlot": {
+            "name": "ComboGlyphTaken"
+          },
+          "onStackTransfer": {
+            "name": "ComboGlyphTaken"
+          },
           "name": "Slot #0",
           "x": 203,
           "y": 61
@@ -78,6 +84,9 @@
         }
       }
     ],
+    "onTick": {
+      "name": "ComboGlyphCrafting"
+    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,

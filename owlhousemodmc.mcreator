@@ -19,7 +19,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "glyph_combination",
-      "path": "~/Blocks/Glyph Workbench"
+      "path": "~/Blocks/Glyph Workbench/Glyph Combination GUI"
     },
     {
       "name": "GlyphWorkbench",
@@ -579,7 +579,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "palistrom_wood",
-      "path": "~/Blocks/Palistrom Log"
+      "path": "~/Blocks"
     },
     {
       "name": "PalistromLeavesBlockDestroyedByPlayer",
@@ -2189,6 +2189,292 @@
         ]
       },
       "path": "~/Items/staffs"
+    },
+    {
+      "name": "ComboGlyphCrafting",
+      "type": "procedure",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combo_glyph_crafting",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Blocks/Glyph Workbench/Glyph Combination GUI"
+    },
+    {
+      "name": "ComboGlyphTaken",
+      "type": "procedure",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combo_glyph_taken",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Blocks/Glyph Workbench/Glyph Combination GUI"
+    },
+    {
+      "name": "TitanStone",
+      "type": "block",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "titan_stone",
+      "path": "~/Blocks"
+    },
+    {
+      "name": "EclipseLake",
+      "type": "biome",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eclipse_lake",
+      "path": "~/Dimension/Biomes"
+    },
+    {
+      "name": "ComboGlyphProjectile",
+      "type": "rangeditem",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combo_glyph_projectile",
+      "path": "~/Items/Glyphs/Combo Glyph"
+    },
+    {
+      "name": "BoilingIslesPlayerEntersDimension",
+      "type": "procedure",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "boiling_isles_player_enters_dimension",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/Dimension"
+    },
+    {
+      "name": "TitanBloodOre",
+      "type": "block",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "titan_blood_ore",
+      "path": "~/Blocks"
+    },
+    {
+      "name": "IceGlyphUpFull",
+      "type": "procedure",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_glyph_up_full",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "IceGlyphDownFull",
+      "type": "procedure",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_glyph_down_full",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "IceGlyphWestFull",
+      "type": "procedure",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_glyph_west_full",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "IceGlyphNorthFull",
+      "type": "procedure",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_glyph_north_full",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "IceGlyphSouthFull",
+      "type": "procedure",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_glyph_south_full",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
+    },
+    {
+      "name": "IceGlyphEastFull",
+      "type": "procedure",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ice_glyph_east_full",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Glyphs/Ice Glyph/Build Pillar/Directional Builds"
     }
   ],
   "variable_elements": [
@@ -2326,49 +2612,53 @@
   "language_map": {
     "en_us": {
       "item.owlhousemodmc.mechanicalstaff": "Mechanical staff",
-      "itemGroup.tabowl_house_blocks": "Owl House Blocks",
-      "item.owlhousemodmc.ice_glyph": "Ice Glyph",
-      "item.owlhousemodmc.boiling_isles": "Boiling Isles Portal Igniter",
       "key.category.owlspells": "Spellcasting",
       "itemGroup.tabowl_house_items": "Owl House Items",
       "block.owlhousemodmc.palistrom_leaves": "Palistrom Leaves",
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
-      "biome.owlhousemodmc.forest_boiling_isles": "Forest Boiling Isles",
       "item.owlhousemodmc.owl_staff": "Owl Staff",
       "advancements.root_advancement.descr": "Well, you\u0027ve managed to get yourself stuck in the Boiling Isles, a world full of strange and terrifying creatures",
       "block.owlhousemodmc.portal_door_bottom": "Portal Door",
       "block.owlhousemodmc.portal_door_bottom_open": "Portal Door Bottom Open",
-      "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
-      "block.owlhousemodmc.portal_door_top": "Portal Door Top",
       "key.owlhousemodmc.primary_spell": "Primary Spell",
       "advancements.root_advancement.title": "A world of magic and demons",
-      "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
       "key.owlhousemodmc.spell_3": "Spell 3",
       "key.owlhousemodmc.spell_4": "Spell 4",
       "itemGroup.tabowl_house_staffs": "Owl House Staffs",
-      "key.owlhousemodmc.secondary_spell": "Secondary Spell",
       "item.owlhousemodmc.owl_beast_curse": "Owl Beast Curse",
-      "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "item.owlhousemodmc.spellbook_item": "Spellbook Item",
       "item.owlhousemodmc.glyph_unlock": "Glyph Unlock",
       "item.owlhousemodmc.light_glyph": "Light Glyph",
-      "item.owlhousemodmc.witchifier": "Witchifier",
-      "subtitles.rainesrhapsody": "",
-      "itemGroup.tabowl_house_curses": "Owl House Curses",
       "item.owlhousemodmc.portal_key": "Portal Key",
       "item.owlhousemodmc.artificialportalkey": "Artificial Portal Key",
       "subtitles.endingtheme": "",
       "biome.owlhousemodmc.plains_boiling_isles": "Plains Boiling Isles",
       "subtitles.gromfright": "",
       "item.owlhousemodmc.brokenportalkey": "Broken Portal Key",
-      "item.owlhousemodmc.notepad": "Notepad",
       "item.owlhousemodmc.elixir": "Elixir",
       "subtitles.spellcast": "Spell cast",
+      "biome.owlhousemodmc.eclipse_lake": "Eclipse Lake",
+      "item.owlhousemodmc.combo_glyph_projectile": "Combo Glyph Projectile",
       "item.owlhousemodmc.combo_glyph": "Combo Glyph",
+      "block.owlhousemodmc.portal_door_top_open": "Portal Door Top Open",
+      "itemGroup.tabowl_house_blocks": "Owl House Blocks",
+      "item.owlhousemodmc.ice_glyph": "Ice Glyph",
+      "item.owlhousemodmc.boiling_isles": "Boiling Isles Portal Igniter",
+      "biome.owlhousemodmc.forest_boiling_isles": "Forest Boiling Isles",
+      "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
+      "block.owlhousemodmc.portal_door_top": "Portal Door Top",
+      "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
+      "key.owlhousemodmc.secondary_spell": "Secondary Spell",
+      "item.owlhousemodmc.fire_glyph": "Fire Glyph",
+      "block.owlhousemodmc.titan_blood_ore": "Titan Blood Ore",
+      "item.owlhousemodmc.witchifier": "Witchifier",
+      "subtitles.rainesrhapsody": "",
+      "itemGroup.tabowl_house_curses": "Owl House Curses",
+      "item.owlhousemodmc.notepad": "Notepad",
       "block.owlhousemodmc.temp_ice": "Temp Ice",
       "biome.owlhousemodmc.palistrom_forest": "Palistrom Forest",
-      "block.owlhousemodmc.portal_door_top_open": "Portal Door Top Open",
       "item.owlhousemodmc.plant_glyph": "Plant Glyph",
+      "block.owlhousemodmc.titan_stone": "Titanstone",
       "block.owlhousemodmc.light_glyph_block": "Light Glyph Block"
     }
   },
@@ -2516,12 +2806,13 @@
             "children": []
           },
           {
-            "name": "Palistrom Log",
-            "children": []
-          },
-          {
             "name": "Glyph Workbench",
-            "children": []
+            "children": [
+              {
+                "name": "Glyph Combination GUI",
+                "children": []
+              }
+            ]
           }
         ]
       },

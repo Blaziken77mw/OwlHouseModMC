@@ -57,7 +57,7 @@ public class FireSpellCastProcedure {
 			if (entity instanceof LivingEntity) {
 				Entity _ent = entity;
 				if (!_ent.world.isRemote()) {
-					FireGlyphProjectileItem.shoot(_ent.world, (LivingEntity) entity, new Random(), (float) 3, (float) 5, (int) 5);
+					FireGlyphProjectileItem.shoot(_ent.world, (LivingEntity) entity, new Random(), (float) 1.5, (float) 5, (int) 5);
 				}
 			}
 			{
