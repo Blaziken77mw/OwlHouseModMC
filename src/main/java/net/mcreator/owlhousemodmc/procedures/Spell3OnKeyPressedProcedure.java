@@ -86,7 +86,7 @@ public class Spell3OnKeyPressedProcedure {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				IceSpellCastProcedure.executeProcedure($_dependencies);
+				FireGlyphRightClickedOnBlockProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}
