@@ -1,0 +1,7 @@
+{
+  "parent": "owlhousemodmc:custom/ravenstaff",
+  "textures": {
+    "0": "owlhousemodmc:blocks/ravenstaff",
+    "particle": "owlhousemodmc:items/ravenstafftexture"
+  }
+}
