@@ -13,19 +13,10 @@
       {
         "type": "checkbox",
         "data": {
-          "text": "Primary Spell",
+          "text": "Primary spell",
           "name": "Spell1",
           "x": 105,
           "y": 26
-        }
-      },
-      {
-        "type": "checkbox",
-        "data": {
-          "text": "Secondary Spell",
-          "name": "Spell2",
-          "x": 105,
-          "y": 53
         }
       },
       {
@@ -100,6 +91,15 @@
           "name": "Fire",
           "x": 87,
           "y": 170
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "text": "Secondary spell",
+          "name": "Spell2",
+          "x": 105,
+          "y": 53
         }
       }
     ],

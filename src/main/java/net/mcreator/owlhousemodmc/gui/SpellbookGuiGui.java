@@ -183,6 +183,7 @@ public class SpellbookGuiGui extends OwlhousemodmcModElements.ModElement {
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
 				$_dependencies.put("guistate", guistate);
+				$_dependencies.put("world", world);
 				LightButtonPushedProcedure.executeProcedure($_dependencies);
 			}
 		}

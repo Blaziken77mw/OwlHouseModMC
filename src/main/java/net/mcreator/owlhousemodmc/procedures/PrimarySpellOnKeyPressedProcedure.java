@@ -1,8 +1,6 @@
 package net.mcreator.owlhousemodmc.procedures;
 
 import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
@@ -45,9 +43,6 @@ public class PrimarySpellOnKeyPressedProcedure {
 		IWorld world = (IWorld) dependencies.get("world");
 		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell1)).equals("light"))) {
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("light"), (false));
-			}
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
@@ -60,9 +55,6 @@ public class PrimarySpellOnKeyPressedProcedure {
 		}
 		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell1)).equals("fire"))) {
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("fire"), (false));
-			}
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
@@ -75,9 +67,6 @@ public class PrimarySpellOnKeyPressedProcedure {
 		}
 		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell1)).equals("growth"))) {
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("plant"), (false));
-			}
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
@@ -90,9 +79,6 @@ public class PrimarySpellOnKeyPressedProcedure {
 		}
 		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell1)).equals("ice"))) {
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("ice"), (false));
-			}
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
