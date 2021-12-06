@@ -130,7 +130,7 @@
         "value": "CUSTOM:TitanStone"
       }
     ],
-    "frequencyPerChunks": 16,
+    "frequencyPerChunks": 20,
     "frequencyOnChunk": 1,
     "minGenerateHeight": 0,
     "maxGenerateHeight": 70

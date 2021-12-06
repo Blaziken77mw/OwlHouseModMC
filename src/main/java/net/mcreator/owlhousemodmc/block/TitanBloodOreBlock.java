@@ -113,7 +113,7 @@ public class TitanBloodOreBlock extends OwlhousemodmcModElements.ModElement {
 				}
 			};
 			configuredFeature = feature.withConfiguration(new OreFeatureConfig(CustomRuleTest.INSTANCE, block.getDefaultState(), 1)).range(70)
-					.square().func_242731_b(16);
+					.square().func_242731_b(20);
 			event.getRegistry().register(feature.setRegistryName("titan_blood_ore"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("owlhousemodmc:titan_blood_ore"), configuredFeature);
 		}
