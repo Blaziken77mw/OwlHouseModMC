@@ -1,0 +1,7 @@
+{
+  "parent": "owlhousemodmc:custom/deerstaff",
+  "textures": {
+    "0": "owlhousemodmc:blocks/deer_staff",
+    "particle": "owlhousemodmc:items/owl_staff"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "owlhousemodmc:custom/catstaff",
+  "textures": {
+    "0": "owlhousemodmc:blocks/amitysstaff",
+    "particle": "owlhousemodmc:items/catstafftexture"
+  }
+}

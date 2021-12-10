@@ -10,21 +10,23 @@ import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.owlhousemodmc.procedures.ElixirRightClickedInAirProcedure;
-import net.mcreator.owlhousemodmc.itemgroup.OwlHouseItemsItemGroup;
+import net.mcreator.owlhousemodmc.procedures.StaffItemRightClickedProcedure;
+import net.mcreator.owlhousemodmc.procedures.StaffItemInHandProcedure;
+import net.mcreator.owlhousemodmc.itemgroup.OwlHouseStaffsItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
 import java.util.Map;
 import java.util.HashMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
-public class ElixirItem extends OwlhousemodmcModElements.ModElement {
-	@ObjectHolder("owlhousemodmc:elixir")
+public class CatStaffItem extends OwlhousemodmcModElements.ModElement {
+	@ObjectHolder("owlhousemodmc:cat_staff")
 	public static final Item block = null;
-	public ElixirItem(OwlhousemodmcModElements instance) {
-		super(instance, 49);
+	public CatStaffItem(OwlhousemodmcModElements instance) {
+		super(instance, 105);
 	}
 
 	@Override
@@ -33,8 +35,8 @@ public class ElixirItem extends OwlhousemodmcModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
-			setRegistryName("elixir");
+			super(new Item.Properties().group(OwlHouseStaffsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
+			setRegistryName("cat_staff");
 		}
 
 		@Override
@@ -62,9 +64,26 @@ public class ElixirItem extends OwlhousemodmcModElements.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
-				ElixirRightClickedInAirProcedure.executeProcedure($_dependencies);
+				StaffItemRightClickedProcedure.executeProcedure($_dependencies);
 			}
 			return ar;
+		}
+
+		@Override
+		public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
+			super.inventoryTick(itemstack, world, entity, slot, selected);
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			if (selected) {
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				StaffItemInHandProcedure.executeProcedure($_dependencies);
+			}
 		}
 	}
 }

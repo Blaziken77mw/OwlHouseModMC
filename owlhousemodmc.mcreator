@@ -1023,24 +1023,6 @@
       "path": "~/Items/Curses"
     },
     {
-      "name": "ElixirRightClickedInAir",
-      "type": "procedure",
-      "sortid": 49,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "elixir_right_clicked_in_air",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Procedures"
-    },
-    {
       "name": "OwlHouseStaffs",
       "type": "tab",
       "sortid": 44,
@@ -1079,16 +1061,6 @@
       "ids": {},
       "registry_name": "owl_house_curses",
       "path": "~/Creative tabs"
-    },
-    {
-      "name": "Elixir",
-      "type": "item",
-      "sortid": 49,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "elixir",
-      "path": "~/Items/Elixirs"
     },
     {
       "name": "OwlBeastCurseLivingEntityIsHitWithItem",
@@ -2547,6 +2519,123 @@
       "ids": {},
       "registry_name": "ravenstaff",
       "path": "~/Items/staffs"
+    },
+    {
+      "name": "Trappedindimension",
+      "type": "procedure",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trappedindimension",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
+    },
+    {
+      "name": "CatStaff",
+      "type": "item",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cat_staff",
+      "path": "~/Items/staffs"
+    },
+    {
+      "name": "DeerStaff",
+      "type": "item",
+      "sortid": 106,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "deer_staff",
+      "path": "~/Items/staffs"
+    },
+    {
+      "name": "CraftNotePad",
+      "type": "recipe",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "craft_note_pad",
+      "path": "~/recipes"
+    },
+    {
+      "name": "Plainsboilingisles2",
+      "type": "biome",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plainsboilingisles_2",
+      "path": "~/Dimension/Biomes"
+    },
+    {
+      "name": "Forestboilingisles2",
+      "type": "biome",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "forestboilingisles_2",
+      "path": "~/Dimension/Biomes"
+    },
+    {
+      "name": "RemovecurseEffectStartedapplied",
+      "type": "procedure",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "removecurse_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Removecurse",
+      "type": "potioneffect",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "removecurse",
+      "path": "~/Items/Elixirs"
+    },
+    {
+      "name": "Elixir",
+      "type": "potion",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "elixir",
+      "path": "~/Items/Elixirs"
     }
   ],
   "variable_elements": [
@@ -2685,18 +2774,21 @@
     "en_us": {
       "item.owlhousemodmc.mechanicalstaff": "Mechanical staff",
       "key.category.owlspells": "Spellcasting",
+      "effect.removecurse": "heal",
       "itemGroup.tabowl_house_items": "Owl House Items",
       "block.owlhousemodmc.palistrom_leaves": "Palistrom Leaves",
       "item.owlhousemodmc.fire_glyph_projectile": "Fire Glyph Projectile",
-      "item.owlhousemodmc.owl_staff": "Owl Staff",
-      "advancements.root_advancement.descr": "Well, you\u0027ve managed to get yourself stuck in the Boiling Isles, a world full of strange and terrifying creatures",
+      "item.minecraft.lingering_potion.effect.elixir": "Lingering Bottle of Elixir",
       "item.owlhousemodmc.strange_diary": "Strange Diary",
+      "advancements.root_advancement.descr": "Well, you\u0027ve managed to get yourself stuck in the Boiling Isles, a world full of strange and terrifying creatures",
+      "item.owlhousemodmc.owl_staff": "Owl Staff",
       "block.owlhousemodmc.portal_door_bottom": "Portal Door",
       "block.owlhousemodmc.portal_door_bottom_open": "Portal Door Bottom Open",
       "key.owlhousemodmc.primary_spell": "Primary Spell",
       "advancements.root_advancement.title": "A world of magic and demons",
       "key.owlhousemodmc.spell_3": "Spell 3",
       "key.owlhousemodmc.spell_4": "Spell 4",
+      "item.minecraft.tipped_arrow.effect.elixir": "Arrow of Elixir",
       "itemGroup.tabowl_house_staffs": "Owl House Staffs",
       "item.owlhousemodmc.owl_beast_curse": "Owl Beast Curse",
       "item.owlhousemodmc.spellbook_item": "Spellbook",
@@ -2708,7 +2800,6 @@
       "biome.owlhousemodmc.plains_boiling_isles": "Plains Boiling Isles",
       "subtitles.gromfright": "",
       "item.owlhousemodmc.brokenportalkey": "Broken Portal Key",
-      "item.owlhousemodmc.elixir": "Elixir",
       "subtitles.spellcast": "Spell cast",
       "biome.owlhousemodmc.eclipse_lake": "Eclipse Lake",
       "item.owlhousemodmc.combo_glyph_projectile": "Combo Glyph Projectile",
@@ -2717,21 +2808,27 @@
       "itemGroup.tabowl_house_blocks": "Owl House Blocks",
       "item.owlhousemodmc.ice_glyph": "Ice Glyph",
       "item.owlhousemodmc.boiling_isles": "Boiling Isles Portal Igniter",
+      "item.owlhousemodmc.deer_staff": "Deer Staff",
       "biome.owlhousemodmc.forest_boiling_isles": "Forest Boiling Isles",
       "block.owlhousemodmc.palistrom_wood": "Palistrom Wood",
+      "biome.owlhousemodmc.plainsboilingisles_2": "Plains Boiling Isles",
       "block.owlhousemodmc.portal_door_top": "Portal Door Top",
       "block.owlhousemodmc.glyph_workbench": "Glyph Workbench",
+      "item.owlhousemodmc.cat_staff": "Cat Staff",
       "key.owlhousemodmc.secondary_spell": "Secondary Spell",
       "item.owlhousemodmc.fire_glyph": "Fire Glyph",
       "block.owlhousemodmc.titan_blood_ore": "Titan Blood Ore",
+      "item.minecraft.potion.effect.elixir": "Bottle of Elixir",
       "item.owlhousemodmc.witchifier": "Witchifier",
       "subtitles.rainesrhapsody": "",
+      "item.minecraft.splash_potion.effect.elixir": "Splash Bottle of Elixir",
       "itemGroup.tabowl_house_curses": "Owl House Curses",
       "item.owlhousemodmc.notepad": "Notepad",
       "block.owlhousemodmc.temp_ice": "Temp Ice",
       "biome.owlhousemodmc.palistrom_forest": "Palistrom Forest",
       "item.owlhousemodmc.ravenstaff": "Raven Staff",
       "item.owlhousemodmc.plant_glyph": "Plant Glyph",
+      "biome.owlhousemodmc.forestboilingisles_2": "Forest Boiling Isles",
       "block.owlhousemodmc.titan_stone": "Titanstone",
       "block.owlhousemodmc.light_glyph_block": "Light Glyph Block"
     }
@@ -2935,6 +3032,10 @@
       },
       {
         "name": "palisman",
+        "children": []
+      },
+      {
+        "name": "recipes",
         "children": []
       }
     ]

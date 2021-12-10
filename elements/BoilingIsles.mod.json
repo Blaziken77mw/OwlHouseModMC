@@ -14,6 +14,12 @@
       },
       {
         "value": "CUSTOM:EclipseLake"
+      },
+      {
+        "value": "CUSTOM:Forestboilingisles2"
+      },
+      {
+        "value": "CUSTOM:Plainsboilingisles2"
       }
     ],
     "worldGenType": "Normal world gen",

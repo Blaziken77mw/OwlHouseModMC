@@ -1,37 +1,21 @@
 {
   "_fv": 24,
-  "_type": "item",
+  "_type": "potion",
   "definition": {
-    "renderType": 0,
-    "texture": "elixir",
-    "customModelName": "Normal",
-    "name": "Elixir",
-    "rarity": "COMMON",
-    "creativeTab": {
-      "value": "CUSTOM:OwlHouseItems"
-    },
-    "stackSize": 64,
-    "enchantability": 0,
-    "useDuration": 0,
-    "toolType": 1.0,
-    "damageCount": 0,
-    "recipeRemainder": {
-      "value": ""
-    },
-    "destroyAnyBlock": false,
-    "immuneToFire": false,
-    "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false,
-    "enableMeleeDamage": false,
-    "damageVsEntity": 0.0,
-    "specialInfo": [],
-    "hasGlow": false,
-    "guiBoundTo": "<NONE>",
-    "inventorySize": 9,
-    "inventoryStackSize": 64,
-    "onRightClickedInAir": {
-      "name": "ElixirRightClickedInAir"
-    },
-    "hasDispenseBehavior": false
+    "potionName": "Bottle of Elixir",
+    "splashName": "Splash Bottle of Elixir",
+    "lingeringName": "Lingering Bottle of Elixir",
+    "arrowName": "Arrow of Elixir",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:Removecurse"
+        },
+        "duration": 3600,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
   }
 }
