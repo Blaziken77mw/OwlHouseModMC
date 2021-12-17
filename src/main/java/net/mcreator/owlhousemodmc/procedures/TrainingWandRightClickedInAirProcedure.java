@@ -1,16 +1,7 @@
 package net.mcreator.owlhousemodmc.procedures;
 
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
-import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
-
-import java.util.Map;
-
 public class TrainingWandRightClickedInAirProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -22,8 +13,10 @@ public class TrainingWandRightClickedInAirProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency itemstack for procedure TrainingWandRightClickedInAir!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
+
 		double spellSlot = 0;
 		String spell = "";
 		spellSlot = (double) new Object() {
@@ -86,4 +79,5 @@ public class TrainingWandRightClickedInAirProcedure {
 			}
 		}
 	}
+
 }

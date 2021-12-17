@@ -2,13 +2,13 @@
 package net.mcreator.owlhousemodmc.item;
 
 @OwlhousemodmcModElements.ModElement.Tag
-public class TrainingWandItem extends OwlhousemodmcModElements.ModElement {
+public class DeerStaffItem extends OwlhousemodmcModElements.ModElement {
 
-	@ObjectHolder("owlhousemodmc:training_wand")
+	@ObjectHolder("owlhousemodmc:deer_staff")
 	public static final Item block = null;
 
-	public TrainingWandItem(OwlhousemodmcModElements instance) {
-		super(instance, 104);
+	public DeerStaffItem(OwlhousemodmcModElements instance) {
+		super(instance, 106);
 
 	}
 
@@ -20,8 +20,8 @@ public class TrainingWandItem extends OwlhousemodmcModElements.ModElement {
 	public static class ItemCustom extends Item {
 
 		public ItemCustom() {
-			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxDamage(50).rarity(Rarity.COMMON));
-			setRegistryName("training_wand");
+			super(new Item.Properties().group(OwlHouseStaffsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
+			setRegistryName("deer_staff");
 		}
 
 		@Override
@@ -40,12 +40,6 @@ public class TrainingWandItem extends OwlhousemodmcModElements.ModElement {
 		}
 
 		@Override
-		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("Warning! as of right now using this without using the spellbook first will crash!"));
-		}
-
-		@Override
 		public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
 			ActionResult<ItemStack> ar = super.onItemRightClick(world, entity, hand);
 			ItemStack itemstack = ar.getResult();
@@ -57,11 +51,29 @@ public class TrainingWandItem extends OwlhousemodmcModElements.ModElement {
 				Map<String, Object> $_dependencies = new HashMap<>();
 
 				$_dependencies.put("entity", entity);
-				$_dependencies.put("itemstack", itemstack);
 
-				TrainingWandRightClickedInAirProcedure.executeProcedure($_dependencies);
+				StaffItemRightClickedProcedure.executeProcedure($_dependencies);
 			}
 			return ar;
+		}
+
+		@Override
+		public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
+			super.inventoryTick(itemstack, world, entity, slot, selected);
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			if (selected) {
+				Map<String, Object> $_dependencies = new HashMap<>();
+
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+
+				StaffItemInHandProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 	}
