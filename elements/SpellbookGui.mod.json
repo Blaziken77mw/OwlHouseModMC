@@ -2,11 +2,11 @@
   "_fv": 24,
   "_type": "gui",
   "definition": {
-    "type": 0,
+    "type": 1,
     "width": 280,
     "height": 220,
-    "inventoryOffsetX": 0,
-    "inventoryOffsetY": 0,
+    "inventoryOffsetX": 50,
+    "inventoryOffsetY": 25,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
@@ -100,6 +100,20 @@
           "name": "Spell2",
           "x": 105,
           "y": 53
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:TrainingWand"
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 105,
+          "y": 197
         }
       }
     ],

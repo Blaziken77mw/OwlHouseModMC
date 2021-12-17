@@ -1,12 +1,15 @@
 package net.mcreator.owlhousemodmc.procedures;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.container.Slot;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.gui.widget.button.CheckboxButton;
 
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
+import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -33,8 +36,21 @@ public class FireButtonPushedProcedure {
 				return false;
 			}
 		}.getValue())) {
-			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell1",
-					"fire");
+			(new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
+					}
+					return ItemStack.EMPTY;
+				}
+			}.getItemStack((int) (0))).getOrCreateTag().putString("spell", "1fire");
 		}
 		if ((new Object() {
 			public boolean getValue() {
@@ -45,8 +61,21 @@ public class FireButtonPushedProcedure {
 				return false;
 			}
 		}.getValue())) {
-			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell2",
-					"fire");
+			(new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
+					}
+					return ItemStack.EMPTY;
+				}
+			}.getItemStack((int) (0))).getOrCreateTag().putString("spell", "2fire");
 		}
 		if ((new Object() {
 			public boolean getValue() {
@@ -57,8 +86,21 @@ public class FireButtonPushedProcedure {
 				return false;
 			}
 		}.getValue())) {
-			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell3",
-					"fire");
+			(new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
+					}
+					return ItemStack.EMPTY;
+				}
+			}.getItemStack((int) (0))).getOrCreateTag().putString("spell", "3fire");
 		}
 		if ((new Object() {
 			public boolean getValue() {
@@ -69,8 +111,21 @@ public class FireButtonPushedProcedure {
 				return false;
 			}
 		}.getValue())) {
-			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell4",
-					"fire");
+			(new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
+					}
+					return ItemStack.EMPTY;
+				}
+			}.getItemStack((int) (0))).getOrCreateTag().putString("spell", "4fire");
 		}
 	}
 }

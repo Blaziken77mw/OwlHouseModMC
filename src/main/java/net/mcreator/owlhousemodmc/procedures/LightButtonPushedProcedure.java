@@ -1,14 +1,15 @@
 package net.mcreator.owlhousemodmc.procedures;
 
-import net.minecraft.world.IWorld;
 import net.minecraft.item.ItemStack;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.container.Slot;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.gui.widget.button.CheckboxButton;
 
-import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
+import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -24,132 +25,107 @@ public class LightButtonPushedProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency guistate for procedure LightButtonPushed!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure LightButtonPushed!");
-			return;
-		}
 		Entity entity = (Entity) dependencies.get("entity");
 		HashMap guistate = (HashMap) dependencies.get("guistate");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((world.isRemote())) {
-			if ((new Object() {
-				public boolean getValue() {
-					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell1");
-					if (checkbox != null) {
-						return checkbox.isChecked();
-					}
-					return false;
+		if ((new Object() {
+			public boolean getValue() {
+				CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell1");
+				if (checkbox != null) {
+					return checkbox.isChecked();
 				}
-			}.getValue())) {
-				{
-					String _setval = (String) "light";
-					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.Spell1 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
+				return false;
 			}
-			if ((new Object() {
-				public boolean getValue() {
-					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell2");
-					if (checkbox != null) {
-						return checkbox.isChecked();
+		}.getValue())) {
+			(new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
 					}
-					return false;
+					return ItemStack.EMPTY;
 				}
-			}.getValue())) {
-				{
-					String _setval = (String) "light";
-					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.Spell2 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+			}.getItemStack((int) (0))).getOrCreateTag().putString("spell", "1light");
+		}
+		if ((new Object() {
+			public boolean getValue() {
+				CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell2");
+				if (checkbox != null) {
+					return checkbox.isChecked();
 				}
+				return false;
 			}
-			if ((new Object() {
-				public boolean getValue() {
-					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell3");
-					if (checkbox != null) {
-						return checkbox.isChecked();
+		}.getValue())) {
+			(new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
 					}
-					return false;
+					return ItemStack.EMPTY;
 				}
-			}.getValue())) {
-				{
-					String _setval = (String) "light";
-					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.Spell3 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+			}.getItemStack((int) (0))).getOrCreateTag().putString("spell", "2light");
+		}
+		if ((new Object() {
+			public boolean getValue() {
+				CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell3");
+				if (checkbox != null) {
+					return checkbox.isChecked();
 				}
+				return false;
 			}
-			if ((new Object() {
-				public boolean getValue() {
-					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell4");
-					if (checkbox != null) {
-						return checkbox.isChecked();
+		}.getValue())) {
+			(new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
 					}
-					return false;
+					return ItemStack.EMPTY;
 				}
-			}.getValue())) {
-				{
-					String _setval = (String) "light";
-					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.Spell4 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+			}.getItemStack((int) (0))).getOrCreateTag().putString("spell", "3light");
+		}
+		if ((new Object() {
+			public boolean getValue() {
+				CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell4");
+				if (checkbox != null) {
+					return checkbox.isChecked();
 				}
+				return false;
 			}
-		} else {
-			if ((new Object() {
-				public boolean getValue() {
-					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell1");
-					if (checkbox != null) {
-						return checkbox.isChecked();
+		}.getValue())) {
+			(new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
 					}
-					return false;
+					return ItemStack.EMPTY;
 				}
-			}.getValue())) {
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-						.putString("spell1", "light");
-			}
-			if ((new Object() {
-				public boolean getValue() {
-					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell2");
-					if (checkbox != null) {
-						return checkbox.isChecked();
-					}
-					return false;
-				}
-			}.getValue())) {
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-						.putString("spell2", "light");
-			}
-			if ((new Object() {
-				public boolean getValue() {
-					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell3");
-					if (checkbox != null) {
-						return checkbox.isChecked();
-					}
-					return false;
-				}
-			}.getValue())) {
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-						.putString("spell3", "light");
-			}
-			if ((new Object() {
-				public boolean getValue() {
-					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell4");
-					if (checkbox != null) {
-						return checkbox.isChecked();
-					}
-					return false;
-				}
-			}.getValue())) {
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-						.putString("spell4", "light");
-			}
+			}.getItemStack((int) (0))).getOrCreateTag().putString("spell", "4light");
 		}
 	}
 }

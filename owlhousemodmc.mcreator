@@ -1646,10 +1646,6 @@
           {
             "name": "guistate",
             "type": "map"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -2547,6 +2543,37 @@
       "ids": {},
       "registry_name": "ravenstaff",
       "path": "~/Items/staffs"
+    },
+    {
+      "name": "TrainingWand",
+      "type": "item",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "training_wand",
+      "path": "~/Spellcasting/Training Wand"
+    },
+    {
+      "name": "TrainingWandRightClickedInAir",
+      "type": "procedure",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "training_wand_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -2692,6 +2719,7 @@
       "advancements.root_advancement.descr": "Well, you\u0027ve managed to get yourself stuck in the Boiling Isles, a world full of strange and terrifying creatures",
       "item.owlhousemodmc.strange_diary": "Strange Diary",
       "block.owlhousemodmc.portal_door_bottom": "Portal Door",
+      "item.owlhousemodmc.training_wand": "Training Wand",
       "block.owlhousemodmc.portal_door_bottom_open": "Portal Door Bottom Open",
       "key.owlhousemodmc.primary_spell": "Primary Spell",
       "advancements.root_advancement.title": "A world of magic and demons",
@@ -2860,6 +2888,10 @@
           },
           {
             "name": "Keybinds",
+            "children": []
+          },
+          {
+            "name": "Training Wand",
             "children": []
           }
         ]
