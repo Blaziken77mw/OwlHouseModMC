@@ -23,6 +23,7 @@ public class GlyphCombinationGuiWindow extends ContainerScreen<GlyphCombinationG
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = GlyphCombinationGui.guistate;
+
 	public GlyphCombinationGuiWindow(GlyphCombinationGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -33,7 +34,9 @@ public class GlyphCombinationGuiWindow extends ContainerScreen<GlyphCombinationG
 		this.xSize = 200;
 		this.ySize = 208;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("owlhousemodmc:textures/glyph_combination.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

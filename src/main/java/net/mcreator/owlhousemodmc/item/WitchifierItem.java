@@ -16,13 +16,16 @@ import net.mcreator.owlhousemodmc.procedures.WitchifierRightClickedInAirProcedur
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseItemsItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class WitchifierItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:witchifier")
 	public static final Item block = null;
+
 	public WitchifierItem(OwlhousemodmcModElements instance) {
 		super(instance, 68);
 	}
@@ -31,6 +34,7 @@ public class WitchifierItem extends OwlhousemodmcModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
@@ -59,11 +63,9 @@ public class WitchifierItem extends OwlhousemodmcModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				WitchifierRightClickedInAirProcedure.executeProcedure($_dependencies);
-			}
+
+			WitchifierRightClickedInAirProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ar;
 		}
 	}

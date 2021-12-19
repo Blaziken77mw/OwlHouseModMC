@@ -17,14 +17,17 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.owlhousemodmc.item.IceGlyphItem;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 public class IceGlyphRightClickedOnBlockProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure IceGlyphRightClickedOnBlock!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure IceGlyphRightClickedOnBlock!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -42,17 +45,17 @@ public class IceGlyphRightClickedOnBlockProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure IceGlyphRightClickedOnBlock!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure IceGlyphRightClickedOnBlock!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure IceGlyphRightClickedOnBlock!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((!(new Object() {
+		Entity entity = (Entity) dependencies.get("entity");
+		if (!(new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayerEntity) {
 					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
@@ -63,24 +66,24 @@ public class IceGlyphRightClickedOnBlockProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)))) {
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getItem() == IceGlyphItem.block)) {
+		}.checkGamemode(entity))) {
+			if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+					.getItem() == IceGlyphItem.block) {
 				if (entity instanceof LivingEntity) {
 					ItemStack _setstack = new ItemStack(IceGlyphItem.block);
 					_setstack.setCount(
-							(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
+							(int) ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount()
 									- 1));
 					((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
 					if (entity instanceof ServerPlayerEntity)
 						((ServerPlayerEntity) entity).inventory.markDirty();
 				}
-			} else if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-					.getItem() == IceGlyphItem.block)) {
+			} else if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+					.getItem() == IceGlyphItem.block) {
 				if (entity instanceof LivingEntity) {
 					ItemStack _setstack = new ItemStack(IceGlyphItem.block);
 					_setstack.setCount(
-							(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
+							(int) ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount()
 									- 1));
 					((LivingEntity) entity).setHeldItem(Hand.OFF_HAND, _setstack);
 					if (entity instanceof ServerPlayerEntity)
@@ -88,77 +91,53 @@ public class IceGlyphRightClickedOnBlockProcedure {
 				}
 			}
 		}
-		if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+		if ((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 				entity.getEyePosition(1f).add(entity.getLook(1f).x * 10, entity.getLook(1f).y * 10, entity.getLook(1f).z * 10),
-				RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.UP)) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("world", world);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				IceGlyphUpFullProcedure.executeProcedure($_dependencies);
-			}
+				RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.UP) {
+			IceGlyphUpFullProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		} else {
-			if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+			if ((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 					entity.getEyePosition(1f).add(entity.getLook(1f).x * 10, entity.getLook(1f).y * 10, entity.getLook(1f).z * 10),
-					RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.DOWN)) {
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("world", world);
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", y);
-					$_dependencies.put("z", z);
-					IceGlyphDownFullProcedure.executeProcedure($_dependencies);
-				}
+					RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.DOWN) {
+				IceGlyphDownFullProcedure.executeProcedure(Stream
+						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			} else {
-				if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+				if ((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 						entity.getEyePosition(1f).add(entity.getLook(1f).x * 10, entity.getLook(1f).y * 10, entity.getLook(1f).z * 10),
-						RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.NORTH)) {
-					{
-						Map<String, Object> $_dependencies = new HashMap<>();
-						$_dependencies.put("world", world);
-						$_dependencies.put("x", x);
-						$_dependencies.put("y", y);
-						$_dependencies.put("z", z);
-						IceGlyphNorthFullProcedure.executeProcedure($_dependencies);
-					}
+						RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.NORTH) {
+					IceGlyphNorthFullProcedure.executeProcedure(Stream
+							.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+									new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				} else {
-					if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+					if ((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 							entity.getEyePosition(1f).add(entity.getLook(1f).x * 10, entity.getLook(1f).y * 10, entity.getLook(1f).z * 10),
-							RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.SOUTH)) {
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("world", world);
-							$_dependencies.put("x", x);
-							$_dependencies.put("y", y);
-							$_dependencies.put("z", z);
-							IceGlyphSouthFullProcedure.executeProcedure($_dependencies);
-						}
+							RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.SOUTH) {
+						IceGlyphSouthFullProcedure.executeProcedure(Stream
+								.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+										new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					} else {
-						if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+						if ((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 								entity.getEyePosition(1f).add(entity.getLook(1f).x * 10, entity.getLook(1f).y * 10, entity.getLook(1f).z * 10),
-								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.WEST)) {
-							{
-								Map<String, Object> $_dependencies = new HashMap<>();
-								$_dependencies.put("world", world);
-								$_dependencies.put("x", x);
-								$_dependencies.put("y", y);
-								$_dependencies.put("z", z);
-								IceGlyphWestFullProcedure.executeProcedure($_dependencies);
-							}
+								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.WEST) {
+							IceGlyphWestFullProcedure.executeProcedure(Stream
+									.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+											new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						} else {
-							if (((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+							if ((entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
 									entity.getEyePosition(1f).add(entity.getLook(1f).x * 10, entity.getLook(1f).y * 10, entity.getLook(1f).z * 10),
-									RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.EAST)) {
-								{
-									Map<String, Object> $_dependencies = new HashMap<>();
-									$_dependencies.put("world", world);
-									$_dependencies.put("x", x);
-									$_dependencies.put("y", y);
-									$_dependencies.put("z", z);
-									IceGlyphEastFullProcedure.executeProcedure($_dependencies);
-								}
+									RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getFace()) == Direction.EAST) {
+								IceGlyphEastFullProcedure.executeProcedure(Stream
+										.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+												new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+										.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 							}
 						}
 					}

@@ -35,6 +35,7 @@ public class BileRechargeProcedure {
 			}
 		}
 	}
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -42,24 +43,24 @@ public class BileRechargeProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellRecharging)
-				&& (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge) < 100))) {
+		if ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellRecharging
+				&& (entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge < 100) {
 			{
-				double _setval = (double) (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge)
-						+ ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new OwlhousemodmcModVariables.PlayerVariables())).RechargeRate));
+				double _setval = ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge
+						+ (entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new OwlhousemodmcModVariables.PlayerVariables())).RechargeRate);
 				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.SpellCharge = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if ((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown) > 100)) {
+			if ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown > 100) {
 				{
-					double _setval = (double) 100;
+					double _setval = 100;
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.GlyphCooldown = _setval;
 						capability.syncPlayerVariables(entity);

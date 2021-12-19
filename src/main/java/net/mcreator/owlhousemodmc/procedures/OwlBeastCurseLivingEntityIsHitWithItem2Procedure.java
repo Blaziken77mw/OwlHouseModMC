@@ -18,19 +18,20 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 
 public class OwlBeastCurseLivingEntityIsHitWithItem2Procedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure OwlBeastCurseLivingEntityIsHitWithItem2!");
-			return;
-		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure OwlBeastCurseLivingEntityIsHitWithItem2!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure OwlBeastCurseLivingEntityIsHitWithItem2!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
+		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof PlayerEntity) {
 			ItemStack _stktoremove = new ItemStack(OwlBeastCurseItem.block);
 			((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
@@ -40,6 +41,7 @@ public class OwlBeastCurseLivingEntityIsHitWithItem2Procedure {
 			private int ticks = 0;
 			private float waitTicks;
 			private IWorld world;
+
 			public void start(IWorld world, int waitTicks) {
 				this.waitTicks = waitTicks;
 				MinecraftForge.EVENT_BUS.register(this);

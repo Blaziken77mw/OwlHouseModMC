@@ -14,6 +14,7 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 public class ComboGlyphItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:combo_glyph")
 	public static final Item block = null;
+
 	public ComboGlyphItem(OwlhousemodmcModElements instance) {
 		super(instance, 70);
 	}
@@ -22,6 +23,7 @@ public class ComboGlyphItem extends OwlhousemodmcModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(null).maxStackSize(64).rarity(Rarity.COMMON));

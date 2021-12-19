@@ -15,7 +15,10 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.owlhousemodmc.procedures.ComboGlyphInfoDisplayOverlayIngameProcedure;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
 
-import com.google.common.collect.ImmutableMap;
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
 
 @Mod.EventBusSubscriber
 public class ComboGlyphInfoOverlay {
@@ -42,7 +45,8 @@ public class ComboGlyphInfoOverlay {
 			double x = _x;
 			double y = _y;
 			double z = _z;
-			if (ComboGlyphInfoDisplayOverlayIngameProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
+			if (ComboGlyphInfoDisplayOverlayIngameProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 				Minecraft.getInstance().fontRenderer
 						.drawString(event.getMatrixStack(),
 								"Medium: " + ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)

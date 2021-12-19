@@ -21,10 +21,13 @@ import net.mcreator.owlhousemodmc.procedures.Charge10DisplayProcedure;
 import net.mcreator.owlhousemodmc.procedures.Charge100DisplayProcedure;
 import net.mcreator.owlhousemodmc.procedures.BileChargeDisplayOverlayIngameProcedure;
 
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
-
-import com.google.common.collect.ImmutableMap;
 
 @Mod.EventBusSubscriber
 public class BileChargeOverlay {
@@ -57,28 +60,35 @@ public class BileChargeOverlay {
 					GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 			RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 			RenderSystem.disableAlphaTest();
-			if (BileChargeDisplayOverlayIngameProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
-				if (ChargeEmptyDisplayProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
+			if (BileChargeDisplayOverlayIngameProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
+				if (ChargeEmptyDisplayProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/charged0.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -198, posY + -4, 0, 0, 44, 119, 44, 119);
 				}
-				if (Charge10DisplayProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
+				if (Charge10DisplayProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/charged10.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -198, posY + -4, 0, 0, 44, 119, 44, 119);
 				}
-				if (Charge25DisplayProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
+				if (Charge25DisplayProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/charged25.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -198, posY + -4, 0, 0, 44, 119, 44, 119);
 				}
-				if (Charge50DisplayProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
+				if (Charge50DisplayProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/charged50.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -198, posY + -4, 0, 0, 44, 119, 44, 119);
 				}
-				if (Charge75DisplayProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
+				if (Charge75DisplayProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/charged75.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -198, posY + -4, 0, 0, 44, 119, 44, 119);
 				}
-				if (Charge100DisplayProcedure.executeProcedure(ImmutableMap.of("entity", entity))) {
+				if (Charge100DisplayProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 					Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("owlhousemodmc:textures/charged100.png"));
 					Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), posX + -198, posY + -4, 0, 0, 44, 119, 44, 119);
 				}

@@ -41,6 +41,7 @@ public class ComboGlyphProjectileItem extends OwlhousemodmcModElements.ModElemen
 	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
 			.size(0.5f, 0.5f)).build("entitybulletcombo_glyph_projectile").setRegistryName("entitybulletcombo_glyph_projectile");
+
 	public ComboGlyphProjectileItem(OwlhousemodmcModElements instance) {
 		super(instance, 90);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ComboGlyphProjectileRenderer.ModelRegisterHandler());
@@ -51,6 +52,7 @@ public class ComboGlyphProjectileItem extends OwlhousemodmcModElements.ModElemen
 		elements.items.add(() -> new ItemRanged());
 		elements.entities.add(() -> arrow);
 	}
+
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
 			super(new Item.Properties().group(null).maxStackSize(1));
@@ -143,6 +145,7 @@ public class ComboGlyphProjectileItem extends OwlhousemodmcModElements.ModElemen
 			}
 		}
 	}
+
 	public static ArrowCustomEntity shoot(World world, LivingEntity entity, Random random, float power, double damage, int knockback) {
 		ArrowCustomEntity entityarrow = new ArrowCustomEntity(arrow, entity, world);
 		entityarrow.shoot(entity.getLookVec().x, entity.getLookVec().y, entity.getLookVec().z, power * 2, 0);

@@ -40,10 +40,12 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 @OwlhousemodmcModElements.ModElement.Tag
 public class PalistromForestBiome extends OwlhousemodmcModElements.ModElement {
 	public static Biome biome;
+
 	public PalistromForestBiome(OwlhousemodmcModElements instance) {
 		super(instance, 30);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
+
 	private static class BiomeRegisterHandler {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
@@ -56,14 +58,15 @@ public class PalistromForestBiome extends OwlhousemodmcModElements.ModElement {
 				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder()
 						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.getDefaultState(),
 								Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState())));
-				biomeGenerationSettings.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.TREE
-						.withConfiguration(
-								(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(PalistromWoodBlock.block.getDefaultState()),
-										new SimpleBlockStateProvider(PalistromLeavesBlock.block.getDefaultState()),
-										new BlobFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0), 3),
-										new StraightTrunkPlacer(7, 2, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().setMaxWaterDepth(0).build())
-						.withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT)
-						.withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(3, 0.1F, 1))));
+				biomeGenerationSettings.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
+						Feature.TREE
+								.withConfiguration(
+										(new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(PalistromWoodBlock.block.getDefaultState()),
+												new SimpleBlockStateProvider(PalistromLeavesBlock.block.getDefaultState()),
+												new BlobFoliagePlacer(FeatureSpread.func_242252_a(2), FeatureSpread.func_242252_a(0), 3),
+												new StraightTrunkPlacer(7, 2, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build())
+								.withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT)
+								.withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(3, 0.1F, 1))));
 				DefaultBiomeFeatures.withCavesAndCanyons(biomeGenerationSettings);
 				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
 				MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().isValidSpawnBiomeForPlayer();
@@ -74,6 +77,7 @@ public class PalistromForestBiome extends OwlhousemodmcModElements.ModElement {
 			}
 		}
 	}
+
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		BiomeDictionary.addTypes(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, WorldGenRegistries.BIOME.getKey(biome)), BiomeDictionary.Type.SPOOKY,

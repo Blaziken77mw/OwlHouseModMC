@@ -45,8 +45,10 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 import io.netty.buffer.Unpooled;
 
@@ -54,6 +56,7 @@ import io.netty.buffer.Unpooled;
 public class SpellbookItemItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:spellbook_item")
 	public static final Item block = null;
+
 	public SpellbookItemItem(OwlhousemodmcModElements instance) {
 		super(instance, 67);
 		MinecraftForge.EVENT_BUS.register(this);
@@ -73,6 +76,7 @@ public class SpellbookItemItem extends OwlhousemodmcModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
@@ -129,11 +133,10 @@ public class SpellbookItemItem extends OwlhousemodmcModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			if (selected) {
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				SpellbookItemItemInHandTickProcedure.executeProcedure($_dependencies);
-			}
+			if (selected)
+
+				SpellbookItemItemInHandTickProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -161,6 +164,7 @@ public class SpellbookItemItem extends OwlhousemodmcModElements.ModElement {
 
 	private static class InventoryCapability implements ICapabilitySerializable<CompoundNBT> {
 		private final LazyOptional<ItemStackHandler> inventory = LazyOptional.of(this::createItemHandler);
+
 		@Override
 		public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
 			return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? this.inventory.cast() : LazyOptional.empty();

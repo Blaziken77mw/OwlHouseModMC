@@ -13,10 +13,11 @@ import java.util.Map;
 import java.util.Collections;
 
 public class MechanicalstaffRightClickedInAirProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure MechanicalstaffRightClickedInAir!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure MechanicalstaffRightClickedInAir!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -34,16 +35,16 @@ public class MechanicalstaffRightClickedInAirProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure MechanicalstaffRightClickedInAir!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure MechanicalstaffRightClickedInAir!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure MechanicalstaffRightClickedInAir!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
+		Entity entity = (Entity) dependencies.get("entity");
 		if (world instanceof ServerWorld) {
 			((ServerWorld) world).spawnParticle(ArtificialmagicParticle.particle, x, y, z, (int) 5000, 3, 3, 3, 1);
 		}

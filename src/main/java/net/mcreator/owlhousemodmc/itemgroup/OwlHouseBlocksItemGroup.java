@@ -31,5 +31,6 @@ public class OwlHouseBlocksItemGroup extends OwlhousemodmcModElements.ModElement
 			}
 		};
 	}
+
 	public static ItemGroup tab;
 }

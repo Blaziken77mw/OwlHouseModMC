@@ -8,6 +8,7 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 
 public class Charge10DisplayProcedure {
+
 	public static boolean executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -15,9 +16,9 @@ public class Charge10DisplayProcedure {
 			return false;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		return ((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge) <= 10)
-				&& (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge) > 5));
+		return (entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge <= 10
+				&& (entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).SpellCharge > 5;
 	}
 }

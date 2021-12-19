@@ -6,14 +6,17 @@ import net.minecraft.entity.Entity;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModVariables;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 public class SecondarySpellOnKeyPressedProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure SecondarySpellOnKeyPressed!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure SecondarySpellOnKeyPressed!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -31,63 +34,43 @@ public class SecondarySpellOnKeyPressedProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure SecondarySpellOnKeyPressed!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure SecondarySpellOnKeyPressed!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure SecondarySpellOnKeyPressed!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2)).equals("fire"))) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				FireGlyphRightClickedOnBlockProcedure.executeProcedure($_dependencies);
-			}
+		Entity entity = (Entity) dependencies.get("entity");
+		if (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2).equals("fire")) {
+			FireGlyphRightClickedOnBlockProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
-		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2)).equals("fire"))) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				FireSpellCastProcedure.executeProcedure($_dependencies);
-			}
+		if (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2).equals("fire")) {
+			FireSpellCastProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
-		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2)).equals("growth"))) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				GrowthSpellCastProcedure.executeProcedure($_dependencies);
-			}
+		if (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2).equals("growth")) {
+			GrowthSpellCastProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
-		if (((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2)).equals("ice"))) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				IceSpellCastProcedure.executeProcedure($_dependencies);
-			}
+		if (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).Spell2).equals("ice")) {
+			IceSpellCastProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

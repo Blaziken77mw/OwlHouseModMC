@@ -22,13 +22,16 @@ import net.mcreator.owlhousemodmc.procedures.FireGlyphEntitySwingsItemProcedure;
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseItemsItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class FireGlyphItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:fire_glyph")
 	public static final Item block = null;
+
 	public FireGlyphItem(OwlhousemodmcModElements instance) {
 		super(instance, 5);
 	}
@@ -37,6 +40,7 @@ public class FireGlyphItem extends OwlhousemodmcModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
@@ -70,15 +74,11 @@ public class FireGlyphItem extends OwlhousemodmcModElements.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 			ItemStack itemstack = context.getItem();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				FireGlyphRightClickedOnBlockProcedure.executeProcedure($_dependencies);
-			}
+
+			FireGlyphRightClickedOnBlockProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
 
@@ -89,11 +89,9 @@ public class FireGlyphItem extends OwlhousemodmcModElements.ModElement {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 			World world = entity.world;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				FireGlyphEntitySwingsItemProcedure.executeProcedure($_dependencies);
-			}
+
+			FireGlyphEntitySwingsItemProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
 
@@ -103,11 +101,10 @@ public class FireGlyphItem extends OwlhousemodmcModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			if (selected) {
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				FireGlyphItemInHandTickProcedure.executeProcedure($_dependencies);
-			}
+			if (selected)
+
+				FireGlyphItemInHandTickProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

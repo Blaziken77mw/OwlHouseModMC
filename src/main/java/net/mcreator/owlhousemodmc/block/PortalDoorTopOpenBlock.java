@@ -42,15 +42,18 @@ import net.mcreator.owlhousemodmc.procedures.PortalDoorTopOpenOnBlockRightClicke
 import net.mcreator.owlhousemodmc.procedures.PortalDoorTopBlockDestroyedByPlayerProcedure;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.AbstractMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class PortalDoorTopOpenBlock extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:portal_door_top_open")
 	public static final Block block = null;
+
 	public PortalDoorTopOpenBlock(OwlhousemodmcModElements instance) {
 		super(instance, 34);
 	}
@@ -66,8 +69,10 @@ public class PortalDoorTopOpenBlock extends OwlhousemodmcModElements.ModElement 
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(3f, 10f).setLightLevel(s -> 8).harvestLevel(1)
 					.harvestTool(ToolType.AXE).setRequiresTool().doesNotBlockMovement().notSolid().setNeedsPostProcessing((bs, br, bp) -> true)
@@ -92,13 +97,29 @@ public class PortalDoorTopOpenBlock extends OwlhousemodmcModElements.ModElement 
 			switch ((Direction) state.get(FACING)) {
 				case SOUTH :
 				default :
-					return VoxelShapes.or(makeCuboidShape(16, 0, 10, 0, 16, 6)).withOffset(offset.x, offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(16, 0, 10, 0, 16, 6)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 				case NORTH :
-					return VoxelShapes.or(makeCuboidShape(0, 0, 6, 16, 16, 10)).withOffset(offset.x, offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(0, 0, 6, 16, 16, 10)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 				case EAST :
-					return VoxelShapes.or(makeCuboidShape(10, 0, 0, 6, 16, 16)).withOffset(offset.x, offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(10, 0, 0, 6, 16, 16)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 				case WEST :
-					return VoxelShapes.or(makeCuboidShape(6, 0, 16, 10, 16, 0)).withOffset(offset.x, offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(6, 0, 16, 10, 16, 0)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 			}
 		}
 
@@ -140,14 +161,11 @@ public class PortalDoorTopOpenBlock extends OwlhousemodmcModElements.ModElement 
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				PortalDoorTopBlockDestroyedByPlayerProcedure.executeProcedure($_dependencies);
-			}
+
+			PortalDoorTopBlockDestroyedByPlayerProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
 
@@ -162,14 +180,11 @@ public class PortalDoorTopOpenBlock extends OwlhousemodmcModElements.ModElement 
 			double hitY = hit.getHitVec().y;
 			double hitZ = hit.getHitVec().z;
 			Direction direction = hit.getFace();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				PortalDoorTopOpenOnBlockRightClickedProcedure.executeProcedure($_dependencies);
-			}
+
+			PortalDoorTopOpenOnBlockRightClickedProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ActionResultType.SUCCESS;
 		}
 	}

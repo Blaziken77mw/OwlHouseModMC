@@ -38,6 +38,7 @@ public class BoilingrainProcedure {
 			}
 		}
 	}
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -45,8 +46,8 @@ public class BoilingrainProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((entity.isInWaterRainOrBubbleColumn()) && ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
-				new ResourceLocation("owlhousemodmc:boiling_isles")))))) {
+		if (entity.isInWaterRainOrBubbleColumn() && (entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY,
+				new ResourceLocation("owlhousemodmc:boiling_isles")))) {
 			entity.attackEntityFrom(DamageSource.GENERIC, (float) 1);
 		}
 	}

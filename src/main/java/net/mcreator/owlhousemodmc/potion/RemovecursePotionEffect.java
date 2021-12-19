@@ -7,7 +7,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
 
 import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.potion.EffectType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effect;
@@ -16,23 +15,25 @@ import net.minecraft.entity.Entity;
 
 import net.mcreator.owlhousemodmc.procedures.RemovecurseEffectStartedappliedProcedure;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class RemovecursePotionEffect {
 	@ObjectHolder("owlhousemodmc:removecurse")
 	public static final Effect potion = null;
+
 	@SubscribeEvent
 	public static void registerEffect(RegistryEvent.Register<Effect> event) {
 		event.getRegistry().register(new EffectCustom());
 	}
+
 	public static class EffectCustom extends Effect {
-		private final ResourceLocation potionIcon;
 		public EffectCustom() {
 			super(EffectType.BENEFICIAL, -415733);
 			setRegistryName("removecurse");
-			potionIcon = new ResourceLocation("owlhousemodmc:textures/spellcirlce.png");
 		}
 
 		@Override
@@ -71,11 +72,9 @@ public class RemovecursePotionEffect {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				RemovecurseEffectStartedappliedProcedure.executeProcedure($_dependencies);
-			}
+
+			RemovecurseEffectStartedappliedProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

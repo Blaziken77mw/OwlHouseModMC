@@ -8,6 +8,7 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 
 public class FireGlyphItemInHandTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -15,11 +16,11 @@ public class FireGlyphItemInHandTickProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown) > 0)) {
+		if ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown > 0) {
 			{
-				double _setval = (double) (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown) - 1);
+				double _setval = ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown - 1);
 				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.GlyphCooldown = _setval;
 					capability.syncPlayerVariables(entity);

@@ -32,6 +32,7 @@ public class SpellbookGuiGuiWindow extends ContainerScreen<SpellbookGuiGui.GuiCo
 	CheckboxButton Spell3;
 	CheckboxButton Spell4;
 	CheckboxButton Spell2;
+
 	public SpellbookGuiGuiWindow(SpellbookGuiGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -42,7 +43,9 @@ public class SpellbookGuiGuiWindow extends ContainerScreen<SpellbookGuiGui.GuiCo
 		this.xSize = 280;
 		this.ySize = 220;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("owlhousemodmc:textures/spellbook_gui.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

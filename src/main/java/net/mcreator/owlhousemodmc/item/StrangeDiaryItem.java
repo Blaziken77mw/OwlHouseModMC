@@ -49,6 +49,7 @@ import io.netty.buffer.Unpooled;
 public class StrangeDiaryItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:strange_diary")
 	public static final Item block = null;
+
 	public StrangeDiaryItem(OwlhousemodmcModElements instance) {
 		super(instance, 101);
 		MinecraftForge.EVENT_BUS.register(this);
@@ -68,6 +69,7 @@ public class StrangeDiaryItem extends OwlhousemodmcModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
@@ -143,6 +145,7 @@ public class StrangeDiaryItem extends OwlhousemodmcModElements.ModElement {
 
 	private static class InventoryCapability implements ICapabilitySerializable<CompoundNBT> {
 		private final LazyOptional<ItemStackHandler> inventory = LazyOptional.of(this::createItemHandler);
+
 		@Override
 		public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
 			return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? this.inventory.cast() : LazyOptional.empty();

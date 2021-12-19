@@ -25,6 +25,7 @@ import java.util.Collections;
 public class TitanStoneBlock extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:titan_stone")
 	public static final Block block = null;
+
 	public TitanStoneBlock(OwlhousemodmcModElements instance) {
 		super(instance, 90);
 	}
@@ -35,6 +36,7 @@ public class TitanStoneBlock extends OwlhousemodmcModElements.ModElement {
 		elements.items
 				.add(() -> new BlockItem(block, new Item.Properties().group(OwlHouseBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1f, 6f).setLightLevel(s -> 0).harvestLevel(0)

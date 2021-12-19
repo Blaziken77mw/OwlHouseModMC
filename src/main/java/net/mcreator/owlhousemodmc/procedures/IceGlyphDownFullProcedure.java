@@ -8,11 +8,19 @@ import net.minecraft.world.IWorld;
 
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 public class IceGlyphDownFullProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure IceGlyphDownFull!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency x for procedure IceGlyphDownFull!");
@@ -28,27 +36,21 @@ public class IceGlyphDownFullProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure IceGlyphDownFull!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure IceGlyphDownFull!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		{
-			Map<String, Object> $_dependencies = new HashMap<>();
-			$_dependencies.put("world", world);
-			$_dependencies.put("x", x);
-			$_dependencies.put("y", y);
-			$_dependencies.put("z", z);
-			BuildIceGlyphDownProcedure.executeProcedure($_dependencies);
-		}
+
+		BuildIceGlyphDownProcedure
+				.executeProcedure(Stream
+						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		new Object() {
 			private int ticks = 0;
 			private float waitTicks;
 			private IWorld world;
+
 			public void start(IWorld world, int waitTicks) {
 				this.waitTicks = waitTicks;
 				MinecraftForge.EVENT_BUS.register(this);
@@ -65,18 +67,16 @@ public class IceGlyphDownFullProcedure {
 			}
 
 			private void run() {
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("world", world);
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", (y - 1));
-					$_dependencies.put("z", z);
-					BuildIceGlyphDownProcedure.executeProcedure($_dependencies);
-				}
+
+				BuildIceGlyphDownProcedure.executeProcedure(Stream
+						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+								new AbstractMap.SimpleEntry<>("y", (y - 1)), new AbstractMap.SimpleEntry<>("z", z))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				new Object() {
 					private int ticks = 0;
 					private float waitTicks;
 					private IWorld world;
+
 					public void start(IWorld world, int waitTicks) {
 						this.waitTicks = waitTicks;
 						MinecraftForge.EVENT_BUS.register(this);
@@ -93,14 +93,11 @@ public class IceGlyphDownFullProcedure {
 					}
 
 					private void run() {
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("world", world);
-							$_dependencies.put("x", x);
-							$_dependencies.put("y", (y - 2));
-							$_dependencies.put("z", z);
-							BuildIceGlyphDownProcedure.executeProcedure($_dependencies);
-						}
+
+						BuildIceGlyphDownProcedure.executeProcedure(Stream
+								.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+										new AbstractMap.SimpleEntry<>("y", (y - 2)), new AbstractMap.SimpleEntry<>("z", z))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 						MinecraftForge.EVENT_BUS.unregister(this);
 					}
 				}.start(world, (int) 10);

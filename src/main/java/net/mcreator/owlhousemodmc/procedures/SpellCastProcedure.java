@@ -20,10 +20,11 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 
 public class SpellCastProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure SpellCast!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure SpellCast!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -41,18 +42,18 @@ public class SpellCastProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure SpellCast!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure SpellCast!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure SpellCast!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
+		Entity entity = (Entity) dependencies.get("entity");
 		{
-			boolean _setval = (boolean) (false);
+			boolean _setval = (false);
 			entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.SpellRecharging = _setval;
 				capability.syncPlayerVariables(entity);
@@ -67,16 +68,16 @@ public class SpellCastProcedure {
 					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("owlhousemodmc:spellcast")),
 					SoundCategory.PLAYERS, (float) 1, (float) 1, false);
 		}
-		if (((entity.getHorizontalFacing()) == Direction.NORTH)) {
+		if ((entity.getHorizontalFacing()) == Direction.NORTH) {
 			world.addParticle(SpellCircleParticle.particle, x, (y + 1.5), (z - 1), 0, 0, 0);
 		} else {
-			if (((entity.getHorizontalFacing()) == Direction.SOUTH)) {
+			if ((entity.getHorizontalFacing()) == Direction.SOUTH) {
 				world.addParticle(SpellCircleParticle.particle, x, (y + 1.5), (z + 1), 0, 0, 0);
 			} else {
-				if (((entity.getHorizontalFacing()) == Direction.WEST)) {
+				if ((entity.getHorizontalFacing()) == Direction.WEST) {
 					world.addParticle(SpellCircleParticle.particle, (x - 1), (y + 1.5), z, 0, 0, 0);
 				} else {
-					if (((entity.getHorizontalFacing()) == Direction.EAST)) {
+					if ((entity.getHorizontalFacing()) == Direction.EAST) {
 						world.addParticle(SpellCircleParticle.particle, (x + 1), (y + 1.5), z, 0, 0, 0);
 					} else {
 						world.addParticle(SpellCircleParticle.particle, x, (y + 1.5), z, 0, 0, 0);
@@ -88,6 +89,7 @@ public class SpellCastProcedure {
 			private int ticks = 0;
 			private float waitTicks;
 			private IWorld world;
+
 			public void start(IWorld world, int waitTicks) {
 				this.waitTicks = waitTicks;
 				MinecraftForge.EVENT_BUS.register(this);
@@ -105,7 +107,7 @@ public class SpellCastProcedure {
 
 			private void run() {
 				{
-					boolean _setval = (boolean) (true);
+					boolean _setval = (true);
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.SpellRecharging = _setval;
 						capability.syncPlayerVariables(entity);

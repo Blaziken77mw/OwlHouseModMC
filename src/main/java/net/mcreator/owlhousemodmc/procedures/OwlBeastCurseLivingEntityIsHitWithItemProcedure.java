@@ -19,29 +19,31 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 
 public class OwlBeastCurseLivingEntityIsHitWithItemProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure OwlBeastCurseLivingEntityIsHitWithItem!");
-			return;
-		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure OwlBeastCurseLivingEntityIsHitWithItem!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure OwlBeastCurseLivingEntityIsHitWithItem!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
+		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof PlayerEntity) {
 			ItemStack _stktoremove = new ItemStack(OwlBeastCurseItem.block);
 			((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
 					((PlayerEntity) entity).container.func_234641_j_());
 		}
-		while ((true)) {
+		while (true) {
 			new Object() {
 				private int ticks = 0;
 				private float waitTicks;
 				private IWorld world;
+
 				public void start(IWorld world, int waitTicks) {
 					this.waitTicks = waitTicks;
 					MinecraftForge.EVENT_BUS.register(this);
@@ -74,14 +76,14 @@ public class OwlBeastCurseLivingEntityIsHitWithItemProcedure {
 						if (entity instanceof LivingEntity)
 							((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 1));
 						{
-							boolean _setval = (boolean) (false);
+							boolean _setval = (false);
 							entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.SpellRecharging = _setval;
 								capability.syncPlayerVariables(entity);
 							});
 						}
 						{
-							double _setval = (double) 0;
+							double _setval = 0;
 							entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.SpellCharge = _setval;
 								capability.syncPlayerVariables(entity);
@@ -91,6 +93,7 @@ public class OwlBeastCurseLivingEntityIsHitWithItemProcedure {
 							private int ticks = 0;
 							private float waitTicks;
 							private IWorld world;
+
 							public void start(IWorld world, int waitTicks) {
 								this.waitTicks = waitTicks;
 								MinecraftForge.EVENT_BUS.register(this);
@@ -108,7 +111,7 @@ public class OwlBeastCurseLivingEntityIsHitWithItemProcedure {
 
 							private void run() {
 								{
-									boolean _setval = (boolean) (true);
+									boolean _setval = (true);
 									entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 										capability.SpellRecharging = _setval;
 										capability.syncPlayerVariables(entity);

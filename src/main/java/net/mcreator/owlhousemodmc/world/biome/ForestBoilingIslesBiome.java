@@ -36,10 +36,12 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 @OwlhousemodmcModElements.ModElement.Tag
 public class ForestBoilingIslesBiome extends OwlhousemodmcModElements.ModElement {
 	public static Biome biome;
+
 	public ForestBoilingIslesBiome(OwlhousemodmcModElements instance) {
 		super(instance, 29);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
+
 	private static class BiomeRegisterHandler {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
@@ -78,6 +80,7 @@ public class ForestBoilingIslesBiome extends OwlhousemodmcModElements.ModElement
 			}
 		}
 	}
+
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}

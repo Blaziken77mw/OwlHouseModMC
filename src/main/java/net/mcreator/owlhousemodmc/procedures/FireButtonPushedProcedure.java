@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class FireButtonPushedProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -24,7 +25,7 @@ public class FireButtonPushedProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		HashMap guistate = (HashMap) dependencies.get("guistate");
-		if ((new Object() {
+		if (new Object() {
 			public boolean getValue() {
 				CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell1");
 				if (checkbox != null) {
@@ -32,11 +33,11 @@ public class FireButtonPushedProcedure {
 				}
 				return false;
 			}
-		}.getValue())) {
+		}.getValue()) {
 			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell1",
 					"fire");
 		}
-		if ((new Object() {
+		if (new Object() {
 			public boolean getValue() {
 				CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell2");
 				if (checkbox != null) {
@@ -44,11 +45,11 @@ public class FireButtonPushedProcedure {
 				}
 				return false;
 			}
-		}.getValue())) {
+		}.getValue()) {
 			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell2",
 					"fire");
 		}
-		if ((new Object() {
+		if (new Object() {
 			public boolean getValue() {
 				CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell3");
 				if (checkbox != null) {
@@ -56,11 +57,11 @@ public class FireButtonPushedProcedure {
 				}
 				return false;
 			}
-		}.getValue())) {
+		}.getValue()) {
 			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell3",
 					"fire");
 		}
-		if ((new Object() {
+		if (new Object() {
 			public boolean getValue() {
 				CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell4");
 				if (checkbox != null) {
@@ -68,7 +69,7 @@ public class FireButtonPushedProcedure {
 				}
 				return false;
 			}
-		}.getValue())) {
+		}.getValue()) {
 			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putString("spell4",
 					"fire");
 		}

@@ -43,10 +43,12 @@ import com.google.common.collect.ImmutableList;
 @OwlhousemodmcModElements.ModElement.Tag
 public class Plainsboilingisles2Biome extends OwlhousemodmcModElements.ModElement {
 	public static Biome biome;
+
 	public Plainsboilingisles2Biome(OwlhousemodmcModElements instance) {
 		super(instance, 108);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
+
 	private static class BiomeRegisterHandler {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
@@ -92,6 +94,7 @@ public class Plainsboilingisles2Biome extends OwlhousemodmcModElements.ModElemen
 			}
 		}
 	}
+
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		BiomeDictionary.addTypes(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, WorldGenRegistries.BIOME.getKey(biome)), BiomeDictionary.Type.PLAINS);

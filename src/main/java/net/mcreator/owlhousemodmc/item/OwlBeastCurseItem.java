@@ -21,14 +21,17 @@ import net.mcreator.owlhousemodmc.procedures.OwlBeastCurseLivingEntityIsHitWithI
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseCursesItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class OwlBeastCurseItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:owl_beast_curse")
 	public static final Item block = null;
+
 	public OwlBeastCurseItem(OwlhousemodmcModElements instance) {
 		super(instance, 47);
 	}
@@ -37,6 +40,7 @@ public class OwlBeastCurseItem extends OwlhousemodmcModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseCursesItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));
@@ -72,12 +76,10 @@ public class OwlBeastCurseItem extends OwlhousemodmcModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("world", world);
-				OwlBeastCurseLivingEntityIsHitWithItemProcedure.executeProcedure($_dependencies);
-			}
+
+			OwlBeastCurseLivingEntityIsHitWithItemProcedure
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ar;
 		}
 
@@ -88,12 +90,10 @@ public class OwlBeastCurseItem extends OwlhousemodmcModElements.ModElement {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 			World world = entity.world;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("world", world);
-				OwlBeastCurseLivingEntityIsHitWithItem2Procedure.executeProcedure($_dependencies);
-			}
+
+			OwlBeastCurseLivingEntityIsHitWithItem2Procedure
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
 	}

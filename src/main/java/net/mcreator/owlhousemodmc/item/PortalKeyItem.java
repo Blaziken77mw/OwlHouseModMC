@@ -18,13 +18,16 @@ import net.mcreator.owlhousemodmc.procedures.PortalKeyRightClickedOnBlockProcedu
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseItemsItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class PortalKeyItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:portal_key")
 	public static final Item block = null;
+
 	public PortalKeyItem(OwlhousemodmcModElements instance) {
 		super(instance, 43);
 	}
@@ -33,6 +36,7 @@ public class PortalKeyItem extends OwlhousemodmcModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxDamage(1).rarity(Rarity.COMMON));
@@ -66,16 +70,12 @@ public class PortalKeyItem extends OwlhousemodmcModElements.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 			ItemStack itemstack = context.getItem();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("itemstack", itemstack);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				PortalKeyRightClickedOnBlockProcedure.executeProcedure($_dependencies);
-			}
+
+			PortalKeyRightClickedOnBlockProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity),
+							new AbstractMap.SimpleEntry<>("itemstack", itemstack))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
 	}

@@ -15,10 +15,11 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 
 public class PalistromLeavesBlockDestroyedByPlayerProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure PalistromLeavesBlockDestroyedByPlayer!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure PalistromLeavesBlockDestroyedByPlayer!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -36,18 +37,18 @@ public class PalistromLeavesBlockDestroyedByPlayerProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure PalistromLeavesBlockDestroyedByPlayer!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure PalistromLeavesBlockDestroyedByPlayer!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure PalistromLeavesBlockDestroyedByPlayer!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((ItemTags.getCollection().getTagByID(new ResourceLocation(("minecraft:shears").toLowerCase(java.util.Locale.ENGLISH)))
-				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem()))) {
+		Entity entity = (Entity) dependencies.get("entity");
+		if (ItemTags.getCollection().getTagByID(new ResourceLocation("minecraft:shears"))
+				.contains(((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem())) {
 			if (world instanceof World && !world.isRemote()) {
 				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(PalistromLeavesBlock.block));
 				entityToSpawn.setPickupDelay((int) 10);

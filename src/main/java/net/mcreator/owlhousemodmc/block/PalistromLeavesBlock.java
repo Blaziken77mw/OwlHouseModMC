@@ -21,15 +21,18 @@ import net.mcreator.owlhousemodmc.procedures.PalistromLeavesBlockDestroyedByPlay
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseBlocksItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.AbstractMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class PalistromLeavesBlock extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:palistrom_leaves")
 	public static final Block block = null;
+
 	public PalistromLeavesBlock(OwlhousemodmcModElements instance) {
 		super(instance, 28);
 	}
@@ -40,6 +43,7 @@ public class PalistromLeavesBlock extends OwlhousemodmcModElements.ModElement {
 		elements.items
 				.add(() -> new BlockItem(block, new Item.Properties().group(OwlHouseBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.PLANTS).sound(SoundType.VINE).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
@@ -65,15 +69,11 @@ public class PalistromLeavesBlock extends OwlhousemodmcModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				PalistromLeavesBlockDestroyedByPlayerProcedure.executeProcedure($_dependencies);
-			}
+
+			PalistromLeavesBlockDestroyedByPlayerProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}
 	}

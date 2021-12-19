@@ -15,6 +15,7 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 public class BrokenportalkeyItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:brokenportalkey")
 	public static final Item block = null;
+
 	public BrokenportalkeyItem(OwlhousemodmcModElements instance) {
 		super(instance, 84);
 	}
@@ -23,6 +24,7 @@ public class BrokenportalkeyItem extends OwlhousemodmcModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(1).rarity(Rarity.COMMON));

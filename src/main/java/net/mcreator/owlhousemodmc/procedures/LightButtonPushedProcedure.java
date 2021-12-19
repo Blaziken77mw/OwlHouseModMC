@@ -13,7 +13,13 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class LightButtonPushedProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure LightButtonPushed!");
+			return;
+		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure LightButtonPushed!");
@@ -24,16 +30,11 @@ public class LightButtonPushedProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency guistate for procedure LightButtonPushed!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure LightButtonPushed!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		Entity entity = (Entity) dependencies.get("entity");
 		HashMap guistate = (HashMap) dependencies.get("guistate");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((world.isRemote())) {
-			if ((new Object() {
+		if (world.isRemote()) {
+			if (new Object() {
 				public boolean getValue() {
 					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell1");
 					if (checkbox != null) {
@@ -41,16 +42,16 @@ public class LightButtonPushedProcedure {
 					}
 					return false;
 				}
-			}.getValue())) {
+			}.getValue()) {
 				{
-					String _setval = (String) "light";
+					String _setval = "light";
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Spell1 = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 			}
-			if ((new Object() {
+			if (new Object() {
 				public boolean getValue() {
 					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell2");
 					if (checkbox != null) {
@@ -58,16 +59,16 @@ public class LightButtonPushedProcedure {
 					}
 					return false;
 				}
-			}.getValue())) {
+			}.getValue()) {
 				{
-					String _setval = (String) "light";
+					String _setval = "light";
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Spell2 = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 			}
-			if ((new Object() {
+			if (new Object() {
 				public boolean getValue() {
 					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell3");
 					if (checkbox != null) {
@@ -75,16 +76,16 @@ public class LightButtonPushedProcedure {
 					}
 					return false;
 				}
-			}.getValue())) {
+			}.getValue()) {
 				{
-					String _setval = (String) "light";
+					String _setval = "light";
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Spell3 = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 			}
-			if ((new Object() {
+			if (new Object() {
 				public boolean getValue() {
 					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell4");
 					if (checkbox != null) {
@@ -92,9 +93,9 @@ public class LightButtonPushedProcedure {
 					}
 					return false;
 				}
-			}.getValue())) {
+			}.getValue()) {
 				{
-					String _setval = (String) "light";
+					String _setval = "light";
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Spell4 = _setval;
 						capability.syncPlayerVariables(entity);
@@ -102,7 +103,7 @@ public class LightButtonPushedProcedure {
 				}
 			}
 		} else {
-			if ((new Object() {
+			if (new Object() {
 				public boolean getValue() {
 					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell1");
 					if (checkbox != null) {
@@ -110,11 +111,11 @@ public class LightButtonPushedProcedure {
 					}
 					return false;
 				}
-			}.getValue())) {
+			}.getValue()) {
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 						.putString("spell1", "light");
 			}
-			if ((new Object() {
+			if (new Object() {
 				public boolean getValue() {
 					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell2");
 					if (checkbox != null) {
@@ -122,11 +123,11 @@ public class LightButtonPushedProcedure {
 					}
 					return false;
 				}
-			}.getValue())) {
+			}.getValue()) {
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 						.putString("spell2", "light");
 			}
-			if ((new Object() {
+			if (new Object() {
 				public boolean getValue() {
 					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell3");
 					if (checkbox != null) {
@@ -134,11 +135,11 @@ public class LightButtonPushedProcedure {
 					}
 					return false;
 				}
-			}.getValue())) {
+			}.getValue()) {
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 						.putString("spell3", "light");
 			}
-			if ((new Object() {
+			if (new Object() {
 				public boolean getValue() {
 					CheckboxButton checkbox = (CheckboxButton) guistate.get("checkbox:Spell4");
 					if (checkbox != null) {
@@ -146,7 +147,7 @@ public class LightButtonPushedProcedure {
 					}
 					return false;
 				}
-			}.getValue())) {
+			}.getValue()) {
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 						.putString("spell4", "light");
 			}

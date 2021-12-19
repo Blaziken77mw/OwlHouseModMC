@@ -22,14 +22,17 @@ import net.mcreator.owlhousemodmc.procedures.Spell4OnKeyPressedProcedure;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
+import java.util.stream.Stream;
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class Spell4KeyBinding extends OwlhousemodmcModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	private KeyBinding keys;
+
 	public Spell4KeyBinding(OwlhousemodmcModElements instance) {
 		super(instance, 64);
 		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
@@ -56,8 +59,10 @@ public class Spell4KeyBinding extends OwlhousemodmcModElements.ModElement {
 			}
 		}
 	}
+
 	public static class KeyBindingPressedMessage {
 		int type, pressedms;
+
 		public KeyBindingPressedMessage(int type, int pressedms) {
 			this.type = type;
 			this.pressedms = pressedms;
@@ -81,6 +86,7 @@ public class Spell4KeyBinding extends OwlhousemodmcModElements.ModElement {
 			context.setPacketHandled(true);
 		}
 	}
+
 	private static void pressAction(PlayerEntity entity, int type, int pressedms) {
 		World world = entity.world;
 		double x = entity.getPosX();
@@ -90,15 +96,11 @@ public class Spell4KeyBinding extends OwlhousemodmcModElements.ModElement {
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
 		if (type == 0) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				Spell4OnKeyPressedProcedure.executeProcedure($_dependencies);
-			}
+
+			Spell4OnKeyPressedProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

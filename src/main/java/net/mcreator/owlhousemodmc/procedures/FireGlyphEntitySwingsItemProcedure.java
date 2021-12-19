@@ -20,6 +20,7 @@ import java.util.Random;
 import java.util.Map;
 
 public class FireGlyphEntitySwingsItemProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -27,9 +28,9 @@ public class FireGlyphEntitySwingsItemProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown) <= 0)) {
-			if ((!(new Object() {
+		if ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).GlyphCooldown <= 0) {
+			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
@@ -40,25 +41,25 @@ public class FireGlyphEntitySwingsItemProcedure {
 					}
 					return false;
 				}
-			}.checkGamemode(entity)))) {
-				if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-						.getItem() == FireGlyphItem.block)) {
+			}.checkGamemode(entity))) {
+				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.getItem() == FireGlyphItem.block) {
 					if (entity instanceof LivingEntity) {
 						ItemStack _setstack = new ItemStack(FireGlyphItem.block);
 						_setstack.setCount(
-								(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY))
-										.getCount()) - 1));
+								(int) ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY))
+										.getCount() - 1));
 						((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
 						if (entity instanceof ServerPlayerEntity)
 							((ServerPlayerEntity) entity).inventory.markDirty();
 					}
-				} else if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-						.getItem() == FireGlyphItem.block)) {
+				} else if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == FireGlyphItem.block) {
 					if (entity instanceof LivingEntity) {
 						ItemStack _setstack = new ItemStack(FireGlyphItem.block);
 						_setstack.setCount(
-								(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY))
-										.getCount()) - 1));
+								(int) ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY))
+										.getCount() - 1));
 						((LivingEntity) entity).setHeldItem(Hand.OFF_HAND, _setstack);
 						if (entity instanceof ServerPlayerEntity)
 							((ServerPlayerEntity) entity).inventory.markDirty();
@@ -72,7 +73,7 @@ public class FireGlyphEntitySwingsItemProcedure {
 				}
 			}
 			{
-				double _setval = (double) 10;
+				double _setval = 10;
 				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.GlyphCooldown = _setval;
 					capability.syncPlayerVariables(entity);

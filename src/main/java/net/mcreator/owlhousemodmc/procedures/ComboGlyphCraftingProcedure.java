@@ -18,6 +18,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 
 public class ComboGlyphCraftingProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -25,7 +26,7 @@ public class ComboGlyphCraftingProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((((new Object() {
+		if (new Object() {
 			public int getAmount(int sltid) {
 				if (entity instanceof ServerPlayerEntity) {
 					Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -40,7 +41,7 @@ public class ComboGlyphCraftingProcedure {
 				}
 				return 0;
 			}
-		}.getAmount((int) (1))) > 0) && (((new Object() {
+		}.getAmount((int) (1)) > 0 && (new Object() {
 			public int getAmount(int sltid) {
 				if (entity instanceof ServerPlayerEntity) {
 					Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -55,7 +56,7 @@ public class ComboGlyphCraftingProcedure {
 				}
 				return 0;
 			}
-		}.getAmount((int) (2))) > 0) || ((new Object() {
+		}.getAmount((int) (2)) > 0 || new Object() {
 			public int getAmount(int sltid) {
 				if (entity instanceof ServerPlayerEntity) {
 					Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -70,7 +71,7 @@ public class ComboGlyphCraftingProcedure {
 				}
 				return 0;
 			}
-		}.getAmount((int) (4))) > 0)))) {
+		}.getAmount((int) (4)) > 0)) {
 			if (entity instanceof PlayerEntity) {
 				Container _current = ((PlayerEntity) entity).openContainer;
 				if (_current instanceof Supplier) {
@@ -83,7 +84,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -97,7 +98,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (1))).getItem() == LightGlyphItem.block)) {
+			}.getItemStack((int) (1))).getItem() == LightGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -114,7 +115,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("medium", "light");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -128,7 +129,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (1))).getItem() == IceGlyphItem.block)) {
+			}.getItemStack((int) (1))).getItem() == IceGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -145,7 +146,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("medium", "ice");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -159,7 +160,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (1))).getItem() == PlantGlyphItem.block)) {
+			}.getItemStack((int) (1))).getItem() == PlantGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -176,7 +177,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("medium", "plant");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -190,7 +191,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (1))).getItem() == FireGlyphItem.block)) {
+			}.getItemStack((int) (1))).getItem() == FireGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -207,7 +208,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("medium", "fire");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -221,7 +222,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (2))).getItem() == LightGlyphItem.block)) {
+			}.getItemStack((int) (2))).getItem() == LightGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -238,7 +239,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("secondary", "light");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -252,7 +253,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (2))).getItem() == IceGlyphItem.block)) {
+			}.getItemStack((int) (2))).getItem() == IceGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -269,7 +270,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("secondary", "ice");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -283,7 +284,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (2))).getItem() == PlantGlyphItem.block)) {
+			}.getItemStack((int) (2))).getItem() == PlantGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -300,7 +301,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("secondary", "plant");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -314,7 +315,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (2))).getItem() == FireGlyphItem.block)) {
+			}.getItemStack((int) (2))).getItem() == FireGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -331,7 +332,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("secondary", "fire");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -345,7 +346,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (3))).getItem() == LightGlyphItem.block)) {
+			}.getItemStack((int) (3))).getItem() == LightGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -362,7 +363,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("modifier", "light");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -376,7 +377,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (3))).getItem() == IceGlyphItem.block)) {
+			}.getItemStack((int) (3))).getItem() == IceGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -393,7 +394,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("modifier", "ice");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -407,7 +408,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (3))).getItem() == PlantGlyphItem.block)) {
+			}.getItemStack((int) (3))).getItem() == PlantGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -424,7 +425,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("modifier", "plant");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -438,7 +439,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (3))).getItem() == FireGlyphItem.block)) {
+			}.getItemStack((int) (3))).getItem() == FireGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -455,7 +456,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("modifier", "fire");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -469,7 +470,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (4))).getItem() == LightGlyphItem.block)) {
+			}.getItemStack((int) (4))).getItem() == LightGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -486,7 +487,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("primary", "light");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -500,7 +501,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (4))).getItem() == IceGlyphItem.block)) {
+			}.getItemStack((int) (4))).getItem() == IceGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -517,7 +518,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("primary", "ice");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -531,7 +532,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (4))).getItem() == PlantGlyphItem.block)) {
+			}.getItemStack((int) (4))).getItem() == PlantGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
@@ -548,7 +549,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 				}.getItemStack((int) (0))).getOrCreateTag().putString("primary", "plant");
 			}
-			if (((new Object() {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -562,7 +563,7 @@ public class ComboGlyphCraftingProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (4))).getItem() == FireGlyphItem.block)) {
+			}.getItemStack((int) (4))).getItem() == FireGlyphItem.block) {
 				(new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;

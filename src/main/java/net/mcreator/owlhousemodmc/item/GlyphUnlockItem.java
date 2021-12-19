@@ -21,14 +21,17 @@ import net.mcreator.owlhousemodmc.procedures.GlyphUnlockRightClickedInAirProcedu
 import net.mcreator.owlhousemodmc.itemgroup.OwlHouseItemsItemGroup;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class GlyphUnlockItem extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:glyph_unlock")
 	public static final Item block = null;
+
 	public GlyphUnlockItem(OwlhousemodmcModElements instance) {
 		super(instance, 76);
 	}
@@ -37,6 +40,7 @@ public class GlyphUnlockItem extends OwlhousemodmcModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(OwlHouseItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
@@ -77,11 +81,9 @@ public class GlyphUnlockItem extends OwlhousemodmcModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				GlyphUnlockRightClickedInAirProcedure.executeProcedure($_dependencies);
-			}
+
+			GlyphUnlockRightClickedInAirProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ar;
 		}
 	}

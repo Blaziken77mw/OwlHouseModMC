@@ -10,6 +10,7 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 
 public class SpellbookItemItemInHandTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -18,32 +19,32 @@ public class SpellbookItemItemInHandTickProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		{
-			String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getOrCreateTag().getString("spell1"));
+			String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+					.getString("spell1"));
 			entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.Spell1 = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getOrCreateTag().getString("spell2"));
+			String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+					.getString("spell2"));
 			entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.Spell2 = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getOrCreateTag().getString("spell3"));
+			String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+					.getString("spell3"));
 			entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.Spell2 = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getOrCreateTag().getString("spell4"));
+			String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+					.getString("spell4"));
 			entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.Spell3 = _setval;
 				capability.syncPlayerVariables(entity);

@@ -1,6 +1,7 @@
 
 package net.mcreator.owlhousemodmc.world.dimension;
 
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
@@ -25,9 +26,12 @@ import net.minecraft.block.Block;
 import net.mcreator.owlhousemodmc.procedures.BoilingIslesPlayerEntersDimensionProcedure;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 
+import java.util.stream.Stream;
 import java.util.Set;
 import java.util.Map;
+import java.util.HashSet;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 
@@ -42,14 +46,40 @@ public class BoilingIslesDimension extends OwlhousemodmcModElements.ModElement {
 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
+		Set<Block> replaceableBlocks = new HashSet<>();
+		replaceableBlocks.add(Blocks.STONE);
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:forest_boiling_isles")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:forest_boiling_isles")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:plainsboilingisles_2")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:plainsboilingisles_2")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:palistrom_forest")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:palistrom_forest")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:forestboilingisles_2")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:forestboilingisles_2")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:eclipse_lake")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:eclipse_lake")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:plains_boiling_isles")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getTop().getBlock());
+		replaceableBlocks.add(ForgeRegistries.BIOMES.getValue(new ResourceLocation("owlhousemodmc:plains_boiling_isles")).getGenerationSettings()
+				.getSurfaceBuilder().get().getConfig().getUnder().getBlock());
 		DeferredWorkQueue.runLater(() -> {
 			try {
 				ObfuscationReflectionHelper.setPrivateValue(WorldCarver.class, WorldCarver.CAVE, new ImmutableSet.Builder<Block>()
 						.addAll((Set<Block>) ObfuscationReflectionHelper.getPrivateValue(WorldCarver.class, WorldCarver.CAVE, "field_222718_j"))
-						.add(Blocks.STONE).build(), "field_222718_j");
+						.addAll(replaceableBlocks).build(), "field_222718_j");
 				ObfuscationReflectionHelper.setPrivateValue(WorldCarver.class, WorldCarver.CANYON, new ImmutableSet.Builder<Block>()
 						.addAll((Set<Block>) ObfuscationReflectionHelper.getPrivateValue(WorldCarver.class, WorldCarver.CANYON, "field_222718_j"))
-						.add(Blocks.STONE).build(), "field_222718_j");
+						.addAll(replaceableBlocks).build(), "field_222718_j");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -89,14 +119,11 @@ public class BoilingIslesDimension extends OwlhousemodmcModElements.ModElement {
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
 		if (event.getTo() == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("owlhousemodmc:boiling_isles"))) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				BoilingIslesPlayerEntersDimensionProcedure.executeProcedure($_dependencies);
-			}
+
+			BoilingIslesPlayerEntersDimensionProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+							new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

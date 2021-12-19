@@ -46,6 +46,7 @@ public class OwlhousemodmcMod {
 	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation("owlhousemodmc", "owlhousemodmc"),
 			() -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 	public OwlhousemodmcModElements elements;
+
 	public OwlhousemodmcMod() {
 		elements = new OwlhousemodmcModElements();
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -86,8 +87,10 @@ public class OwlhousemodmcMod {
 	public void registerSounds(RegistryEvent.Register<net.minecraft.util.SoundEvent> event) {
 		elements.registerSounds(event);
 	}
+
 	private static class OwlhousemodmcModFMLBusEvents {
 		private final OwlhousemodmcMod parent;
+
 		OwlhousemodmcModFMLBusEvents(OwlhousemodmcMod parent) {
 			this.parent = parent;
 		}

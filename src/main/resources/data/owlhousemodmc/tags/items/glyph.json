@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
+    "owlhousemodmc:plant_glyph",
+    "owlhousemodmc:light_glyph",
     "owlhousemodmc:fire_glyph",
     "owlhousemodmc:ice_glyph",
-    "owlhousemodmc:light_glyph",
-    "owlhousemodmc:plant_glyph",
     "owlhousemodmc:combo_glyph"
   ]
 }

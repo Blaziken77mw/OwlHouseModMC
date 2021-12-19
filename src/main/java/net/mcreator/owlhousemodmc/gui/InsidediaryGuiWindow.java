@@ -27,6 +27,7 @@ public class InsidediaryGuiWindow extends ContainerScreen<InsidediaryGui.GuiCont
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = InsidediaryGui.guistate;
+
 	public InsidediaryGuiWindow(InsidediaryGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -37,7 +38,9 @@ public class InsidediaryGuiWindow extends ContainerScreen<InsidediaryGui.GuiCont
 		this.xSize = 176;
 		this.ySize = 166;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("owlhousemodmc:textures/insidediary.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
@@ -54,9 +57,11 @@ public class InsidediaryGuiWindow extends ContainerScreen<InsidediaryGui.GuiCont
 		int k = (this.width - this.xSize) / 2;
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
+
 		Minecraft.getInstance().getTextureManager()
 				.bindTexture(new ResourceLocation("owlhousemodmc:textures/static-assets-upload2874270387487832228.png"));
 		this.blit(ms, this.guiLeft + -17, this.guiTop + -2, 0, 0, 197, 170, 197, 170);
+
 		RenderSystem.disableBlend();
 	}
 

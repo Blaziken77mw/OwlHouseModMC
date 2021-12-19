@@ -31,5 +31,6 @@ public class OwlHouseCursesItemGroup extends OwlhousemodmcModElements.ModElement
 			}
 		}.setBackgroundImageName("item_search.png");
 	}
+
 	public static ItemGroup tab;
 }

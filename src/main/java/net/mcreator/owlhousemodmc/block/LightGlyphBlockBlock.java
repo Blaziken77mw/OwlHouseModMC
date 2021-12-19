@@ -32,6 +32,7 @@ import java.util.Collections;
 public class LightGlyphBlockBlock extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:light_glyph_block")
 	public static final Block block = null;
+
 	public LightGlyphBlockBlock(OwlhousemodmcModElements instance) {
 		super(instance, 23);
 	}
@@ -47,6 +48,7 @@ public class LightGlyphBlockBlock extends OwlhousemodmcModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.AIR).sound(SoundType.GLASS).hardnessAndResistance(0f, 0f).setLightLevel(s -> 15)

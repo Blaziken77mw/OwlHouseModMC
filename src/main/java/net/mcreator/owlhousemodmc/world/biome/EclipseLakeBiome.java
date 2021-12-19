@@ -20,10 +20,12 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 @OwlhousemodmcModElements.ModElement.Tag
 public class EclipseLakeBiome extends OwlhousemodmcModElements.ModElement {
 	public static Biome biome;
+
 	public EclipseLakeBiome(OwlhousemodmcModElements instance) {
 		super(instance, 90);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
+
 	private static class BiomeRegisterHandler {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
@@ -44,6 +46,7 @@ public class EclipseLakeBiome extends OwlhousemodmcModElements.ModElement {
 			}
 		}
 	}
+
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 	}

@@ -23,10 +23,11 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 
 public class PlantGlyphRightClickedOnBlockProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure PlantGlyphRightClickedOnBlock!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure PlantGlyphRightClickedOnBlock!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -44,17 +45,17 @@ public class PlantGlyphRightClickedOnBlockProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure PlantGlyphRightClickedOnBlock!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency world for procedure PlantGlyphRightClickedOnBlock!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure PlantGlyphRightClickedOnBlock!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((!(new Object() {
+		Entity entity = (Entity) dependencies.get("entity");
+		if (!(new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayerEntity) {
 					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
@@ -65,24 +66,24 @@ public class PlantGlyphRightClickedOnBlockProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)))) {
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getItem() == PlantGlyphItem.block)) {
+		}.checkGamemode(entity))) {
+			if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+					.getItem() == PlantGlyphItem.block) {
 				if (entity instanceof LivingEntity) {
 					ItemStack _setstack = new ItemStack(PlantGlyphItem.block);
 					_setstack.setCount(
-							(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount())
+							(int) ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)).getCount()
 									- 1));
 					((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
 					if (entity instanceof ServerPlayerEntity)
 						((ServerPlayerEntity) entity).inventory.markDirty();
 				}
-			} else if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-					.getItem() == PlantGlyphItem.block)) {
+			} else if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+					.getItem() == PlantGlyphItem.block) {
 				if (entity instanceof LivingEntity) {
 					ItemStack _setstack = new ItemStack(PlantGlyphItem.block);
 					_setstack.setCount(
-							(int) (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)).getCount())
+							(int) ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)).getCount()
 									- 1));
 					((LivingEntity) entity).setHeldItem(Hand.OFF_HAND, _setstack);
 					if (entity instanceof ServerPlayerEntity)

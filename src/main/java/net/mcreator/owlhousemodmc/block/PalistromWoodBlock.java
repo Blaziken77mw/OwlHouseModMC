@@ -31,6 +31,7 @@ import java.util.Collections;
 public class PalistromWoodBlock extends OwlhousemodmcModElements.ModElement {
 	@ObjectHolder("owlhousemodmc:palistrom_wood")
 	public static final Block block = null;
+
 	public PalistromWoodBlock(OwlhousemodmcModElements instance) {
 		super(instance, 27);
 	}
@@ -41,8 +42,10 @@ public class PalistromWoodBlock extends OwlhousemodmcModElements.ModElement {
 		elements.items
 				.add(() -> new BlockItem(block, new Item.Properties().group(OwlHouseBlocksItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2f, 10f).setLightLevel(s -> 0).harvestLevel(1)
 					.harvestTool(ToolType.AXE).setRequiresTool());

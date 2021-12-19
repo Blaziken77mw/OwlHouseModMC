@@ -9,12 +9,8 @@ import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 import java.util.Map;
 
 public class BoilingIslesPlayerEntersDimensionProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure BoilingIslesPlayerEntersDimension!");
-			return;
-		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency x for procedure BoilingIslesPlayerEntersDimension!");
@@ -30,10 +26,15 @@ public class BoilingIslesPlayerEntersDimensionProcedure {
 				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency z for procedure BoilingIslesPlayerEntersDimension!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				OwlhousemodmcMod.LOGGER.warn("Failed to load dependency entity for procedure BoilingIslesPlayerEntersDimension!");
+			return;
+		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
+		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof ServerPlayerEntity)
 			((ServerPlayerEntity) entity).func_242111_a(((ServerPlayerEntity) entity).world.getDimensionKey(),
 					new BlockPos((int) x, (int) y, (int) z), 0, true, false);

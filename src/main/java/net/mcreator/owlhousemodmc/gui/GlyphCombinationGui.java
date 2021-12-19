@@ -35,14 +35,17 @@ import net.mcreator.owlhousemodmc.procedures.ComboGlyphCraftingProcedure;
 import net.mcreator.owlhousemodmc.OwlhousemodmcModElements;
 import net.mcreator.owlhousemodmc.OwlhousemodmcMod;
 
+import java.util.stream.Stream;
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @OwlhousemodmcModElements.ModElement.Tag
 public class GlyphCombinationGui extends OwlhousemodmcModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
+
 	public GlyphCombinationGui(OwlhousemodmcModElements instance) {
 		super(instance, 7);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
@@ -53,12 +56,14 @@ public class GlyphCombinationGui extends OwlhousemodmcModElements.ModElement {
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ContainerRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);
 	}
+
 	private static class ContainerRegisterHandler {
 		@SubscribeEvent
 		public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
 			event.getRegistry().register(containerType.setRegistryName("glyph_combination"));
 		}
 	}
+
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
 		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, GlyphCombinationGuiWindow::new));
@@ -72,13 +77,12 @@ public class GlyphCombinationGui extends OwlhousemodmcModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				ComboGlyphCraftingProcedure.executeProcedure($_dependencies);
-			}
+
+			ComboGlyphCraftingProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
+
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {
 			return new GuiContainerMod(id, inv, extraData);
@@ -92,6 +96,7 @@ public class GlyphCombinationGui extends OwlhousemodmcModElements.ModElement {
 		private IItemHandler internal;
 		private Map<Integer, Slot> customSlots = new HashMap<>();
 		private boolean bound = false;
+
 		public GuiContainerMod(int id, PlayerInventory inv, PacketBuffer extraData) {
 			super(containerType, id);
 			this.entity = inv.player;
@@ -216,12 +221,9 @@ public class GlyphCombinationGui extends OwlhousemodmcModElements.ModElement {
 			return itemstack;
 		}
 
-		@Override /**
-					 * Merges provided ItemStack with the first avaliable one in the
-					 * container/player inventor between minIndex (included) and maxIndex
-					 * (excluded). Args : stack, minIndex, maxIndex, negativDirection. /!\ the
-					 * Container implementation do not check if the item is valid for the slot
-					 */
+		@Override /** 
+					* Merges provided ItemStack with the first avaliable one in the container/player inventor between minIndex (included) and maxIndex (excluded). Args : stack, minIndex, maxIndex, negativDirection. /!\ the Container implementation do not check if the item is valid for the slot
+					*/
 		protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
 			boolean flag = false;
 			int i = startIndex;
@@ -324,6 +326,7 @@ public class GlyphCombinationGui extends OwlhousemodmcModElements.ModElement {
 
 	public static class ButtonPressedMessage {
 		int buttonID, x, y, z;
+
 		public ButtonPressedMessage(PacketBuffer buffer) {
 			this.buttonID = buffer.readInt();
 			this.x = buffer.readInt();
@@ -361,6 +364,7 @@ public class GlyphCombinationGui extends OwlhousemodmcModElements.ModElement {
 
 	public static class GUISlotChangedMessage {
 		int slotID, x, y, z, changeType, meta;
+
 		public GUISlotChangedMessage(int slotID, int x, int y, int z, int changeType, int meta) {
 			this.slotID = slotID;
 			this.x = x;
@@ -403,6 +407,7 @@ public class GlyphCombinationGui extends OwlhousemodmcModElements.ModElement {
 			context.setPacketHandled(true);
 		}
 	}
+
 	static void handleButtonAction(PlayerEntity entity, int buttonID, int x, int y, int z) {
 		World world = entity.world;
 		// security measure to prevent arbitrary chunk generation
@@ -416,19 +421,15 @@ public class GlyphCombinationGui extends OwlhousemodmcModElements.ModElement {
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
 		if (slotID == 0 && changeType == 1) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				ComboGlyphTakenProcedure.executeProcedure($_dependencies);
-			}
+
+			ComboGlyphTakenProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 		if (slotID == 0 && changeType == 2) {
 			int amount = meta;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				ComboGlyphTakenProcedure.executeProcedure($_dependencies);
-			}
+
+			ComboGlyphTakenProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

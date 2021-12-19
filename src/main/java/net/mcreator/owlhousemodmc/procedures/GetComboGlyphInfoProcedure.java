@@ -38,6 +38,7 @@ public class GetComboGlyphInfoProcedure {
 			}
 		}
 	}
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -45,10 +46,9 @@ public class GetComboGlyphInfoProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == ComboGlyphItem.block)) {
+		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == ComboGlyphItem.block) {
 			{
-				String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 						.getOrCreateTag().getString("medium"));
 				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ComboGlyphMedium = _setval;
@@ -56,7 +56,7 @@ public class GetComboGlyphInfoProcedure {
 				});
 			}
 			{
-				String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 						.getOrCreateTag().getString("primary"));
 				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ComboGlyphPrimary = _setval;
@@ -64,7 +64,7 @@ public class GetComboGlyphInfoProcedure {
 				});
 			}
 			{
-				String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 						.getOrCreateTag().getString("secondary"));
 				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ComboGlyphSecondary = _setval;
@@ -72,7 +72,7 @@ public class GetComboGlyphInfoProcedure {
 				});
 			}
 			{
-				String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 						.getOrCreateTag().getString("modifier"));
 				entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.ComboGlyphModifier = _setval;
@@ -80,10 +80,10 @@ public class GetComboGlyphInfoProcedure {
 				});
 			}
 		} else {
-			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-					.getItem() == ComboGlyphItem.block)) {
+			if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+					.getItem() == ComboGlyphItem.block) {
 				{
-					String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+					String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 							.getOrCreateTag().getString("medium"));
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.ComboGlyphMedium = _setval;
@@ -91,7 +91,7 @@ public class GetComboGlyphInfoProcedure {
 					});
 				}
 				{
-					String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+					String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 							.getOrCreateTag().getString("primary"));
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.ComboGlyphPrimary = _setval;
@@ -99,7 +99,7 @@ public class GetComboGlyphInfoProcedure {
 					});
 				}
 				{
-					String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+					String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 							.getOrCreateTag().getString("secondary"));
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.ComboGlyphSecondary = _setval;
@@ -107,7 +107,7 @@ public class GetComboGlyphInfoProcedure {
 					});
 				}
 				{
-					String _setval = (String) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+					String _setval = (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 							.getOrCreateTag().getString("modifier"));
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.ComboGlyphModifier = _setval;
@@ -116,28 +116,28 @@ public class GetComboGlyphInfoProcedure {
 				}
 			} else {
 				{
-					String _setval = (String) "";
+					String _setval = "";
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.ComboGlyphMedium = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 				{
-					String _setval = (String) "";
+					String _setval = "";
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.ComboGlyphPrimary = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 				{
-					String _setval = (String) "";
+					String _setval = "";
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.ComboGlyphSecondary = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
 				{
-					String _setval = (String) "";
+					String _setval = "";
 					entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.ComboGlyphModifier = _setval;
 						capability.syncPlayerVariables(entity);

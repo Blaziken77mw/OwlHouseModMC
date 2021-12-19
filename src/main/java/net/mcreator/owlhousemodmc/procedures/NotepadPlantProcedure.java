@@ -16,6 +16,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 
 public class NotepadPlantProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -23,9 +24,9 @@ public class NotepadPlantProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).IceGlyphFound)) {
-			if ((((new Object() {
+		if ((entity.getCapability(OwlhousemodmcModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new OwlhousemodmcModVariables.PlayerVariables())).IceGlyphFound) {
+			if ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -39,7 +40,7 @@ public class NotepadPlantProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (0))).getItem() == Items.PAPER) && (((new Object() {
+			}.getItemStack((int) (0))).getItem() == Items.PAPER && ((new Object() {
 				public ItemStack getItemStack(int sltid) {
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -53,7 +54,7 @@ public class NotepadPlantProcedure {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (1))).getItem() == PlantGlyphItem.block) || ((new Object() {
+			}.getItemStack((int) (1))).getItem() == PlantGlyphItem.block || new Object() {
 				public int getAmount(int sltid) {
 					if (entity instanceof ServerPlayerEntity) {
 						Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -68,7 +69,7 @@ public class NotepadPlantProcedure {
 					}
 					return 0;
 				}
-			}.getAmount((int) (1))) == 0)))) {
+			}.getAmount((int) (1)) == 0)) {
 				{
 					Entity _ent = entity;
 					if (_ent instanceof ServerPlayerEntity) {
@@ -88,7 +89,7 @@ public class NotepadPlantProcedure {
 						Object invobj = ((Supplier) _current).get();
 						if (invobj instanceof Map) {
 							ItemStack _setstack = new ItemStack(PlantGlyphItem.block);
-							_setstack.setCount((int) ((new Object() {
+							_setstack.setCount((int) (new Object() {
 								public int getAmount(int sltid) {
 									if (entity instanceof ServerPlayerEntity) {
 										Container _current = ((ServerPlayerEntity) entity).openContainer;
@@ -103,7 +104,7 @@ public class NotepadPlantProcedure {
 									}
 									return 0;
 								}
-							}.getAmount((int) (1))) + 1));
+							}.getAmount((int) (1)) + 1));
 							((Slot) ((Map) invobj).get((int) (1))).putStack(_setstack);
 							_current.detectAndSendChanges();
 						}
