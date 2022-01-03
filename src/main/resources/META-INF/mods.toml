@@ -6,11 +6,10 @@ license="GNU General Public License version 3 (GPLv3)"
 modId="owlhousemodmc"
 version="0.3.0"
 displayName="OwlHouseModMC"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
+credits=""
 authors="Blaziken77mw, "
 description='''
-Use the magic of The Owl House in Minecraft!
+Used by the magic of the isles mod
 '''
 
 [[dependencies.owlhousemodmc]]
@@ -20,6 +19,22 @@ Use the magic of The Owl House in Minecraft!
     ordering="NONE"
     side="BOTH"
 
+[[mods]]
+modId="magicIsles"
+version="0.3.0"
+displayName="Magic of the Isles"
+credits=""
+authors="Blaziken77mw,
+description='''
+Use features from The Owl House in Minecraft!
+'''
+
+[[dependencies.magicisles]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5]"
+    ordering="NONE"
+    sides="BOTH"
 
 
 
